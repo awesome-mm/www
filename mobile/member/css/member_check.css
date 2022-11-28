@@ -87,16 +87,16 @@ body {
 .join .policy {
     padding: 10px;
     overflow-y: scroll;
-    height: 100px;
+    height: 94px;
     margin: 15px 0;
     border: 1px solid #ddd;
     background: #fff;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.5em;
 }
 
 .join .check {
-    margin: 10px 0 40px;
+    margin-bottom: 40px;
 }
 
 .join .button {
@@ -107,9 +107,9 @@ body {
 
 .join .button .ok {
     display: inline-block;
-    width: 246px;
+    width: 48%;
     line-height: 24px;
-    padding: 8px 0;
+    padding: 1% 0;
     font-size: 1rem;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -117,15 +117,15 @@ body {
     transition: all 0.3s ease-out;
     color: #fff;
     box-sizing: border-box;
-    opacity: 0.6;
+    opacity: 1;
 }
 
 
 .join .button .cancel {
     display: inline-block;
-    width: 246px;
+    width: 48%;
     line-height: 24px;
-    padding: 8px 0;
+    padding: 1% 0;
     font-size: 1rem;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -147,7 +147,7 @@ body {
 .join .allcheck {
     display: inline-block;
     padding: 10px 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease-out;

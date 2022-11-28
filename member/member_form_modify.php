@@ -5,32 +5,16 @@
     @extract($_GET);
     @extract($_SESSION);
 ?>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주성엔지니어링</title>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
+<meta charset="utf-8">
 <link href="../common/css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/modify.css" rel="stylesheet" type="text/css" media="all">
 
 <script src="./js/jquery-1.12.4.min.js"></script>
   <script src="./js/jquery-migrate-1.4.1.min.js"></script>
 <script>
-   function check_id()
-   {
-     window.open("check_id.php?id=" + document.member_form.id.value,
-         "IDcheck",
-          "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
-   }
-
-   function check_nick()
-   {
-     window.open("../member/check_nick.php?nick=" + document.member_form.nick.value,
-         "NICKcheck",
-          "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
-   }
 
    function check_input()
    {
@@ -100,6 +84,8 @@
    }
 
    $(document).ready(function() {
+
+    //nick 중복검사
     $("#nick").keyup(function() {    // id입력 상자에 id값 입력시
     var nick = $('#nick').val();
 
@@ -133,9 +119,38 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
         }
     });
 });	
-   });
-       //nick 중복검사		 
+//폰번호 검사
+$("#hp2").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp2 = $('#hp2').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data: "hp2=" + hp2,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	
 
+//폰번호 검사
+$("#hp3").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp3 = $('#hp3').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data:"hp3=" + hp3,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	
+});
 
 </script>
 </head>
@@ -246,6 +261,8 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                 - <label class="hidden" for="hp3">전화번호끝4자리</label>
                 <input type="text" class="hp" name="hp3" id="hp3" value="<?= $hp3 ?>"
                     placeholder="0000" required>
+                    <span id="loadtext4"></span>
+
                 </dd>
 
             </dl>
@@ -261,7 +278,7 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                 </dd>
             </dl>
             <div class="row bottom_btn">
-                <a href="#" onclick="reset_form()" class="cansle_btn">취소</a>
+                <a href="../index.html" class="cansle_btn">취소</a>
                 <a href="#" onclick="check_input()" class="signup_btn">정보저장</a>&nbsp;&nbsp;
             </div>
             </form>

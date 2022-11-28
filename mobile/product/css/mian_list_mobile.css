@@ -10,14 +10,14 @@
 
 #content .top_menu .top_btn{
   display: flex;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
   
 }
 #content .top_menu .top_btn p{
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 #content .top_menu .top_btn p span{
   color: #b51f1f;

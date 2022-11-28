@@ -25,7 +25,7 @@
 <?
 	include "../../lib/dbconn.php";
 
-	if(!$scale){$scale=6;}			// 한 화면에 표시되는 글 수
+	if(!$scale){$scale=4;}			// 한 화면에 표시되는 글 수
 
     if ($mode=="search")
 	{
@@ -123,7 +123,7 @@
               </form>
             </div>
             <div class="top_btn">
-            <p>총 <span><?= $total_record ?></span> 개의 게시물이 있습니다.</p>
+            <p><span><?= $total_record ?></span> 개의 게시물이 있습니다.</p>
               <div class="btn_inner">
                 <div class="list_style">
                   <a href="./list.php?liststyle=box&page=<?=$page?>&scale=<?=$scale?>" class="box_style_btn active">

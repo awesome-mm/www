@@ -4,6 +4,18 @@
     @extract($_POST);
     @extract($_SESSION);
 ?>
+<script>
+  function search_check(){
+  if (!document.search_from.search.value || !$search)
+    {
+        document.search_from.search.focus();
+        document.search_from.search.select();
+        return false;
+        
+    }
+    document.search_from.submit();
+}
+</script>
   <div id="skipNav">
     <a href="#content">본문바로가기</a>
     <a href="#gnb">네비게이션바로가기</a>
@@ -29,14 +41,14 @@
               <form action="./product/list.php?table=product&mode=search" method="post" name="search_from">
                 <input type="hidden" name="find" value="category">
                 <div>
-                  <label class="hidden" for="search">검색어입력</label>
-                  <input maxlength="8" type="text" name="search" id="search" placeholder="검색어를 입력해주세요" value="<?=$search?>" list="dataList_id">
+                  <label class="hidden" for="hd_search">검색어입력</label>
+                  <input maxlength="8" type="text" name="search" id="hd_search" placeholder="검색어를 입력해주세요" value="<?=$search?>" list="dataList_id">
                   <datalist id="dataList_id">
                     <option value="반도체"></option>
                     <option value="태양광"></option>
                     <option value="디스플레이"></option>
                   </datalist>
-                  <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button onclick="search_check()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
               </form>
             </div>

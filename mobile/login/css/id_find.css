@@ -75,7 +75,7 @@ header h1 a {
 
 #wrap #hp1 {
   width: calc(33.33% - 33px);
-  padding: 15px;
+  padding: 15px 5px;
   box-sizing: border-box;
   font-size: 1rem;
 }
@@ -150,10 +150,12 @@ header h1 a {
   height: 14px;
   background: #999;
   right: -8px;
-  top: 8px;
+  top: 14px;
 }
 #wrap .go li a{
-  font-size: 0.89rem;
+  font-size: 1rem;
+  display: block;
+  padding: 10px;
 }
 #loadtext{
   display: none;

@@ -21,6 +21,11 @@
    $result = mysql_query($sql, $connect);
    $exist_id = mysql_num_rows($result);
 
+   $sql2 = "select * from member where nick='$nick'";
+   $result2 = mysql_query($sql2, $connect);
+   $exist_nick = mysql_num_rows($result2);
+
+
    if($exist_id) {
      echo("
            <script>
@@ -29,7 +34,17 @@
            </script>
          ");
          exit;
-   }
+
+    }else if($exist_nick){
+      echo("
+            <script>
+              window.alert('해당 닉네임이 존재합니다.')
+              history.go(-1)
+            </script>
+          ");
+          exit;
+    }
+    
    else //아이디 중복이 되지않으면
    {            // 레코드 삽입 명령을 $sql에 입력
 	    $sql = "insert into member(id, pass, name, nick, hp, email, regist_day, level) ";

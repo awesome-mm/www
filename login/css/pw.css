@@ -130,9 +130,9 @@ header h1 a {
   content: '';
   width: 1px;
   height: 14px;
-  margin: 10% 0;
   background: #999;
   right: -8px;
+  top: 8px;
 }
 #wrap .go li a{
   font-size: 0.89rem;

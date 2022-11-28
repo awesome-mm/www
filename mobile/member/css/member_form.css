@@ -139,9 +139,9 @@ body{
 
 .bottom_btn .signup_btn{
   display: inline-block;
-  width: 246px;
+  width: 48%;
   line-height: 24px;
-  padding: 8px 0;
+  padding: 1% 0;
   font-size: 1rem;
   cursor: pointer;
   border: 1px solid #ccc;
@@ -155,16 +155,15 @@ body{
 
 .bottom_btn .cansle_btn{
   display: inline-block;
-  width: 246px;
+  width: 48%;
   line-height: 24px;
-  padding: 8px 0;
+  padding: 1% 0;
   font-size: 1rem;
   cursor: pointer;
   border: 1px solid #ccc;
   background: #f7f7f7;
   transition: all 0.3s ease-out;
   box-sizing: border-box;
-  margin-right: 10px;
 }
 .bottom_btn{
   margin: 30px 0;
