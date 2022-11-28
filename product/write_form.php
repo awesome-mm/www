@@ -24,10 +24,13 @@
 		$copied_file_2 = $row[file_copied_2];
 	}
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head> 
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주성엔지니어링</title>
 <link rel="stylesheet" href="../common/css/common.css" type="text/css" media="all">
 <link href="./css/sub2common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/write_form.css" rel="stylesheet" type="text/css" media="all">

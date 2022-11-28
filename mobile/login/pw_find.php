@@ -8,8 +8,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>주성엔지니어링-비밀번호찾기</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주성엔지니어링</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="./css/pw_find.css">
 <script src="https://kit.fontawesome.com/f8a0f5a24e.js" crossorigin="anonymous"></script>
