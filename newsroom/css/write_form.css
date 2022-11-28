@@ -1,0 +1,137 @@
+#content .title_area{
+  margin-bottom: 50px;
+}
+
+#content .write_form {
+  width: 90%;
+  margin: 0 auto;
+  padding: 100px;
+  background: #f3f3f3;
+  box-sizing: border-box;
+}
+#content .write_form .form_box{
+  overflow: hidden;
+}
+#content .write_form ul li{
+  margin-bottom: 20px;
+}
+#content .write_form ul li label{
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  
+}
+#content .write_form #title{
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-indent: 10px;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #ccc;
+  color: #333;
+}
+
+#content .write_form #subject{
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-indent: 10px;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  outline: none;
+}
+#content .write_form #subject:focus{
+  border: 1px solid #ed164c;
+}
+#content .write_form #content{
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  clear: both;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+}
+#content .write_form #content:focus{
+  border: 1px solid #ed164c;
+}
+
+#content .write_form #write_row3 > label{
+  float: left;
+  display: inline-block;
+  margin-right: 100px;
+
+}
+#content .write_form #write_row3 .html_box{
+  float: left;
+
+}
+#content .write_form #write_row3 .html_box label{
+  display: inline-block;
+}
+#content .write_form #write_row3 #html_ok{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 3px;
+  margin: 0;
+  left: 0;
+}
+
+#write_button{
+  float: right;
+  margin-bottom: 100px;
+}
+#write_button > a, #write_button button{
+  color: #666;
+    transition: all 0.2s ease-out;
+    border: 1px solid #ccc;
+    width: 76px;
+    height: 52px;
+    display: block;
+    float: left;
+    padding: 12px;
+    margin-right: 15px;
+    text-align: center;
+    font-size: 1.125rem;
+    box-sizing: border-box;
+    background: #fff;
+    font-weight: 300;
+    
+}
+#write_button button{
+  cursor: pointer;
+  margin-right: 0;
+  color: #666;
+
+}
+
+#write_button > a:hover , #write_button> button:hover{
+  color: #fff;
+  background: #b51f1f;
+}
+#write_row4 ,#write_row5 ,#write_row6{
+  overflow: hidden;
+  margin: 15px 0;
+}
+#write_row4 .col1{
+  float: left;
+  margin-right: 40px;
+}
+
+#write_row5 .col1{
+  float: left;
+  margin-right: 40px;
+}
+#write_row6 .col1{
+  float: left;
+  margin-right: 40px;
+}
+.delete_ok{
+  margin-bottom: 20px;
+}

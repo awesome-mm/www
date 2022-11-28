@@ -1,0 +1,350 @@
+<?session_start();?>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주성엔지니어링</title>
+  <link rel="stylesheet" href="./common/css/common.css">
+  <link rel="stylesheet" href="./maincss/main.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="./common/js/prefixfree.min.js"></script>
+  <script src="./mainjs/mainpopup.js"> </script>
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+
+</head>
+
+<body>
+
+  <? include "./common/main_header.html" ?>
+
+  <div class="main">
+    <div class="gallery">
+      <ul class="visual_box">
+        <li class="link1"><img src="./images/visual/visual01.jpg" alt=''>
+          <span>World's 1st Technology,<br>
+            Only 1 in the World.</span>
+          </li>
+        <li class="link2"><img src="./images/visual/visual02.jpg" alt=''>
+          <span>we creative precisely
+            <br>
+            engineered parts and solutions</span>
+        </li>
+        <li class="link3"><img src="./images/visual/visual03.jpg" alt=''>
+          <span>We enable a creative mind
+            <br>to advance the world</span>
+        </li>
+      </ul>
+    </div>
+    <div class="dock">
+      <ul>
+        <li class="btn_main1"><span class="mbutton"></span></li>
+        <li class="btn_main2"><span class="mbutton"></span></li>
+        <li class="btn_main3"><span class="mbutton"></span></li>
+      </ul>
+    </div>
+    <div class="play">
+      <img class="btn_play" src="./images/visual/stop-button.png" alt="">
+    </div>
+    <div class="left_right">
+      <span class="btn btnLeft"><i class="fa-solid fa-chevron-left"></i></span>
+      <span class="btn btnRight"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+  </div>
+
+  <article id="content">
+    <h2 class="hidden">본문콘텐츠영역</h2>
+    <section class="product">
+      <div class="product_inner">
+        <h3>사업영역</h3>
+        <div class="business_img">
+          <img src="./images/product/product01.jpg" alt="">
+          <img src="./images/product/product02.jpg" alt="">
+          <img src="./images/product/product03.jpg" alt="">
+        </div>
+        <div class="business_box">
+          <ul>
+            <li class="business_content">
+              <a href="./sub2/sub2_1.html" title="새창으로 열림" class="btn">제품 자세히보기</a>
+            </li>
+          </ul>
+          <div class="business_btn">
+            <a href="#" class="btn_prev">
+              <i class="fa-solid fa-angle-left "><span class="hidden">이전</span></i>
+            </a>
+            <a href="#" class="btn_next">
+              <i class="fa-solid fa-angle-right"><span class="hidden">다음</span></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="introduce">
+      <h3>기업소개</h3>
+      <ul>
+        <li>
+          <a href="./sub1/sub1_1.html">
+            <div class="introduce_img">
+              <img src="./images/introduce/introduce01.jpg" alt="">
+            </div>
+            <dl>
+              <dt>VISION</dt>
+              <dd>기술혁신을 통한 새로운 시장개척으로 고객과 임직원의 행복을 창출합니다</dd>
+            </dl>
+            <div class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./sub1/sub1_3.html">
+            <div class="introduce_img">
+              <img src="./images/introduce/introduce02.jpg" alt="">
+            </div>
+            <dl>
+              <dt>BUSINESS</dt>
+              <dd>세계 최초 기술과 명품장비로 고객을 감동시키는 세계1등 기업으로 도약합니다</dd>
+            </dl>
+            <div class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./sub1/sub1_2.html">
+            <div class="introduce_img">
+              <img src="./images/introduce/introduce03.jpg" alt="">
+            </div>
+            <dl>
+              <dt>HISTORY</dt>
+              <dd>누구보다 먼저 생각하고 세계1등의 업무 효율이 주성인의 정신입니다</dd>
+            </dl>
+            <div class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./sub4/sub4_1.html">
+            <div class="introduce_img">
+              <img src="./images/introduce/introduce04.jpg" alt="">
+            </div>
+            <dl>
+              <dt>CULTURE</dt>
+              <dd>고객의성공을 통한 동반성장과 행복창출이 주성엔지니어링의 문화입니다.</dd>
+            </dl>
+            <div class="plus">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="management">
+      <div class="management_box">
+        <h3>경영정보</h3>
+        <ul class="managementContent">
+          <li class="mana_Con">
+            <div class="mana_img img1">
+              <img class="" src="./images/management/management01.jpg" alt="">
+            </div>
+            <div class="management_text">
+              <h4>윤리경영</h4>
+              <p>지속가능한 성장을 하기 위한 첫걸음은 스스로 시장생태계의 건강한 생명체가 되고, 나아가 제품과 서비스 등 모든 경영활동 전반에서 시장 생태계의 건강을 도모하는 것입니다.
+              </p>
+              <a href="./sub4/sub4_2.html" class="btn">자세히보기<i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </li>
+          <li class="mana_Con">
+            <div class="mana_img img2">
+              <img class="" src="./images/management/management02.jpg" alt="">
+            </div>
+            <div class="management_text">
+              <h4>사회공헌</h4>
+              <p>기업의 사회적 책임과 범지구적인 환경문제에 대한 중요성과 가치를 지역사회와 함께 나누기 위하여 자연생태계 보존활동을 꾸준히 실천해 나가고있습니다. 주성엔지니어링은 깨끗하고 쾌적한
+                주변환경을 만들기 위해 환경정화 활동을 꾸준히 펼쳐오고 있습니다.</p>
+              <a href="./sub4/sub4_3.html" class="btn">자세히보기<i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </li>
+          <li>
+            <ul class="management_sub">
+              <li>
+                <div>
+                  <img src="./images/management/management03.png" alt="">
+                </div>
+                <span>지속가능경영</span>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/management/management04.png" alt="">
+                </div>
+                <span>안전보건</span>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/management/management05.png" alt="">
+                </div>
+                <span>보건활동</span>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/management/management06.png" alt="">
+                </div>
+                <span>상생경영</span>
+              </li>
+              <li>
+                <div>
+                  <img src="./images/management/management07.png" alt="">
+                </div>
+                <span>환경경영</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- <li>
+      <a href="#">
+        <dl>
+          <dt>반디기술학회 20주년 기념식… 황철주 회장,`산학연협력상`수상</dt>
+          <dd>한국반도체디스플레이기술학회(반디학회)서울 코엑스 인터컨티넨탈에서창립 20주년 기념식을개최 반도체 디스플레이 기술발전과 상호 협업에 앞장선 산업 공로자에...
+          </dd>
+        </dl>
+        <span class="news_day">2022.06.16</span>
+        <div>
+          <span class="border_top"></span>
+          <span class="border_right"></span>
+          <span class="border_bottom"></span>
+          <span class="border_left"></span>
+        </div>
+      </a>
+    </li> -->
+
+    <? include "./lib/func.php";?>
+
+    <section class="news">
+      <div class="news_container">
+        <div class="news_Box">
+          <h3>뉴스룸</h3>
+          <div class="clone_inner">
+            <div class="clone_inner2">
+              <ul>
+                <?
+                  latest_article('concert',5,13,120);
+                ?>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="news_btn">
+          <ul>
+            <li><a class="news_btn1 news_perv" href="#"><i class="fa-solid fa-arrow-left-long"></i><span class="hidden">이전</span></a></li>
+            <li><a class="news_btn1 news_next" href="#"><i class="fa-solid fa-arrow-right-long"></i><span class="hidden">다음</span></a></li>
+            <li><a class=" news_more" href="./newsroom/list.php" title="뉴스페이지로 이동"><i class="fa-solid fa-plus"></i><span class="hidden">더보기</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="recruitment">
+      <div class="recruitment_back">
+        <div class="text">
+          <h3>인재채용</h3>
+          <P>열정과 도전정신을 지닌 인재를 찾습니다</P>
+        </div>
+        <ul>
+          <li>
+            <a href="./sub5/sub5_1.html">
+              <div class="img_box hover_img1">
+                <img src="./images/recruitment/recruitment_white01.png" alt="">
+              </div>
+              <dl>
+                <dt>인재상</dt>
+                <dd>World's Best 수준의 긍정적인 마인드와
+                  적극적인 태도, 세계 1등을 향한
+                  열정을 가진 준비된 인재</dd>
+              </dl>
+              <div class="rec_btn">
+                <i class="fa-solid fa-plus"></i>
+                <span class="hidden">더보기</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./sub5/sub5_2.html">
+              <div class="img_box hover_img2">
+                <img src="./images/recruitment/recruitment_white02.png" alt="">
+              </div>
+              <dl>
+                <dt>복리후생</dt>
+                <dd>주성은 보상과 적절한 휴식을 통해 주성의 임직원들이 세계 최고의 기술 기업인으로 성장</dd>
+              </dl>
+              <div class="rec_btn">
+                <i class="fa-solid fa-plus"></i>
+                <span class="hidden">더보기</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="./sub5/sub5_3.html">
+              <div class="img_box hover_img3">
+                <img src="./images/recruitment/recruitment_white03.png" alt="">
+              </div>
+              <dl>
+                <dt>채용정보</dt>
+                <dd>주성엔지니어링은 경영 VISION 및 직원의 성공과 행복을 달성하기 위하여 공정하고 투명한 인사제도를
+                  시행하고 있습니다</dd>
+              </dl>
+              <div class="rec_btn">
+                <i class="fa-solid fa-plus"></i>
+                <span class="hidden">더보기</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </article>
+
+  <? include "./common/main_footer.html" ?>
+
+  <script src="./common/js/jquery.easing.1.3.js"></script>
+  <script src="./mainjs/main.js"> </script>
+  <script src="./mainjs/mainJson.js"> </script>
+
+  <!-- 공지 팝업 -->
+  <div id="showimage" style="z-index:40;position:absolute;width:322px;right:150px;top:250px;">
+    <script>
+      function closeWin() {
+        var chk = document.getElementById('Notice')
+        if (chk.checked) {
+          setCookie("Notice", "done", 1); //1이란 숫자는 1일간 안보임을 뜻합니다. 날짜는 자신에 맞게 수정하세요
+        }
+      }
+      if (getCookie("Notice") == "done") {
+        hidebox();
+      }
+    </script>
+    <div>
+      <img src="./popup/pop.png"
+        alt="본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다. 홈페이지의 일부 내용과 기타 이미지 등은 그 출처가 따로 있음을 밝힙니다.">
+    </div>
+    <div style="font-size:12px;text-align:center;color:#fff;">
+      <input type="checkbox" name="Notice" id="Notice" value="" title="오늘은 이창을 열지 않음 선택상자">
+      <label for="Notice">오늘은 이창을
+        열지 않음.</label>
+      <a href="#" onclick="closeWin();hidebox();return false;" style="color:#fff"> [close] </a>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

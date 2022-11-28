@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>주성엔지니어링</title>
+
+  <!-- PWA 매너페스트 파일 연결(앱정보), 상태바 테마색상을 흰색으로 변경 -->
+  <link rel="manifest" href="manifest.json">
+  <!-- 배경색 -->
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="apple-touch-icon-precomposed" href="app_icon.png">
+  <link rel="apple-touch-startup-image" href="startup.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="./js/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="./css/swiper.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+
+
+  <script>
+    // <![CDATA[
+    try {
+      window.addEventListener('load', function () {
+        setTimeout(scrollTo, 0, 0, 1);
+      }, false);
+    } catch (e) {}
+    // ]]>
+  </script>
+
+</head>
+
+<body>
+
+  <div id="skipNav">
+    <a href="#content">본문바로가기</a>
+    <a href="#gnb">네비게이션바로가기</a>
+  </div>
+
+  <div id="wrap">
+    <header id="headerArea">
+      <div class="headerInner">
+        <h1><a href="./index.html">주성엔지니어링</a></h1>
+        <a class="menu_btn" href="#">
+          <span>메뉴</span>
+        </a>
+        <div class="modal_box"></div>
+      </div>
+
+      <nav id="gnb">
+        <h2 class="hidden">글로벌네비게이션영역</h2>
+        <ul class="menu_box">
+          <li class="depth1">
+            <h3><a href="#">회사소개<span>about company</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub1_1.html">기업정보</a></li>
+              <li><a href="./sub1_2.html">회사연혁</a></li>
+              <li><a href="./sub1_3.html">융합경쟁력</a></li>
+              <li><a href="./sub1_4.html">오시는길</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">제품소개 <span>product</span> <i class="fa-solid fa-plus"></i></a>
+            </h3>
+            <ul>
+              <li><a href="./sub2_1.html">반도체장비</a></li>
+              <li><a href="./sub2_2.html">디스플레이장비</a></li>
+              <li><a href="./sub2_3.html">태양광장비</a></li>
+              <li><a href="./sub2_4.html">제품검색</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">경영정보 <span>management</span> <i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub3_1.html">윤리경영</a></li>
+              <li><a href="./sub3_2.html">사회공헌</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">인재채용 <span>empolyment</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub4_1.html">인재상</a></li>
+              <li><a href="./sub4_2.html">복리후생</a></li>
+              <li><a href="./sub4_3.html">채용절차</a></li>
+            </ul>
+          </li>
+        </ul>
+        <?
+        @extract($_POST);
+        @extract($_GET);
+        @extract($_SESSION);//세션만있으면됨
+        //$userid =$_SESSION['userid']; ,... 
+     
+         if(!$userid) // 세션변수 받은게 있냐?
+       {
+     ?>
+             <ul class="login_box">
+               <li><a href="./login/login_form.php">로그인</a></li>
+               <li><a href="./member/join.html">회원가입</a></li>
+             </ul>
+     <?
+       }
+       else
+       {
+     ?>
+     
+             <ul class="login_box">
+               <li><a href="./login/logout.php">로그아웃</a></li>
+               <li><a href="./member/member_form_modify.php">정보수정</a></li>
+             </ul>
+     <?
+       }
+     ?>
+      </nav>
+    </header>
+
+    <div class="main">
+      <div class="gallery_box">
+        <div class="swiper-container swiper1">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <img src="./images/main/main_visual640_1.png" alt="">
+              <span>World's 1st Technology,<br>
+                Only 1 in the World.</span>
+            </li>
+            <li class="swiper-slide">
+              <img src="./images/main/main_visual640_2.png" alt="">
+              <span>We creative precisely
+                <br>
+                engineered parts and solutions</span>
+            </li>
+            <li class="swiper-slide">
+              <img src="./images/main/main_visual640_3.png" alt="">
+              <span>We enable a creative mind
+                <br>to advance the world</span>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <article id="content">
+      <h2 class="hidden">본문콘텐츠영역</h2>
+
+      <section class="product">
+        <h3>사업영역</h3>
+        <div class="product_inner">
+          <ul>
+            <li>
+              <div class="business_text">
+                <dl>
+                  <dt>반도체 장비</dt>
+                  <dd>세계 최초/ 최고 기술</dd>
+                  <dd>공간분할과 semi-batch를 통한 단위생산량 극대화 기술</dd>
+                </dl>
+                <a href="./sub2_1.html"><span class="hidden">자세히보기</span><i class="fa-solid fa-plus"></i></a>
+              </div>
+              <div class="business_img">
+                <img src="./images/main/main_product640_1.png" alt="">
+              </div>
+            </li>
+            <li>
+              <div class="business_text">
+                <dl>
+                  <dt>디스플레이 장비</dt>
+                  <dd>세계 최고 Mobility</dd>
+                  <dd>낮은 온도에서 고품질의 박막 형성 기술</dd>
+                </dl>
+                <a href="./sub2_2.html"><span class="hidden">자세히보기</span><i class="fa-solid fa-plus"></i></a>
+              </div>
+              <div class="business_img">
+                <img src="./images/main/main_product640_2.png" alt="">
+              </div>
+            </li>
+            <li>
+              <div class="business_text">
+                <dl>
+                  <dt>태양광 장비</dt>
+                  <dd>고효율/고생산성 시스템</dd>
+                  <dd>세계 최고 Flexible 이중접합 태양전지 기술</dd>
+                </dl>
+                <a href="./sub2_3.html"><span class="hidden">자세히보기</span><i class="fa-solid fa-plus"></i></a>
+              </div>
+              <div class="business_img">
+                <img src="./images/main/main_product640_3.png" alt="">
+              </div>
+            </li>
+          </ul>
+          <div class="product_btn">
+            <a class="left" href="#">
+              <i class="fa-solid fa-angle-left"></i><span class="hidden">이전</span>
+            </a>
+            <a class="right" href="#">
+              <i class="fa-solid fa-angle-right"></i><span class="hidden">다음</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section class="introduce">
+        <h3>기업소개</h3>
+        <ul class="introduce_grid">
+          <li>
+            <a href="./sub1_1.html">
+              <img src="./images/main/main_about640_1.png" alt="">
+              <p>VISION</p>
+            </a>
+          </li>
+          <li>
+            <a href="./sub1_3.html">
+              <img src="./images/main/main_about640_4.png" alt="">
+              <p>BUSINESS</p>
+            </a>
+          </li>
+          <li>
+            <a href="./sub1_2.html">
+              <img src="./images/main/main_about640_3.png" alt="">
+              <p>HISTORY</p>
+            </a>
+          </li>
+          <li>
+            <a href="./sub3_2.html">
+              <img src="./images/main/main_about640_2.png" alt="">
+              <p>CLUTURE</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="management">
+        <h3>경영정보</h3>
+        <div class="management_inner">
+          <ul class="management_img">
+            <li>
+              <img src="./images/main/main_management640_1.png" alt="">
+            </li>
+            <li>
+              <img src="./images/main/main_management640_2.png" alt="">
+            </li>
+          </ul>
+
+          <div class="management_tap">
+            <a href="#">
+              <h4>윤리경영</h4>
+            </a>
+            <a href="#">
+              <h4>사회공헌</h4>
+            </a>
+          </div>
+
+          <ul class="management_text">
+            <li>
+              <p>지속가능한 성장을 하기 위한 첫걸음은 스스로 시장생태계의
+                건강한 생명체가 되고, 나아가 제품과 서비스 등 모든 경영활동
+                전반에서시장 생태계의 건강을 도모하는 것입니다.</p>
+              <a href="./sub3_1.html">
+                <span>자세히보기</span>
+              </a>
+            </li>
+            <li>
+              <p>기업의 사회적 책임과 범지구적인 환경문제에 대한 중요성과
+                가치를 지역사회와 함께 나누기 위하여 자연생태계 보존활동을
+                실천해 나가고 있습니다.
+              </p>
+              <a href="./sub3_2.html">
+                <span>자세히보기</span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="employment">
+        <h3>인재채용</h3>
+        <div class="swiper-container swiper3">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide employment_List">
+              <a href="./sub4_1.html">
+                <img src="./images/main/main_employment640_1.png" alt="">
+                <dl>
+                  <dt>인재상</dt>
+                  <dd>긍정적인 마인드와 적극적인
+                    태도 세계1등을 향한 열정을
+                    가진 준비된 인재</dd>
+                </dl>
+                <i class="fa-solid fa-plus"><span class="hidden">더보기</span></i>
+              </a>
+            </li>
+            <li class="swiper-slide employment_List">
+              <a href="./sub4_2.html">
+                <img src="./images/main/main_employment640_2.png" alt="">
+                <dl>
+                  <dt>복리후생</dt>
+                  <dd>긍정적인 마인드와 적극적인
+                    태도 세계1등을 향한 열정을
+                    가진 준비된 인재</dd>
+                </dl>
+                <i class="fa-solid fa-plus"><span class="hidden">더보기</span></i>
+              </a>
+            </li>
+            <li class="swiper-slide employment_List">
+              <a href="./sub4_3.html">
+                <img src="./images/main/main_employment640_3.png" alt="">
+                <dl>
+                  <dt>채용정보</dt>
+                  <dd>긍정적인 마인드와 적극적인
+                    태도 세계1등을 향한 열정을
+                    가진 준비된 인재</dd>
+                </dl>
+                <i class="fa-solid fa-plus"><span class="hidden">더보기</span></i>
+              </a>
+            </li>
+          </ul>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination2"></div>
+        </div>
+      </section>
+
+    </article>
+
+
+
+    <footer id="footerArea">
+      <a href="#" class="topMove"><i class="fa-solid fa-up-long"></i></a>
+      <div class="fnb">
+        <ul>
+          <li><a href="#">이메일 무단수집거부</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">서비스 이용약관</a></li>
+        </ul>
+      </div>
+
+      <div class="tom_menu">
+        <div class="footerLogo"> 
+        </div>
+        <ul class="sns">
+          <li><a title="instagram으로 이동" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span
+                class="hidden">인스타그램</span></a></li>
+          <li><a title="facebook 으로 이동" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span
+                class="hidden">페이스북</span></a></li>
+          <li><a title="youtube 으로 이동" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i><span
+                class="hidden">소개</span></a></li>
+          <li><a title="twitter 으로 이동" href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter"></i><span
+                class="hidden">트위터</span></a></li>
+        </ul>
+      </div>
+
+      <address>
+        <span>
+          [본사]경기도 광주시 오포읍 오포로 240
+        </span>
+        <span>
+          [용인 R&D Center]경기도 용인시 기흥구 신정로 79
+        </span>
+        <span>☎ 031-760-7000 ,FAX : 031-760-7117</span>
+      </address>
+
+      <div class="family">
+        <a class="arrow" href="#">Family Site</a>
+        <ul class="aList">
+          <li><a href="https://www.samsungengineering.co.kr/kor/index" title="family Site 새창에 열림"
+              target="_blank">삼성엔지니어링</a></li>
+          <li><a href="http://www.jseng.com/jusung_recruit/index.html" title="family Site 새창에 열림"
+              target="_blank">주성인재채용</a></li>
+          <li><a href="http://www.ilun.or.kr/main/kr_main.asp" title="family Site 새창에 열림" target="_blank">일운과학재단</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script>
+    // visual
+    var swiper1 = new Swiper('.swiper1', {
+      slidesPerView: 1,
+      spaceBetween: 3,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: {
+        delay: 3000
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+
+    //employment
+    var swiper3 = new Swiper('.swiper3', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+//ㅔ
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('./service_worker.js')
+      .then(function () {
+        console.log('서비스 워커가 등록됨!');
+      })
+  }
+</script>
+
+
+</body>
+
+</html>

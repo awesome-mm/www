@@ -1,0 +1,153 @@
+<?session_start();?>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개-기업정보</title>
+  <link rel="stylesheet" href="../common/css/common.css">
+  <link rel="stylesheet" href="./common/css/sub2common.css">
+  <link rel="stylesheet" href="./css/sub2_2content.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="../common/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+  <? include "../common/sub_header.html" ?>
+
+  <div class="main">
+    <div class="main_ani">
+      <img src="./common/image/visual01.jpg" alt="">
+    </div>
+    <div class="text">
+      <h3>제품소개</h3>
+      <p>product information</p>
+    </div>
+  </div>
+
+  <div class="sub_nav">
+    <ul>
+      <li><a href="./sub2_1.html">반도체장비</a></li>
+      <li><a class="current" href="./sub2_2.html">디스플레이장비</a></li>
+      <li><a href="./sub2_3.html">태양광장비</a></li>
+      <li><a href="../product/list.php">제품검색</a></li>
+    </ul>
+  </div>
+
+  <article id="content">
+    <div class="title_area">
+      <div class="line_map">
+        <i class="fa-solid fa-house"></i><span class="hidden">home</span>&gt;
+        <span>제품소개</span>&gt;
+        <span>디스플레이장비</span>
+      </div>
+      <div class="title_text">
+        <h2>디스플레이장비</h2>
+        <p class="slogan">생산의 핵심인 <span>품질, 시간, 기술</span>을 선도합니다.</p>
+      </div>
+    </div>
+
+    <div class="content_area">
+      <!-- 본문 컨텐츠 영역 -->
+      <section class="content1">
+        <div class="text_box">
+          <h3>Display equipment</h3>
+          <p>필요한 제품을 확인하세요</p>
+        </div>
+        <div class="img_box">
+          <ul>
+            <li>
+              <a class="jump1" href="#">
+                <div class="img_box1">
+                  <img src="./images/content2/con1_1.jpg" alt="">
+                </div>
+                <div class="text_box1">
+                  <p>OLED(CVD&ALD)</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="jump2" href="#" >
+                <div class="img_box1">
+                  <img src="./images/content2/con1_2.jpg" alt="">
+                </div>
+                <div class="text_box1">
+                  <p>IGZO MOCVD</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="jump1" href="#" >
+                <div class="img_box1">
+                  <img src="./images/content2/con1_3.jpg" alt="">
+                </div>
+                <div class="text_box1">
+                  <p>PE CVD</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="product">
+        <ul>
+          <li>
+            <div class="img_box"><img src="./images/content2/con2_1.jpg" alt=""></div>
+            <div class="text_box">
+              <h4 id="jump1">OLED Encapsulation(CVD&ALD)</h4>
+              <p>대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템</p>
+              <p>세계 최초로 신개념 플라즈마 기술을 적용한 대면적 봉지용 TSD - CVD/ALD</p>
+              <p>Damage Zero의 신개념 플라즈마 기술</p>
+                <a href="#">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <div class="img_box"><img src="./images/content2/con2_2.jpg" alt=""></div>
+            <div class="text_box">
+              <h4 id="jump2">IGZO MOCVD</h4>
+              <p>Source(In, Ga, Zn)의 비율 조절 가능</p>
+              <p>이동도(Mobility) 90 이상</p>
+              <p>세계 최초 CVD방식의 IGZO 장비</p>
+              <p>세계 최고 Mobility</p>
+              <a href="#">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <div class="img_box"><img src="./images/content2/con2_3.jpg" alt=""></div>
+            <div class="text_box">
+              <h4 id="jump3">PE CVD</h4>
+              <p>온도 및 가스 분사 제어</p>
+              <p>낮은 이물 제어</p>
+              <p>우수한 막질 균일도</p>
+              <a href="#">자세히보기</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pop">
+      <div class="modal_box"></div>
+      <div class="pop_btn">
+        <a class="prev" href="#">&lt;<span class="hidden">이전보기</span></a>
+        <a class="next" href="#">&gt;<span class="hidden">다음보기</span></a>
+      </div>
+      <div class="popup">
+        <img src="./images/content1/con2_1.jpg" alt="">
+
+        <div class="txt">
+
+        </div>
+        <a href="#" class="close_btn"><span class="hidden">닫기</span><i class="fa-solid fa-xmark"></i></a>
+      </div>
+    </div>
+  </article>
+
+  <? include "../common/sub_footer.html" ?>
+  <script src="./js/sub2_2.js"></script>
+
+</body>
+
+</html>

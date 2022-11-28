@@ -1,0 +1,25 @@
+{
+  "product": [{
+      "dt": "반도체 장비",
+      "img": "./images/product/product01.jpg",
+      "dd1": "세계 최초/ 최고 기술",
+      "dd2": "공간분할과 semi-batch를 통한 단위생산량 극대화 기술",
+      "dd3": "Damage Zero의 신개념 플라즈마 기술",
+      "dd4": "낮은 온도에서 고품질의 박막 형성 기술"
+    }, {
+      "dt": "디스플레이 장비",
+      "img": "./images/product/product02.jpg",
+      "dd1": "세계 최고 Mobility",
+      "dd2": "낮은 온도에서 고품질의 박막 형성 기술",
+      "dd3": "세계 최초/최고 대면적 양산 ALD",
+      "dd4": "Damage Zero의 신개념 플라즈마 기술"
+    }, {
+      "dt": "태양광 장비",
+      "img": "./images/product/product03.jpg",
+      "dd1": "고효율/고생산성 시스템",
+      "dd2": "세계 최고 Flexible 이중접합 태양전지 기술",
+      "dd3": "플랙서블 박막형 태양전지 일괄 생산설비",
+      "dd4": "전 공정 저온 공정 시스템"
+    }
+  ]
+}

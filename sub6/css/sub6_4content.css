@@ -1,0 +1,62 @@
+#content .title_area{
+  margin-bottom: 100px;
+}
+#content{width: 70%;}
+
+#mailAddress{}
+#mailAddress form{}
+#mailAddress form ul{
+  margin-bottom: 150px;
+}
+#mailAddress form ul li{
+  margin-bottom: 20px;
+}
+#mailAddress form label{
+  display: inline-block;
+  position: relative;
+  margin-left: 6px;
+  margin-bottom: 5px;
+}
+#mailAddress form input{
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+#mailAddress form label::before{
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+  background: #b51f1f;
+  position: absolute;
+  top: 10px;
+  left: -6px;
+}
+
+#mailAddress #message{
+  width: 100%;
+  resize: none;
+  font-size: 26px;
+  padding: 10px;
+
+
+}
+#mailAddress .submitBtn{
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #b51f1f;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  border-radius: 30px;
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+} 
+#mailAddress .submitBtn:hover{
+  background:#ed164c;
+  opacity: 1;
+}

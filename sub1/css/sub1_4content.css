@@ -1,0 +1,219 @@
+#content .title_text span{
+  font-size: 2.222em;
+  letter-spacing: 5px;
+  font-weight: 600;
+  color: #b51f1f;
+  margin-bottom: 10px;
+}
+#content .title_text  p{
+  margin-top: 10px;
+
+}
+#content .content_area .tab_menu{
+  text-align: center;
+  width: 600px;
+  border: 1px solid  rgba(0, 0, 0, 0.3);;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+#content .content_area .tab_menu::before{
+  content: '';
+  height: 74px;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+#content .content_area .tab_menu a{
+  display: block;
+  width: 300px;
+  float: left;
+  font-size: 1.667em;
+  padding: 15px 0;
+}
+#content .content_area .tab_menu a:hover{
+  background: #ed164c;
+  color: #fff;
+}
+#content .content_area .office_title{
+  overflow: hidden;
+  color: #b51f1f;
+  margin-bottom: 20px;
+}
+#content  h3{
+  font-size: 2.222em;
+  float: left;
+  margin-right: 20px;
+}
+#content .head_office .office_title span{
+  display: block;
+  margin-top: 30px;
+}
+#content .head_office #officeArea{
+  width: 1200px;
+  height: 740px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#content #headOffice{
+  position: relative;
+}
+#content #kaempeoseu{
+  position: relative;
+}
+#content h3::before{
+  content: '';
+  width: 200px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 4px;
+  left: 0px;
+  z-index: -1;
+  background: rgba(250,252,136,1);
+  opacity: 0.7;
+}
+#content #kaempeoseu::before{
+  width: 280px;
+  bottom: 2px;
+}
+
+#content .head_office .office_text{
+  margin-bottom: 250px;
+}
+#content .head_office .office_text dl{
+  overflow: hidden;
+}
+#content .head_office .office_text dl:first-child{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+#content .head_office .office_text dt{
+  float: left;
+  padding: 70px 0 100px 40px;
+  width: 350px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 1.667em;
+  font-weight: 500;
+}
+#content .content_area dt{
+  content: '';
+  height: 5px;
+  width: 200px;
+}
+#content .content_area dt::after{
+  content: '';
+  width: 1px;
+  height: 190px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+#content .content_area dl dt span{
+  position: absolute;
+  width: 195px;
+  height: 15px;
+  border-radius: 7.5px;
+  background: rgba(130, 255, 0, 0.4);
+  top: 100px;
+  left: 40px;
+  z-index: -1;
+}
+#content .content_area dl:last-child dt span{
+  width: 220px;
+  background: rgba(255, 0, 0, 0.4);
+
+}
+#content .content_area dl:last-child dt::after{
+  height: 250px;
+}
+
+#content .content_area dd{
+  float: left;
+  padding: 70px 0 30px 40px;
+  width: 800px;
+}
+
+#content .content_area dd ul{}
+#content .content_area dd ul li{
+  margin-bottom: 45px;
+  line-height: 1.5em;
+}
+#content .content_area dd ul li > span{
+  float: left;
+  font-size: 1.333em;
+  font-weight: 500;
+}
+#content .content_area dd ul li p{
+  margin-left: 230px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  position: relative;
+
+}
+#content .content_area dd ul li p span{
+  margin-right: 20px;
+}
+#content  .content_area dd ul li p .bus_red{
+  color: red;
+}
+#content .content_area dd ul li p .bus_green{
+  color: green;
+}
+#content .content_area dd ul li:last-child{
+  margin: 0;
+}
+#content  .tell{
+  margin-bottom: 0;
+}
+#content .yongin_office #yonginArea{
+  width: 1200px;
+  height: 740px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+#content .content_area .yongin_title{
+  overflow: hidden;
+  color: #b51f1f;
+  margin-bottom: 20px;
+}
+#content .content_area i{
+  position: absolute;
+  top: 5px;
+  margin-left: -30px;
+
+}
+#content .yongin_office .yongin_title span{
+  display: block;
+  margin-top: 30px;
+}
+#content .yongin_office .yongin_text dl{
+  overflow: hidden;
+}
+#content .yongin_office .yongin_text dl:first-child{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+#content .yongin_office .yongin_text dt{
+  float: left;
+  padding: 70px 0 100px 40px;
+  width: 350px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 1.667em;
+  font-weight: 500;
+
+}
+#content .yongin_office dt::after{
+  content: '';
+  width: 1px;
+  height: 190px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+#content .yongin_office .yongin_text{
+  margin-bottom: 100px;
+}

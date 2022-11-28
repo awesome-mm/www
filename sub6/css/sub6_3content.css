@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+.faq {
+  width: 650px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1em
+}
+
+.faq .hgroup {
+  position: relative;
+  margin: 0 0 10px 0;
+  width: 1200px;
+}
+
+.faq .hgroup .all {
+  position: absolute;
+  top: -35px;
+  right: 10px;
+  color: #333;
+  text-decoration: none;
+}
+.faq .hgroup .all i{
+  margin-left: 15px;
+}
+
+
+.faq ul {
+  margin-bottom: 200px;
+  padding: 20px 10px;
+  list-style: none;
+  width: 1200px;
+
+}
+.faq ul li{
+  background: #f8f8f8;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.faq .q {
+  margin: 0;
+  position: relative;
+}
+
+.faq .q a.trigger {
+  display: block;
+  padding: 20px 30px ;
+  color: #333;
+  text-align: left;
+  text-decoration: none;
+}
+
+.faq .hide .q a.trigger {
+  font-weight: normal;
+  background: none
+}
+
+
+.faq .q span {
+  display: block;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+.faq .q b{
+  float: left;
+  display: block;
+  font-size: 1.111em;
+  color: #b51f1f;
+  font-weight: 400;
+  margin-right: 30px;
+} 
+
+
+.faq .a {
+  margin: 0;
+  display: block;
+  padding: 20px 30px ;
+  line-height: 1.5;
+  display: none;
+  margin-left: 60px;
+  position: relative;
+}
+.faq .a:before{
+  content:'A';
+  float: left;
+  display: block;
+  font-size: 1.111em;
+  color: #b51f1f;
+  font-weight: 400;
+  margin-right: 30px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  margin-right: 30px;
+}

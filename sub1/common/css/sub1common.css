@@ -1,0 +1,141 @@
+/* 서브페이지 공통영역 */
+@keyframes mainScale{
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+
+.main{
+  width: 2000px;
+  height: 500px;
+  position: relative;
+  left: 50%;
+  top: 0%;
+  margin-left: -1000px;
+}
+
+.main h3{
+  font-weight: 300;
+  float: left;
+}
+.main p{
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 300;
+  float: right;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-family: 'lato', sans-serif;
+}
+.main .text{
+  overflow: hidden;
+  font-size: 2.5em;
+  color: #fff;
+  position: absolute;
+  left: 500px;
+  top: 350px;
+}
+
+.main .main_ani{
+  width: 2000px;
+  height: 500px;
+  overflow: hidden;
+}
+.main img{
+  animation: mainScale 4s infinite ease-in-out alternate;
+}
+.sub_nav{
+  border-bottom: 1px solid #ccc;
+}
+.sub_nav ul{
+  overflow: hidden;
+  width: 920px;
+  height: 80px;
+  margin: 0 auto;
+}
+.sub_nav ul li{
+  float: left;
+  width: 230px;
+  height: 80px;
+  text-align: center;
+  margin-top: 10px;
+
+}
+.sub_nav ul li a{
+  display: block;
+  padding: 15px 0;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.5s ease-out;
+}
+.sub_nav ul li a:hover{
+  color: #fff;
+  background: #ed164c;
+  border-radius: 50px;
+  padding: 15px 0;
+}
+.sub_nav ul li .current{
+  color: #fff;
+  background: #ed164c;
+  border-radius: 50px;
+  padding: 15px 0;
+}
+
+#content{
+  width: 1200px;
+  margin: 0 auto;
+}
+#content_area{}
+
+#content .title_area{
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  position: relative;
+
+}
+#content .title_area .line_map{
+  color: #999;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 0.889em;
+}
+#content .title_area .line_map span{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#content .title_area .line_map span:last-child{
+  color: #666;
+}
+#content .title_area .line_map i{
+  margin-right: 10px;
+}
+#content .title_text h2{
+  font-size:2.778em;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 110px;
+}
+#content .title_text h2::after{
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 1px;
+  height: 60px;
+  background-color: #ed164c;
+}
+#content .title_text{
+  text-align: center;
+  padding-top: 110px;
+}
+#content .title_text p{
+  font-size: 1.667em;
+  display: block;
+  font-weight: 500;
+}
+#content .title_text span{
+  color: #ed164c;
+}

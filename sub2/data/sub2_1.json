@@ -1,0 +1,39 @@
+{
+  "text_box" : [
+    {
+      "title": "SDP CVD (CVD & ALD)",
+      "p1": "'증착' 과정 모두를 대응할 수 있는 신개념 반도체 제조장비",
+      "p2": "플라즈마로 인한 기판 손상 없이 300도 이하의 저온에서 우수한 최고의 막질을 균일하게 형성",
+      "p3": "20nm 이하의 미세 반도체 공정에서 실리콘 산화막, 실리콘 질화막 금속막 및 High-K 공정의 모든 CVD 및 ALD 공정 대응",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "TSD CVD",
+      "p1": "세계 최초의 공간과 시간분할을 동시에 가능",
+      "p2": "플라즈마로 인한 기판 손상 없이 300도 이하의 저온에서 우수한 최고의 막질을 균일하게 형성",
+      "p3": "시∙공간 분할을 통한 치밀한 막 생성 및 플라즈마 손상 Zero",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "SD CVD",
+      "p1": "단위 시간당 생산력 극대화를 위한 세계 최초/최고의 Semi-Batch 장비",
+      "p2": "낮은 온도에서 고품질/고생산성의 박막 형성",
+      "p3": "극 저온에서의 특화된 공정 기술",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "UHV CVD",
+      "p1": "산소 및 수증기 분압 최소화를 통한 초고순도(Ultra Clean)의 증착 환경 제공",
+      "p2": "고유의 저온 (550℃) 플라즈마 기판 세정",
+      "p3": "신개념 상온 플라즈마 기판 세정",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "DRY ETCH",
+      "p1": "Poly 및 Metal 등 모든 공정에 적용가능",
+      "p2": "웨이퍼에 주는 손상 최소화, 식각량 균일하게 유지",
+      "p3": "웨이퍼 가장자리까지 정밀 조절을 통한 CDU 향상",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+body {
+  background: #f8f8f8;
+}
+
+#wrap {
+  width: 650px;
+  margin: 0 auto;
+  font-family: 'Nanum Gothic', sans-serif;
+  background: #fff;
+  margin-bottom: 100px;
+  box-shadow: 12px 20px 20px 10px rgb(0 0 0 / 10%);
+  padding: 60px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+header h1 a {
+  display: block;
+  width: 200px;
+  height: 42px;
+  text-align: center;
+  margin: 50px auto;
+  margin-top: 70px;
+}
+
+#wrap h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+#wrap .top_menu {
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+#wrap .top_menu li {
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+}
+
+#wrap .top_menu li a {
+  font-size: 1.111rem;
+  display: block;
+  padding: 10px 0;
+}
+
+#wrap .top_menu li a.current {
+  background: #b51f1f;
+  color: #fff;
+}
+
+#wrap #title strong {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 30px;
+  display: block;  
+  font-weight: 400;
+}
+
+#wrap #name {
+  width: 260px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-right: 3px;
+}
+
+#wrap #id {
+  width: 260px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+
+#wrap #hp1 {
+  width: 110px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+#wrap #hp2 {
+  width: 190px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+#wrap #hp3 {
+  width: 189px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+#wrap .find {
+  width: 100%;
+  background: #b51f1f;
+  padding: 15px;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  opacity: 0.8;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+#wrap .go{
+  overflow: hidden;
+}
+
+#wrap .go li{
+  float: left;
+  position: relative;
+  margin-right: 15px;
+}
+#wrap .go li:first-child::after{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 14px;
+  margin: 10% 0;
+  background: #999;
+  right: -8px;
+}
+#wrap .go li a{
+  font-size: 0.89rem;
+}

@@ -1,0 +1,165 @@
+<?session_start();?>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개-기업정보</title>
+  <link rel="stylesheet" href="../common/css/common.css">
+  <link rel="stylesheet" href="./common/css/sub1common.css">
+  <link rel="stylesheet" href="./css/sub1_4content.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="../common/js/prefixfree.min.js"></script>
+  <script src="./js/kakao_map2.js"></script>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=384b0ad679f349f2338dafcc71d4a1d0"></script>
+</head>
+
+<body>
+  <? include "../common/sub_header.html" ?>
+
+  <div class="main">
+    <div class="main_ani">
+      <img src="./common/images/main1.jpg" alt="">
+    </div>
+    <div class="text">
+      <h3>회사소개</h3>
+      <p>about company</p>
+    </div>
+  </div>
+
+  <div class="sub_nav">
+    <ul>
+      <li><a href="./sub1_1.html">기업정보</a></li>
+      <li><a href="./sub1_2.html">회사연혁</a></li>
+      <li><a href="./sub1_3.html">융합경쟁력</a></li>
+      <li><a class="current" href="./sub1_4.html">오시는 길</a></li>
+    </ul>
+  </div>
+
+  <article id="content">
+    <div class="title_area">
+      <div class="line_map">
+        <i class="fa-solid fa-house"></i><span class="hidden">home</span>&gt;
+        <span>회사소개</span>&gt;
+        <span>오시는 길</span>
+      </div>
+      <div class="title_text">
+        <h2>오시는 길</h2>
+        <span>OUR LOCATION</span>
+        <p class="slogan">주성으로 오시는 길을 안내해드리겠습니다 </p>
+      </div>
+    </div>
+
+
+    <div class="content_area">
+      <!-- 본문 컨텐츠 영역 -->
+      
+      <ul class="tab_menu">
+        <li>
+          <a class="tab tab1" href="#">본사</a>
+        </li>
+        <li>
+          <a class="tab tab2" href="#">용인캠퍼스</a>
+        </li>
+      </ul>
+
+      <section class="contlist head_office">
+        <div class="office_title">
+          <h3 id="headOffice">본사</h3>
+          <span>head office</span>
+        </div>
+        <div id="officeArea"></div>
+        <div class="office_text">
+          <dl>
+            <dt>주소 및 연락처<span></span></dt>
+            <dd>
+              <ul>
+                <li>
+                  <span>주소</span>
+                  <p><i class="fa-solid fa-map-location-dot"></i>12773 경기도 광주시 오포읍 오포로 240</p>
+                </li>
+                <li class="tell">
+                  <span>연락처</span>
+                  <p><i class="fa-solid fa-phone"></i>TEL : 031-760-7000</p>
+                  <p><i class="fa-solid fa-phone"></i>FAX : 031-760-7070</p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt>찾아오시는 방법<span></span></dt>
+            <dd>
+              <ul>
+                <li>
+                  <span>대중교통</span>
+                  <p><span class="bus_red"><i class="fa-solid fa-bus-simple"></i>직행버스</span>1150, 1500-2</p>
+                  <p><span class="bus_green"><i class="fa-solid fa-bus-simple"></i>일반버스</span>14-3, 17, 17-1, 60</p>
+                  <p>- 주성엔지니어링 (시안공원) 정거장에서 하차</p>
+                </li>
+                <li>
+                  <span>자가용 길 찾기</span>
+                  <p><i class="fa-solid fa-car"></i>경부고속도로이용 &#62;경부고속도로 판교 IC &#62; 오포 터널
+                    &#62;시안공원 방면<br> 우회전&#62; 주성엔지니어링 </p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="contlist yongin_office">
+        <div class="yongin_title">
+          <h3 id="kaempeoseu">용인</h3>
+          <span>yong-in kaempeoseu</span>
+        </div>
+        <div id="yonginArea"></div>
+        <div class="yongin_text">
+          <dl>
+            <dt>주소 및 연락처<span></span></dt>
+            <dd>
+              <ul>
+                <li>
+                  <span>주소</span>
+                  <p><i class="fa-solid fa-map-location-dot"></i>17094 경기도 용인시 기흥구 신정로 79</p>
+                </li>
+                <li class="tell">
+                  <span>연락처</span>
+                  <p><i class="fa-solid fa-phone"></i>TEL : 031-760-7000</p>
+                  <p><i class="fa-solid fa-phone"></i>FAX : 031-760-7070</p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt>찾아오시는 방법<span></span></dt>
+            <dd>
+              <ul>
+                <li>
+                  <span>대중교통</span>
+                  <p><span class="bus_red"><i class="fa-solid fa-bus-simple"></i> 직행버스</span>5000A, 5000B, 5001, 5003B,
+                    5600, 1560</p>
+                  <p><span class="bus_green"><i class="fa-solid fa-bus-simple"></i> 일반버스</span>10, 66 ,66-4 등</p>
+                  <p> - 상미마을·신갈오거리 정거장에서 하차 후 10분~13분 도보</p>
+                </li>
+                <li>
+                  <span>자가용 길 찾기</span>
+                  <p><i class="fa-solid fa-car"></i>경부고속도로이용 &#62;경부고속도로 판교 IC &#62;수원신갈 IC &#62;
+                    신갈SK주유소사거리에서 ‘상미로’방면으로 비보호 좌회전
+                    &#62;주성엔지니어링 </p>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </article>
+  
+  <? include "../common/sub_footer.html" ?>
+  <script src="./js/sub1_4.js"></script>
+
+</body>
+
+</html>

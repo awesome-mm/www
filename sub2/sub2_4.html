@@ -1,0 +1,285 @@
+<?session_start();?>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개-기업정보</title>
+  <link rel="stylesheet" href="../common/css/common.css">
+  <link rel="stylesheet" href="./common/css/sub2common.css">
+  <link rel="stylesheet" href="./css/sub2_4content.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="../common/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+  <? include "../common/sub_header.html" ?>
+
+  <div class="main">
+    <div class="main_ani">
+      <img src="./common/image/visual01.jpg" alt="">
+    </div>
+    <div class="text">
+      <h3>제품소개</h3>
+      <p>product information</p>
+    </div>
+  </div>
+
+  <div class="sub_nav">
+    <ul>
+      <li><a href="../sub2/sub2_1.html">반도체장비</a></li>
+      <li><a href="../sub2/sub2_2.html">디스플레이장비</a></li>
+      <li><a href="../sub2/sub2_3.html">태양광장비</a></li>
+      <li><a class="current" href="./list.php">제품검색</a></li>
+    </ul>
+  </div>
+
+  <article id="content">
+    <div class="title_area">
+      <div class="line_map">
+        <i class="fa-solid fa-house"></i><span class="hidden">home</span>&gt;
+        <span>제품소개</span>&gt;
+        <span>제품검색</span>
+      </div>
+      <div class="title_text">
+        <h2>제품검색</h2>
+        <p class="slogan">원하시는 제품을 <span>검색</span>해보세요</p>
+      </div>
+    </div>
+
+    <div class="content_area">
+      <!-- 본문 컨텐츠 영역 -->
+
+      <div class="content1">
+        <div class="top_menu">
+          <p>총 <span>12</span>개의 제품이 있습니다.</p>
+          <div class="top_btn">
+            <div class="list_style">
+              <a href="#">
+                <span class="hidden">목록형</span>
+                <i class="fa-solid fa-list-check"></i>
+              </a>
+              <a href="#">
+                <span class="hidden">박스형</span>
+                <i class="fa-solid fa-table-cells-large"></i>
+              </a>
+            </div>
+            <div class="option_list">
+              <select name="number">
+                <option value="4">4개씩</option>
+                <option value="6">6개씩</option>
+                <option value="8">8개씩</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_list">
+          <ul>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_01.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>SDP CVD (CVD & ALD)</dt>
+                  <dd>20nm 이하의 미세 반도체 공정에서 금속막 및 High-K 공정의 모든 CVD 및 ALD 공정 대응</dd>
+                  <dd>플라즈마로 인한 기판 손상 없이 저온에서 우수한 최고의 막질을 균일하게 형성</dd>
+                  <dd>“증착" 과정 모두를 대응할 수 있는 신개념 반도체 제조장비</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_02.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>TSD CVD</dt>
+                  <dd>CVD 및 ALD, Nitridation, Oxidation, Doping 등 다양한 공정에 적용 가능</dd>
+                  <dd>시∙공간 분할을 통한 치밀한 막 생성 및 플라즈마 손상 Zero</dd>
+                  <dd>세계 최초의 공간과 시간분할을 동시에 가능</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_03.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>SD CVD</dt>
+                  <dd>단위 시간당 생산력 극대화를 위한 세계 최초/최고의 Semi-Batch 장비</dd>
+                  <dd>낮은 온도에서 고품질/고생산성의 박막 형성</dd>
+                  <dd>극 저온에서의 특화된 공정 기술</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_04.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>UHV CVD</dt>
+                  <dd>산소 및 수증기 분압 최소화를 통한 초고순도(Ultra Clean)의 증착 환경 제공</dd>
+                  <dd>고유의 저온 (550℃) 플라즈마 기판 세정</dd>
+                  <dd>신개념 상온 플라즈마 기판 세정</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_05.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>DRY ETCH</dt>
+                  <dd>웨이퍼에 주는 손상 최소화, 식각량 균일하게 유지</dd>
+                  <dd>낮은 유지보수 비용 및 안정성, 양산성 우수</dd>
+                  <dd>Poly 및 Metal 등 모든 공정에 적용가능</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_06.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>OLED Encapsulation(CVD&ALD)</dt>
+                  <dd>세계 최초로 신개념 플라즈마 기술을 적용한 대면적 봉지용 TSD - CVD/ALD</dd>
+                  <dd>대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템</dd>
+                  <dd>Damage Zero의 신개념 플라즈마 기술</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_07.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>IGZO MOCVD</dt>
+                  <dd>Source(In, Ga, Zn)의 비율 조절 가능</dd>
+                  <dd>이동도(Mobility) 90 이상</dd>
+                  <dd>세계 최초 CVD방식의 IGZO 장비</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_08.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>PE CVD</dt>
+                  <dd>온도 및 가스 분사 제어</dd>
+                  <dd>우수한 막질 균일도</dd>
+                  <dd>낮은 이물 제어</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_09.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>Flexible Solar (Turnkey Solution)</dt>
+                  <dd>세계 최고 수준의 플랙서블 태양전지 내구성 및 내환경성 시험 통과</dd>
+                  <dd>세계 최고 Flexible a-Si:H/μc-Si:H 이중접합 태양전지 기술.</dd>
+                  <dd>다양한 구조의 이중접합 태양전지 기술</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_10.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>결정형(PE CVD / RIE)</dt>
+                  <dd>최고 효율 / 최저 비용 시스템</dd>
+                  <dd>고효율 및 고생산성 시스템</dd>
+                  <dd>저온에서 특화된 공정 기술</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_11.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>결정형(Turnkey Solution)</dt>
+                  <dd>고효율 및 고 생산성 시스템</dd>
+                  <dd>공정 단순화 및 저온 공정 시스템</dd>
+                  <dd>Bi-facial module 구현</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/content4/product_12.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>박막형(Turnkey Solution)</dt>
+                  <dd>Single, tandem, triple junction 까지 다양한 고효율 박막형 태양전지 생산 가능</dd>
+                  <dd>장비 안정성 우수, 낮은 유지 보수 비용</dd>
+                  <dd>세계 최고 생산성 / 최저 비용 시스템</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom_menu">
+          <div class="next_menu">
+            <a href="#">
+              <span class="hidden">이전</span>
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">
+              <span class="hidden">다음</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="search_box">
+            <form action="list.php" method="post" name="search_form">
+              <select name="find" id="find">
+                <option  value="내용">내용</option>
+                <option  value="제목">제목</option>
+                <option  value="이름">이름</option>
+              </select>
+              <label for="search" class="hidden">검색</label>
+              <input maxlength="15" type="text" name="search" id="search" placeholder="검색어를 입력해주세요">
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="hidden">검색</span></button> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <? include "../common/sub_footer.html" ?>
+
+</body>
+
+</html>

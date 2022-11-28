@@ -1,0 +1,28 @@
+{
+  "product1": [{
+      "title": "Flexible Solar (Turnkey Solution)",
+      "subTitle": "Flexible Solar Cell",
+      "dd1": "<dd>플랙서블 박막형 태양전지 일괄 생산설비</dd><dd>세계 최고 Flexible a-Si:H/μc-Si:H 이중접합 태양전지 기술</dd>",
+      "dd2": "<dd>세계 최고 수준의 플랙서블 태양전지 내구성 및 내환경성 시험 통과</dd><dd>다양한 구조의 이중접합 태양전지(a-Si:H/a-Si:H, a-Si:H/a-SiGe:H, a-Si:H/μc-Si:H) 기술</dd>",
+      "dd3": "<span>민수/군수용 휴대용 태양전지</span>,<span>의류용 CIPV</span>,<span>건물용 BIPV</span>,<span>차량용 VIPV</span>,<span>전자기기용 DIPV</span>"
+    },{
+      "title": "결정형(PE CVD / RIE)",
+      "subTitle": "Time Space Divided Chemical Vapor Deposition",
+      "dd1": "<dd>반사 방지막용 PE CVD</dd><dd>텍스쳐링용 건식 식각 장치 (RIE)</dd><dd>최고 효율 / 최저 비용 시스템</dd>",
+      "dd2": "<dd>고효율 및 고생산성 시스템</dd><dd>태양전지 변환 효율 향상</dd><dd>Easy Control Surface Reflectance</dd><dd>저온에서 특화된 공정 기술</dd><dd>Excellent NanoTexture Shape, Passivation</dd>",
+      "dd3": "<span>PE CVD(SiN / SiO / SiON / AlO)</span>,<span>RIE(Plasma Texturing Etching)</span>"
+    },{
+      "title": "결정형(Turnkey Solution)",
+      "subTitle": "결정형 고효율 태양전지 (High Efficiency Solar Cell)",
+      "dd1": "<dd>고효율 및 고 생산성 시스템</dd><dd>공정 단순화 및 저온 공정 시스템</dd><dd> Bi-facial module 구현</dd>",
+      "dd2": "<dd>단위 시간당 생산력 극대화를 위한 세계 최초/최고의 Semi-Batch 장비</dd><dd>낮은 온도에서 고품질/고생산성의 박막 형성</dd><dd>극 저온에서의 특화된 공정 기술</dd>",
+      "dd3": "<span>Hetero Junction Solar Cell</span>,<span>Bi-facial Cell</span>,<span> a-Si:H/B,P Doped a-Si:H</span>,<span>TCO</span>"
+    },{
+      "title": "박막형(Turnkey Solution)",
+      "subTitle": "박막형 태양전지 (a-Si/uc-Si) 장비",
+      "dd1": "<dd>박막형 태양전지 일괄 생산라인</dd><dd>세계 최고 효율</dd><dd>세계 최고 생산성 / 최저 비용 시스템</dd>",
+      "dd2": "<dd>장비 안정성 우수, 낮은 유지 보수 비용</dd><dd>Single, tandem, triple junction 까지 다양한 고효율 박막형 태양전지 생산 가능</dd>",
+      "dd3": "<span>건물용 BIPV</span>,<span>차량용 VIPV</span>,<span>민수/군수용 Wearable 태양전지</span>,<span>DIPV (device integrated photovoltaics) </span>"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "product1": [{
+      "title": "OLED Encapsulation(CVD&ALD)",
+      "subTitle": "Organic Light Emitting Diode",
+      "dd1": "<dd>세계 최초/최고 대면적 양산 ALD</dd><dd>Damage Zero의 신개념 플라즈마 기술</dd><dd>낮은 온도에서 고품질의 박막 형성 기술</dd>",
+      "dd2": "<dd>'대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템</dd><dd>세계 최초로 신개념 플라즈마 기술을 적용한 대면적 봉지용 TSD CVD/ALD</dd>",
+      "dd3": "<span>Encapsulation (SiO / SiOX / SiN / Al2O3)</span>,<span>Barrier (SiO / SiOX / SiN / Al2O3)</span>"
+    },{
+      "title": "IGZO MOCVD",
+      "subTitle": "Indium Gallium Zinc Oxide Metal Organic Chemical Vapor Deposition",
+      "dd1": "<dd>세계 최초 CVD방식의 IGZO 장비</dd><dd>세계 최고 Mobility</dd>",
+      "dd2": "<dd>Source(In, Ga, Zn)의 비율 조절 가능</dd><dd>이동도(Mobility) 90 이상</dd><dd>In-System GI / IGZO / ESL</dd>",
+      "dd3": "<span>IGZO</span>,<span>AlO / SiO / SiN</span>"
+    },{
+      "title": "PE CVD",
+      "subTitle": "Plasma Enhanced Chemical Vapor Deposition",
+      "dd1": "<dd>3.5세대, 4.5세대, 5세대, 5.5세대, 6세대, 7세대, 8세대, 8.5세대: 공급 완료</dd><dd>11세대: 개발 완료</dd>",
+      "dd2": "<dd>우수한 막질 균일도</dd><dd>낮은 이물 제어</dd><dd>온도 및 가스 분사 제어</dd>",
+      "dd3": "<span>TFT (a-Si / SiN / SiO)</span>,<span>Passivation (SiN /SiO)</span>"
+    }
+  ]
+}

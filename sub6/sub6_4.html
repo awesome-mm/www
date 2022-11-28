@@ -1,0 +1,91 @@
+<?session_start();?>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회사소개-기업정보</title>
+  <link rel="stylesheet" href="../common/css/common.css">
+  <link rel="stylesheet" href="./common/css/sub6common.css">
+  <link rel="stylesheet" href="./css/sub6_4content.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="../common/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+  <? include "../common/sub_header.html" ?>
+
+  <div class="main">
+    <div class="main_ani">
+      <img src="./common/images/visual01.jpg" alt="">
+    </div>
+    <div class="text">
+      <h3>홍보센터</h3>
+      <p>promotion center</p>
+    </div>
+  </div>
+
+  <div class="sub_nav">
+    <ul>
+      <li><a href="../greet/list.php">공지사항</a></li>
+      <li><a href="../newsroom/list.php">뉴스룸</a></li>
+      <li><a href="./sub6_2.html">C I</a></li>
+      <li><a href="./sub6_3.html">Q &amp; A</a></li>
+      <li><a class="current" href="./sub6_4.html">문의하기</a></li>
+    </ul>
+  </div>
+
+  <article id="content">
+    <div class="title_area">
+      <div class="line_map">
+        <i class="fa-solid fa-house"></i><span class="hidden">home</span>&gt;
+        <span>홍보센터</span>&gt;
+        <span>문의하기</span>
+      </div>
+      <div class="title_text">
+        <h2>문의하기</h2>
+        <p class="slogan">궁금한 사항은 <span>문의</span>를 주시면 친절하고 신속하게 <span>답변</span>드리겠습니다.</p>
+      </div>
+    </div>
+
+    <div class="content_area">
+      <!-- 본문 컨텐츠 영역 -->
+
+      <div id="mailAddress">
+        <form action="./mail.php" method="post">
+          <ul>
+            <li class="uname_box">
+              <label for="uname">이름</label>
+              <input type="text" name="uname" id="uname" placeholder="홍길동">
+            </li>
+            <li class="email_box">
+              <label for="email">이메일</label>
+              <input type="text" name="email" id="email" placeholder="jusung333@jusung.com">
+            </li>
+            <li class="phone_box">
+              <label for="phone">전화번호</label>
+              <input type="text" name="phone" id="phone" placeholder="010-0000-0000">
+            </li>
+            <li class="massage_box"> 
+              <label for="message">문의내용</label>
+              <textarea name="message" id="message" placeholder="문의내용 입력" cols="50" rows="15"></textarea>
+            </li>
+            <li class="submit_box">
+              <input type="submit" value="문의사항 보내기" class="submitBtn">
+            </li>
+          </ul>
+
+        </form>
+      </div>
+
+
+    </div>
+  </article>
+
+  <? include "../common/sub_footer.html" ?>
+
+</body>
+
+</html>

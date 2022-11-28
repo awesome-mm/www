@@ -1,0 +1,55 @@
+#content .product_list{
+  position: relative;
+}
+#content .product_list ul{
+  position: relative;
+}
+#content .product_list ul li{
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  width: 100%;
+  padding-bottom: 100px;
+
+}
+#content .product_list ul li img{
+  width: 60%;
+  position: relative;
+  top: 0%;
+  left: 20%;
+}
+
+#content .product_list ul li .text_box{
+  position: relative;
+  top: 30%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 30px;
+  margin: 0 5%;
+
+}
+#content .product_list ul li h4{
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #b51f1f;
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+}
+#content .product_list h4::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #ed164c;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+#content .product_list ul li p{
+  font-size: 1rem;
+  line-height: 2em;
+  text-align: justify;
+}

@@ -1,0 +1,97 @@
+#content{
+}
+#content .content1 ul{
+  width: 1200px;
+  margin: 0 auto;
+}
+#content .content1 > li{
+  padding-bottom: 200px;
+}
+#content .content1 li .img_box{
+  width: 1400px;
+  height: 200px;
+  overflow: hidden;
+}
+#content .content1 li .img_box img{
+  width: 1400px;
+  height: 200px;
+  transition: all 0.5s ease-out;
+}
+
+#content .content1 li:nth-of-type(2n+1) .img_box{
+  position: relative; 
+  top: 0;
+  left: -400px;
+ }
+#content .content1 li:nth-of-type(2n) .img_box{
+ position: relative; 
+ top: 0;
+ left: 200px;
+}
+#content .content1 .text_box h3{
+  font-size: 40px;
+  margin-top: 30px;
+  position: relative;
+}
+#content .content1 h3::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 3px;
+  background: #b51f1f;
+  border-radius: 1.5px;
+  transform: scaleX(0);
+  transition: all 0.3s ease-out;
+
+}
+
+
+#content .content1 li:nth-of-type(2n+1) h3{
+  margin-left: 50px;
+}
+#content .content1 li:nth-of-type(2n) h3{
+  margin-right: 50px;
+  text-align: right;
+}
+
+#content .content1 .text_box ol{
+  width: 800px;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+#content .content1 .text_box ol li{
+  font-size: 1em;
+  line-height: 2em;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+#content .content1 .text_box ol li span{
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+}
+#content .content1 .text_box ol li span::before{
+  content: '';
+  width: 3px;
+  height: 30px;
+  background: rgba(0, 0, 255, 0.8);
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  transform: scaleY(0);
+  transition: all 0.3s ease-out;
+}
+
+#content .content1 li.scale h3::before{
+  transform: scaleX(1);
+  opacity: 1;
+}
+#content .content1 > li.scale ol li span::before{
+  transform: scaleY(1);
+  opacity: 1;
+}
+#content .content1 li.scale .img_box img{
+  transform: scale(1.1);
+}

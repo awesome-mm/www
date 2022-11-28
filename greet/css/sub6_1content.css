@@ -1,0 +1,189 @@
+#content .content1 {
+  margin-bottom: 200px;
+
+}
+#content .top_menu{
+  width: 1021px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#content .top_menu > p > span{
+  color: #b51f1f;
+  font-size: 1.111em;
+}
+#content .top_menu p{
+  float: left;
+  font-size: 1em;
+  margin-left: 50px;
+
+}
+#content .top_menu .top_btn{
+  width: auto;
+  float: right;
+  
+}
+#content .top_menu .list_style{
+  float: left;
+  margin-left: 30px;
+}
+#content .top_menu .list_style i{
+  margin-right: 30px;
+  font-size: 1.333em;
+}
+#content .top_menu .list_style a:hover{
+  color: #b51f1f;
+}
+
+#content .top_menu .list_style a{
+  color: #999;
+  transition: all 0.5s ease-out;
+  border: 1px solid #ccc;
+  width: 24px;
+  height: 24px;
+  display: block;
+  float: left;
+  padding: 12px;
+  margin-right: 15px;
+}
+
+#content .top_menu .option_list{
+  float: left;
+}
+#content .top_menu .option_list select{
+  font-size: 1em;
+  padding: 11px 10px;
+  color: #666;
+  width: 100px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+
+#content .table_box{
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 50px;
+}
+#content .table_box p{
+  margin-bottom: 30px;
+  font-size: 1.25rem;
+  margin-left: 45px;
+  
+}
+#content .table_box table{
+  text-align: center;
+  margin: 0 auto;
+}
+#content .table_box thead{
+
+}
+#content .table_box th{
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 20px 10px;
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #f8f8f8;
+  color: #333;
+}
+
+#content .table_box td{
+  font-size:1rem;
+  padding: 20px 10px;
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+}
+#content .table_box p span{
+  color: #b51f1f;
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+#content .table_box .list_con_1{ width: 10%;}
+#content .table_box .list_con_2{ width: 50%; text-align: start;}
+#content .table_box .list_con_3{ width: 10%;}
+#content .table_box .list_con_4{ width: 10%;}
+#content .table_box .list_con_5{ width: 10%;}
+
+#content .table_box #list_item2{ text-align: start;}
+
+
+#button {
+  width: 910px;
+  margin: 0 auto;
+}
+#button a{
+}
+
+
+#content .bottom_menu{
+  text-align: center;
+  margin-top: 50px;
+}
+#content .bottom_menu i{
+  font-size: 1em;
+  color: #999;
+}
+#content .bottom_menu a{
+  color: #999;
+  font-size: 1em;
+  padding: 10px 20px;
+}
+#content .bottom_menu b{
+  color: #999;
+  font-size: 1em;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: 700;
+}
+#content .bottom_menu a:hover{
+  color: #333;
+}
+#content .bottom_menu a:hover i{
+  color: #333;
+}
+
+#content .search_box{
+}
+#content .search_box form{
+  width: 620px;
+  margin: 0 auto;
+  position: relative;
+  float: left;
+}
+#content .search_box select{
+  width: 100px;
+  height: 50px;
+  padding: 0px 10px;
+  font-size: 0.889em;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+#content .search_box #search{
+  width: 500px;
+  height: 50px;
+  outline: none;
+  box-sizing: border-box;
+  text-indent: 20px;
+  vertical-align: top;
+  border: 1px solid #b51f1f;
+}
+#content .search_box button{
+  height: 50px;
+  width: 50px;
+  padding: 10px 10px;
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #b51f1f;
+  border: none;
+}
+#content .search_box button i{
+  transition: all 0.3s ease-out;
+  font-size: 1.667em;
+  color: #fff;
+}

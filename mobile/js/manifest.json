@@ -1,0 +1,34 @@
+{
+  "name": "주성엔지니어링",
+  "short_name": "주성엔지니어링",
+  "description": "주성 start program",
+  "scope": ".",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],  
+  "shortcuts": [
+    {
+      "name": "이것은 메뉴1입니다.",
+      "short_name": "메뉴1",
+      "description": "이것은 메뉴1입니다.",
+      "url": "./",
+      "icons": [{ "src": "images/icons/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "이것은 메뉴2입니다.",
+      "short_name": "메뉴2",
+      "description": "이것은 메뉴2입니다.",
+      "url": "./",
+      "icons": [{ "src": "images/icons/android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

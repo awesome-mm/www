@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Starbucks</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+	<link rel="apple-touch-startup-image" href="./startup.png">
+
+	<link rel="stylesheet" href="./css/swiper.css">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/layout.css">
+
+
+	<script src="./js/prefixfree.min.js"></script>
+	<script src="./js/jquery-1.12.4.min.js"></script>
+	<script src="./js/jquery-migrate-1.4.1.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+	<script>
+		// <![CDATA[
+		try {
+			window.addEventListener('load', function () {
+				setTimeout(scrollTo, 0, 0, 1);
+			}, false);
+		} catch (e) {}
+		// ]]>
+	</script>
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example" data-offset="50">
+	<div id="skipNav">
+		<a href="#content">본문 바로가기</a>
+		<a href="#navbar">글로벌 네비게이션 바로가기</a>
+	</div>
+
+	<div id="wrap" class="container-fluid">
+
+		<header id="headerArea">
+			<h1><a href="index.html">Starbucks</a></h1>
+			<nav id="navbar-example" class="navbar navbar-default navbar-fixed-top">
+				<h2 class="hidden">글로벌 네비게이션 영역</h2>
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse bs-example-js-navbar-scrollspy" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right clearfix">
+						<li data-toggle data-target><a class="btn1" href="#about">
+								<h3>abuot</h3>
+							</a></li>
+						<li data-toggle data-target><a class="btn2" href="#coffee">
+								<h3>coffee</h3>
+							</a></li>
+						<li data-toggle data-target><a class="btn3" href="#menu">
+								<h3>menu</h3>
+							</a></li>
+						<li data-toggle data-target><a class="btn4" href="#reserve">
+								<h3>reserve</h3>
+							</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</header>
+
+
+
+		<div class="main">
+			<div class="gallery_box">
+				<div class="swiper-container swiper1">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="./images/main1.jpg" alt="">
+							<strong>
+								<span>FINED Y</span>
+								<span class="text_point">UR TASTE</span>
+							</strong>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/main2.jpg" alt="">
+							<strong>
+								<span>Every name's story</span>
+							</strong>
+						</div>
+						<div class="swiper-slide">
+							<img src="./images/main3.jpg" alt="">
+							<strong>
+								<span class="text3">Be the brighttest start</span>
+							</strong>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<article id="content">
+			<h2 class="hidden">본문 콘텐츠영역</h2>
+
+			<section id="about" class="about contanier clearfix">
+				<h3>about</h3>
+				<div class="row">
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<img src="./images/about1.jpg" alt="">
+						<dl>
+							<dt>사명</dt>
+							<dd>스타벅스는 한 분의 고객, 한 잔의 음료
+								정성을 다하여 인간의 영감을 불어넣고 더욱 풍요롭게
+								하기 위해 노력을 다합니다.</dd>
+						</dl>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<img src="./images/about2.jpg" alt="">
+						<dl>
+							<dt>스타벅스 소개</dt>
+							<dd>스타벅스는 고객의 일상을 풍요롭게 하는
+								제3의 공간으로서 세계인들의 생활 속에
+								스며들어 각 나라의 커피 문화를 선도합니다.</dd>
+						</dl>
+					</div>
+					<div class="col-md-4 col-sm-6 hidden-xs pull-left">
+						<img src="./images/about3.jpg" alt="">
+						<dl>
+							<dt>세계의 스타벅스</dt>
+							<dd>오늘날 스타벅스는세계 최고의 커피
+								전문 회사로서 매주 수백만 명의 고객
+								들에게 최고의 커피와 특별한 경험을
+								전달하고 있습니다.</dd>
+						</dl>
+					</div>
+				</div>
+
+				<div class="more_box">
+					<!-- Button trigger modal -->
+					<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal1">
+						&num;경험
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+											class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="myModalLabel1">경험</h4>
+								</div>
+								<div class="modal-body">
+									<p>우리의 커피와 고객,
+										지역사회에 매번 집중합니다.</p>
+									스타벅스는 현재 전세계 76개 지역의 수많은 매장에서
+									매일 수백만 명의 고객이 즐겨 찾는
+									세계 최대의 커피 문화 기업으로 성장해 집과 사무실을
+									떠난 제3의 공간으로서,
+									숙련된 바리스타들의 뛰어난 지식과 열정을 통해
+									고객의 일상을 풍요롭게 하는 특별한 경험을 전달해
+									드리고 있습니다.
+
+									아울러, 매장 밖에서도 스타벅스의 독특한 문화를
+									경험할 수 있도록 소셜 네트워크 서비스를 통한
+									고객 소통 채널을 다양화해 차별화된
+									제4의 공간을 제공하기 위한 서비스를
+									확대해 나가고 있습니다.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+								</div>
+							</div> <!-- 모달 콘텐츠 -->
+						</div> <!-- 모달 다이얼로그 -->
+					</div> <!-- 모달 전체 윈도우 -->
+
+
+					<!-- Button trigger modal -->
+					<button class=" btn btn-default btn-lg" data-toggle="modal" data-target="#myModal2">
+						&num;사명
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+											class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="myModalLabel2">사명</h4>
+								</div>
+								<div class="modal-body">
+									<p>스타벅스 사명은
+										인간의 정신에 영감을 불어넣고
+										더욱 풍요롭게 하는 것입니다</p>
+									이를 위해 한 분의 고객, 한 잔의 음료,
+									우리의 이웃에 정성을 다합니다.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+								</div>
+							</div> <!-- 모달 콘텐츠 -->
+						</div> <!-- 모달 다이얼로그 -->
+					</div> <!-- 모달 전체 윈도우 -->
+
+					<!-- Button trigger modal -->
+					<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal3">
+						&num;파트너
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+											class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="myModalLabel3">파트너</h4>
+								</div>
+								<div class="modal-body">
+									<p>파트너라고 불리는 스타벅스 직원들은
+										스타벅스 경험의 핵심입니다.</p>
+									세계 최고 품질의 스타벅스 커피는
+									자체 양성한 바리스타들에 의해 제조되어 고객에게
+									제공됩니다.
+									스타벅스 파트너들은 커피 지식과 제품 경험 및
+									고객 서비스에 열정을 바치고 있습니다.
+									커피 전문가(Coffee Master) 과정을 통과한 숙련된
+									바리스타들은 뛰어난 지식과 열정을 통해 고객의 일상을
+									풍요롭게 하는 최고의 서비스를 제공해 드리며
+									지역사회와 커피 지식을 나누고 있습니다.
+									이를 위해 스타벅스는 체계적인 내부 육성 프로그램을
+									운영하고 누구에게나 열려있는 평등 직장을 추구하고
+									있으며, 특히 사회적 약자 및 취약계층 고용을
+									선도하고 있습니다.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+								</div>
+							</div> <!-- 모달 콘텐츠 -->
+						</div> <!-- 모달 다이얼로그 -->
+					</div> <!-- 모달 전체 윈도우 -->
+
+					<!-- Button trigger modal -->
+					<button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal4">
+						&num;책임
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+											class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="myModalLabel4">책임</h4>
+								</div>
+								<div class="modal-body">
+									<p>서로에게 그리고 지구 환경에 도움을
+										주는 방식으로 사업을 전개하겠다는
+										스타벅스의 약속</p>
+									윤리구매, 환경보호, 지역사회 참여 활동을 중심으로
+									커피 원산지에서부터 매장으로 이어지는 우리의 노력은
+									스타벅스가 지금껏 해왔던 사업 방식이며 우리의 일상입니다.
+									또한 우리의 참여를 좋은 일에 쓰는 것이며,
+									고객과 지역사회가 함께 하는 노력입니다.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+								</div>
+							</div> <!-- 모달 콘텐츠 -->
+						</div> <!-- 모달 다이얼로그 -->
+					</div> <!-- 모달 전체 윈도우 -->
+
+					<!-- Button trigger modal -->
+					<button class="btn btn-default btn-lg hidden-xs" data-toggle="modal" data-target="#myModal5">
+						&num;환경보호
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+											class="sr-only">Close</span></button>
+									<h4 class="modal-title" id="myModalLabel5">환경보호</h4>
+								</div>
+								<div class="modal-body">
+									<p>환경발자국을 최소화하고
+										전세계 기후변화 방지를 위해 노력합니다.</p>
+									환경과 지역사회를 아우르는 친환경 매장 구축을 통해
+									에너지 절약을 실천하고 지역사회에 환경적으로 기여하며
+									나아가 지구촌 기후변화 방지 활동에도 적극 참여하고
+									있습니다.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+								</div>
+							</div> <!-- 모달 콘텐츠 -->
+						</div> <!-- 모달 다이얼로그 -->
+					</div> <!-- 모달 전체 윈도우 -->
+				</div>
+
+			</section>
+
+			<section id="coffee" class="coffee jumbotron clearfix">
+				<h3>coffee</h3>
+				<dl>
+					<dt>“또 하나의 스타벅스”</dt>
+					<dd>최고의 품질과 생두가 가진 잠재된 맛을 최대한 발현하기 위해
+						최상의 블렌딩과 오랜 경험으로 쌓아온 최고의 로스팅 과정을 거칩니다.</dd>
+				</dl>
+
+				<div class="row clearfix coffee_content">
+					<div class="row col-md-12 col-sm-6 col-xs-12 clearfix con1">
+						<div class="col-md-6 col-sm-12 col-xs-12 pull-left content_img">
+							<img src="./images/coffee1.jpg" alt="">
+						</div>
+						<div class="col-md-6 col-sm-12 col-xs-12 pull-right content_text">
+							<dl>
+								<dt>클로버 브루잉 시스템</dt>
+								<dd>아주 미세한 온도 변화도 커피의 맛을 전혀 다르게 만들 수 있기 때문에
+									클로버® 브루잉 시스템은 커피 추출시간과 온도를 디지털로 관리합니다.
+									커피가 추출된 다음에는 70 미크론의 아주 고운 필터를 통과해 커피가
+									나옵니다. 따뜻하고 향기롭고 놀라운 커피 풍미가 그대로 살아있는
+									커피가 컵에 담깁니다. 아마 지금까지 맛 본 커피 중 가장 최상의
+									커피를 경험하실 수 있을 것입니다.</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="row col-md-12 col-sm-6 col-xs-12 clearfix con2">
+						<div class="col-md-6 col-sm-12 col-xs-12 pull-right content_img">
+							<img src="./images/coffee2.jpg" alt="">
+						</div>
+						<div class="col-md-6 col-sm-12 col-xs-12 pull-left content_text">
+							<dl>
+								<dt>최상의 블렌드를 위한 노력</dt>
+								<dd>스타벅스는 커피잔에 담긴 최종 결과물이 어떠해야 하는지를
+									가장 먼저 생각합니다.
+									“강조하고 싶은 풍미는 무엇인가, 무엇이 느껴져야 하는가?”
+									그리고 풍부한 경험을 가진 스타벅스 팀에서 각각의 블렌드를
+									개발하고 제조합니다. 예를 들어, 풍성한 저녁식사에 풍미를
+									더하기 위해 블렌드를 만들고,싱글 오리진 커피에서 찾아볼
+									수 없는 매우 복잡하고 완성된 맛의 커피를 만들기도 하고,
+									계절에 어울리는 블렌드를 개발합니다.</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="menu" class="menu clearfix">
+				<div class="menu_box">
+					<h3>menu</h3>
+					<ul class="nav nav-tabs clearfix row">
+						<li class="col-lg-3 col-md-3 col-sm-3 col-xs-6 active"><a href="#tab1" data-toggle="tab">&num;상품 Goods</a></li>
+						<li class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="#tab2" data-toggle="tab">&num;커피 Coffee</a></li>
+						<li class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="#tab3 " data-toggle="tab">&num;푸드 Food</a></li>
+						<li class="col-lg-3 col-md-3 col-sm-3 last_list col-xs-6"><a href="#tab4" data-toggle="tab">&num;추천 special</a></li>
+					</ul>
+					<p>바리스타의 숙련된 기술로 취향까지 담은 음료를 경험해보세요.</p>
+					<p>스타벅스에서 가장 있기있는 특별한 음료들을 만나보세요.</p>
+
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="tab1">
+							<div class="row">
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_pro1.jpg" alt="">
+									<p>레인보우 스코프 콜드컵</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_pro2.jpg" alt="">
+									<p>SS블랙 데비머그</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_pro3.jpg" alt="">
+									<p>SS블랙 앤 골드 스탠리보온병</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_pro4.jpg" alt="">
+									<p>SS엘마 블랙 텀블러</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="tab2">
+							<div class="row">
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_cold1.jpg" alt="">
+									<p>나이트로 콜드브루</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_cold2.jpg" alt="">
+									<p>돌체 콜드브루</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_cold3.jpg" alt="">
+									<p>바닐라 콜드브루</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_cold4.jpg" alt="">
+									<p>콜드브루</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="tab3">
+							<div class="row">
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_brad1.jpg" alt="">
+									<p>레드벨벳 케이크</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_brad2.jpg" alt="">
+									<p>블루베리 치즈 케이크</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_brad3.jpg" alt="">
+									<p>스모크드 소시지 브레드</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_brad4.jpg" alt="">
+									<p>콥 & 화이트 샐러드밀 박스</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="tab4">
+							<div class="row">
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_special1.jpg" alt="">
+									<p>아메리카노</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_special2.jpg" alt="">
+									<p>카라멜 마끼야또</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_special3.jpg" alt="">
+									<p>카푸치노</p>
+								</div>
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<img src="./images/menu/menu_special4.jpg" alt="">
+									<p>에소프레소 마끼야또</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+			<section class="cards clearfix">
+				<h3 class="hidden">cards</h3>
+				<div class="row">
+					<div class="col-lg-3 col-md-12 col-sm-12 con_left">
+						<img src="./images/cards_logo.png" alt="">
+						<p>starbucks</p>
+						<span>rewards</span>
+					</div>
+					<div class="col-lg-9 col-md-12 col-sm-12 con_right">
+						<div class="login clearfix">
+							<div class="col-md-9 col-sm-12">
+								<p class="title"><span>“스타벅스만의 특별한 혜택, 스타벅스 리워드”</span></p>
+								<p><span class="qus">스타벅스 회원이세요?</span> 로그인을 통해 나만의 리워드를 확인해보세요.<br>
+									<span class="qus">스타벅스 회원이 아니세요?</span> 가입을 통해 리워드 혜택을 즐기세요.</p>
+							</div>
+							<div class="col-md-3 col-sm-12">
+								<!-- Button trigger modal -->
+								<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bs-example-modal-lg1">
+									회원가입
+								</button>
+								<!-- Modal -->
+								<div class="modal fade" id="bs-example-modal-lg1" tabindex="-1" role="dialog"
+									aria-labelledby="myLargeModalLabel1" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span
+														aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="myLargeModalLabel1">회원가입</h4>
+											</div>
+											<div class="modal-body">
+												<form class="form">
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>
+														<label class="hidden" for="text">아이디</label>
+														<input type="text" id="text" class="form-control" placeholder="아이디">
+													</div>
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span>
+														<label class="hidden" for="password">암호</label>
+														<input type="password" id="password" class="form-control" placeholder="암 호">
+													</div>
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span>
+														<label class="hidden" for="password2">암호</label>
+														<input type="password" id="password2" class="form-control" placeholder="암 호 확 인">
+													</div>
+												</form>
+
+												<form class="form-inline form-middle">
+													<div class="form-group">
+														<label class="hidden" for="Name">이름</label>
+															<input type="text" id="Name" name="Name" class="form-control" placeholder="이름">
+														
+													</div>
+													<div class="form-group">
+														<label class="hidden" for="emailaddress">이메일</label>
+															<input type="email" id="emailaddress" name="emailaddress" class="form-control"
+																placeholder="이메일 asd123@naver.com">
+														
+													</div>
+													<div class="form-group">
+														<label class="hidden" for="happy">생년월일</label>
+															<input type="date" id="happy" name="happy" class="form-control">
+													</div>
+												</form>
+												<div class="modal-footer">
+													<div class="form-group">
+														<button class="submit" type="submit">회원가입</button>
+														<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Button trigger modal -->
+								<button class="btn btn-primary btn-lg login_btn" data-toggle="modal"
+									data-target="#bs-example-modal-lg2">
+									로그인
+								</button>
+								<!-- Modal -->
+								<div class="modal fade" id="bs-example-modal-lg2" tabindex="-1" role="dialog"
+									aria-labelledby="myLargeModalLabel2" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span
+														aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="myLargeModalLabel2">로그인</h4>
+											</div>
+											<div class="modal-body">
+												<form class="form">
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>
+														<input type="text" class="form-control" placeholder="아이디">
+													</div>
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span>
+														<input type="password" class="form-control" placeholder="암 호">
+													</div>
+													<label class="checkbox-inline"></label>
+														<input type="checkbox" id="inlineCheckbox1" value="option1"> 로그인 상태 유지
+												</form>
+											</div>
+											<div class="modal-footer">
+												<div class="form-group">
+													<button class="submit_login" type="submit">로그인</button>
+													<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="gift clearfix">
+							<div class="col-md-9 col-sm-12">
+								<p>회원 가입 후, 스타벅스 e-Gift Card를 <span>"나에게 선물하기"</span>로 구매하시고, 편리하게 등록하세요!<br>
+									카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료쿠폰을 드립니다!</p>
+							</div>
+							<div class="col-md-3 col-sm-12">
+								<!-- Button trigger modal -->
+								<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bs-example-modal-lg3">
+									e-Gift Card 선물하기
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="bs-example-modal-lg3" tabindex="-1" role="dialog"
+									aria-labelledby="myLargeModalLabel3" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal"><span
+														aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<h4 class="modal-title" id="myLargeModalLabel3">e-Gift Card 선물하기</h4>
+											</div>
+											<p>로그인 후 이용이 가능합니다.</p>
+											<p>로그인 &gt; 정보입력 &gt; 결제하기 &gt; 결제완료로 진행됩니다.</p>
+											<div class="modal-body">
+												<form class="form">
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>
+														<input type="text" class="form-control" placeholder="아이디">
+													</div>
+													<div class="input-group">
+														<span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span>
+														<input type="password" class="form-control" placeholder="암 호">
+													</div>
+
+												</form>
+											</div>
+											<div class="modal-footer">
+												<div class="form-group">
+													<button class="submit_login" type="submit">로그인</button>
+													<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="reserve" class="reserve clearfix">
+				<h3>reserve</h3>
+				<dl>
+					<dt>스타벅스 리저브™ 매장에서 프리미엄 커피를 만나다.</dt>
+					<dd>단일 원산지에서 극소량만 재배되어 한정된 기간에만 만나볼 수 있는 스타벅스 리저브™ 커피는 스타벅스의 모든 매장에서 선보일 수 있을 만큼
+						충분한 양을 제공할 수 없기 때문에 전 세계에서 약 800개 정도의 지정된 매장에서만 제공되며, 새로운 커피들이 주기적으로 소개됩니다.
+						스타벅스 리저브™ 매장을 방문하여 리저브 커피와 함께 특별한 순간을 경험해보세요!</dd>
+				</dl>
+				<div class="row clearfix img_box">
+					<div class="col-md-4 hidden-sm hidden-xs"><img src="./images/reserve1.jpg" alt=""></div>
+					<div class="col-md-4 col-sm-6 col-xs-12"><img src="./images/reserve2.jpg" alt=""></div>
+					<div class="col-md-4 col-sm-6 col-xs-12 "><img src="./images/reserve3.jpg" alt=""></div>
+				</div>
+
+			</section>
+
+
+
+		</article>
+
+
+		<footer id="footerArea">
+			<div class="top_btn">
+				<a href="#top" ><span class="hidden">탑으로이동</span><span class="glyphicon glyphicon-arrow-up"></span></a>
+			</div>
+			<div class="img_box">
+				<img src="./images/main_logo.png" alt="">
+			</div>
+			<address>
+				사업자등록번호 : 201-81-21515 주식회사 에스씨케이컴퍼니 대표이사 : 송 데이비드 호섭 TEL : 1522-3232 개인정보 책임자 : 이현수
+				<br>
+				<br>
+				&copy;2022 Starbucks Coffee Company. All Rights Reserved.
+			</address>
+		</footer>
+	</div>
+
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script>
+		var swiper1 = new Swiper('.swiper1', {
+			slidesPerView: '1',
+			spaceBetween: 0,
+			loop: true,
+			autoplay: {
+				delay: 5000
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			// observer: true,
+			// observeParents: true,
+		});
+	</script>
+</body>
+
+</html>

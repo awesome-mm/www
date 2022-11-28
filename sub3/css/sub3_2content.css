@@ -1,0 +1,123 @@
+#content .chart_box{
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+#content .content1{
+  width: 1200px;
+  padding: 100px 0 200px 0 ;
+}
+#content .content2{
+  width: 1200px;
+  padding: 100px 0 200px 0 ;
+}
+#content .content3{
+  width: 1200px;
+  padding: 100px 0 200px 0 ;
+}
+
+#content h3{
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.333em;
+  margin-bottom: 10px;
+}
+#content table{
+  margin: 0 auto;
+  border: 1px solid blue;
+  border-collapse: collapse;
+  width: 800px;
+  text-align: center;
+}
+#content tbody{
+  font-size: 1em;
+  background: #f3f3f3;
+}
+#content tfoot{
+font-size: 1em;
+background: #ccc;
+font-weight: 500;
+
+}
+#content td,
+#content tr,
+#content th{
+  border: 1px solid rebeccapurple;
+}
+#content th{
+  font-size: 1em;
+  font-weight: 400;
+  padding: 5px 0;
+
+}
+#content th.bold{
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 15px 0;
+}
+#content td{
+  font-size: 0.899em;
+  width: 120px;
+  padding: 5px 0;
+}
+#content .content3 td {
+  width: 100px;
+}
+
+#content .year {
+  font-size: 1.1em;
+  padding: 15px 0;
+}
+
+#content .content_area span{
+  text-align: right;
+  display: block;
+  margin-right: 200px;
+  margin-bottom: 30px;
+}
+
+
+
+#content .jump {
+  width: 900px;
+  height: 70px;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+#content .jump a{
+  height: 30px;
+  font-size: 1.111em;
+  padding: 20px 0;
+  display: block;
+  width: 300px;
+  float: left;
+  position: relative;
+  transition: color 0.5s;
+  position: relative;
+}
+#content .jump a:hover {
+  color: white;
+  padding: 20px 0;
+  background: #ed164c;
+}
+#content .jump a::before{
+  content: '';
+  width: 1px;
+  height: 70px;
+  background: #ccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#content .jump li:last-child a::before{
+  content: none;
+}
+#content .jump.current{
+  color: white;
+  padding: 20px 0;
+  background: #ed164c;
+}

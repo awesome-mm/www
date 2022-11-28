@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>주성엔지니어링</title>
+
+  <link rel="apple-touch-icon-precomposed" href="app_icon.png">
+  <link rel="apple-touch-startup-image" href="startup.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/sub_common.css">
+  <link rel="stylesheet" href="./css/sub2css/sub2_4.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="./js/prefixfree.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <script src="./js/prefixfree.min.js"></script>
+
+
+  <script>
+    // <![CDATA[
+    try {
+      window.addEventListener('load', function () {
+        setTimeout(scrollTo, 0, 0, 1);
+      }, false);
+    } catch (e) {}
+    // ]]>
+  </script>
+
+</head>
+
+<body>
+  <div id="skipNav">
+    <a href="#content">본문바로가기</a>
+    <a href="#gnb">네비게이션바로가기</a>
+  </div>
+
+
+  <div id="wrap">
+
+    <header id="headerArea">
+      <div class="headerInner">
+        <h1><a href="./index.html">주성엔지니어링</a></h1>
+        <a class="menu_btn" href="#">
+          <span>메뉴</span>
+        </a>
+        <div class="modal_box"></div>
+      </div>
+
+      <nav id="gnb">
+        <h2 class="hidden">글로벌네비게이션영역</h2>
+        <ul class="menu_box">
+          <li class="depth1">
+            <h3><a href="#">회사소개<span>about company</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub1_1.html">기업정보</a></li>
+              <li><a href="./sub1_2.html">융합경쟁력</a></li>
+              <li><a href="./sub1_3.html">회사연혁</a></li>
+              <li><a href="./sub1_4.html">오시는길</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">제품소개 <span>product</span> <i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub2_1.html">반도체장비</a></li>
+              <li><a href="./sub2_2.html">디스플레이장비</a></li>
+              <li><a href="./sub2_3.html">태양광장비</a></li>
+              <li><a href="./sub2_4.html">제품검색</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">경영정보 <span>management</span> <i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub3_1.html">윤리경영</a></li>
+              <li><a href="./sub3_2.html">사회공헌</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">인재채용 <span>empolyment</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub4_1.html">인재상</a></li>
+              <li><a href="./sub4_2.html">복리후생</a></li>
+              <li><a href="./sub4_3.html">채용절차</a></li>
+            </ul>
+          </li>
+        </ul>
+        <?
+        @extract($_POST);
+        @extract($_GET);
+        @extract($_SESSION);//세션만있으면됨
+        //$userid =$_SESSION['userid']; ,... 
+     
+         if(!$userid) // 세션변수 받은게 있냐?
+       {
+     ?>
+             <ul class="login_box">
+               <li><a href="./login/login_form.php">로그인</a></li>
+               <li><a href="./member/join.html">회원가입</a></li>
+             </ul>
+     <?
+       }
+       else
+       {
+     ?>
+     
+             <ul class="login_box">
+               <li><a href="./login/logout.php">로그아웃</a></li>
+               <li><a href="./member/member_form_modify.php">정보수정</a></li>
+             </ul>
+     <?
+       }
+     ?>
+      </nav>
+    </header>
+
+
+    <article id="content">
+      <div class="sub_layout">
+        <div class="main">
+            <img src="./images/visual_sub2.png" alt="">
+          <h3>제품소개 <span>Product</span></h3>
+        </div>
+        <div class="sub_menu">
+          <h2>
+            <a href="#" class="menu_open_btn">제품검색</a>
+            <span class="notice hidden">
+            </span>
+            <i id="sub_menu_icon" class="fa-solid fa-plus"></i>
+          </h2>
+          <ul>
+            <li><a href="./sub2_1.html">반도체장비</a></li>
+            <li><a href="./sub2_2.html">디스플레이장비</a></li>
+            <li><a href="./sub2_3.html">태양광장비</a></li>
+            <li><a href="./sub2_4.html">제품검색</a></li>
+          </ul>
+        </div>
+        <div class="title_area">
+          <strong class="slogan">
+            원하시는 <span>제품</span>을 검색해보세요
+          </strong>
+        </div>
+      </div>
+
+      
+      <div class="content1">
+
+        <div class="top_menu">
+          <div class="top_btn">
+            <div class="list_style">
+              <a href="#">
+                <span class="hidden">박스형</span>
+                <i class="fa-solid fa-table-cells-large"></i>
+              </a>
+              <a href="#">
+                <span class="hidden">목록형</span>
+                <i class="fa-solid fa-list-check"></i>
+              </a>
+            </div>
+            <div class="option_list">
+              <select name="number">
+                <option value="4">4개씩</option>
+                <option value="6">6개씩</option>
+                <option value="8">8개씩</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="search_box">
+          <form action="list.php" method="post" name="search_form">
+            <select name="find" id="find">
+              <option  value="태그">태그</option>
+              <option  value="제목">제목</option>
+              <option  value="내용">내용</option>
+              <option  value="이름">이름</option>
+            </select>
+            <label for="search" class="hidden">검색</label>
+            <input maxlength="15" type="text" name="search" id="search" placeholder="검색어를 입력해주세요">
+            <button type="submit"><span class="hidden">검색</span><i class="fa-solid fa-magnifying-glass"></i></button> 
+          </form>
+        </div>
+
+
+
+        <div class="bottom_menu">
+          <div class="next_menu">
+            <a href="#">
+              <span class="hidden">이전</span>
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">
+              <span class="hidden">다음</span>
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="product_list">
+          <ul>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_01.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>SDP CVD (CVD & ALD)</dt>
+                  <dd>20nm 이하의 미세 반도체 공정에서 금속막 및 High-K 공정의 모든 CVD 및 ALD 공정 대응</dd>
+                  <dd>플라즈마로 인한 기판 손상 없이 저온에서 우수한 최고의 막질을 균일하게 형성</dd>
+                  <dd>“증착" 과정 모두를 대응할 수 있는 신개념 반도체 제조장비</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_02.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>TSD CVD</dt>
+                  <dd>CVD 및 ALD, Nitridation, Oxidation, Doping 등 다양한 공정에 적용 가능</dd>
+                  <dd>시∙공간 분할을 통한 치밀한 막 생성 및 플라즈마 손상 Zero</dd>
+                  <dd>세계 최초의 공간과 시간분할을 동시에 가능</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_03.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>SD CVD</dt>
+                  <dd>단위 시간당 생산력 극대화를 위한 세계 최초/최고의 Semi-Batch 장비</dd>
+                  <dd>낮은 온도에서 고품질/고생산성의 박막 형성</dd>
+                  <dd>극 저온에서의 특화된 공정 기술</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_04.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>UHV CVD</dt>
+                  <dd>산소 및 수증기 분압 최소화를 통한 초고순도(Ultra Clean)의 증착 환경 제공</dd>
+                  <dd>고유의 저온 (550℃) 플라즈마 기판 세정</dd>
+                  <dd>신개념 상온 플라즈마 기판 세정</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_05.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>DRY ETCH</dt>
+                  <dd>웨이퍼에 주는 손상 최소화, 식각량 균일하게 유지</dd>
+                  <dd>낮은 유지보수 비용 및 안정성, 양산성 우수</dd>
+                  <dd>Poly 및 Metal 등 모든 공정에 적용가능</dd>
+                  <dd><span>#반도체</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_06.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>OLED Encapsulation(CVD&ALD)</dt>
+                  <dd>세계 최초로 신개념 플라즈마 기술을 적용한 대면적 봉지용 TSD - CVD/ALD</dd>
+                  <dd>대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템</dd>
+                  <dd>Damage Zero의 신개념 플라즈마 기술</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_07.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>IGZO MOCVD</dt>
+                  <dd>Source(In, Ga, Zn)의 비율 조절 가능</dd>
+                  <dd>이동도(Mobility) 90 이상</dd>
+                  <dd>세계 최초 CVD방식의 IGZO 장비</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_08.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>PE CVD</dt>
+                  <dd>온도 및 가스 분사 제어</dd>
+                  <dd>우수한 막질 균일도</dd>
+                  <dd>낮은 이물 제어</dd>
+                  <dd><span>#디스플레이</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_09.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>Flexible Solar (Turnkey Solution)</dt>
+                  <dd>세계 최고 수준의 플랙서블 태양전지 내구성 및 내환경성 시험 통과</dd>
+                  <dd>세계 최고 Flexible a-Si:H/μc-Si:H 이중접합 태양전지 기술.</dd>
+                  <dd>다양한 구조의 이중접합 태양전지 기술</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_10.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>결정형(PE CVD / RIE)</dt>
+                  <dd>최고 효율 / 최저 비용 시스템</dd>
+                  <dd>고효율 및 고생산성 시스템</dd>
+                  <dd>저온에서 특화된 공정 기술</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_11.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>결정형(Turnkey Solution)</dt>
+                  <dd>고효율 및 고 생산성 시스템</dd>
+                  <dd>공정 단순화 및 저온 공정 시스템</dd>
+                  <dd>Bi-facial module 구현</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img_box">
+                  <img src="./images/sub2_4/product_12.jpg" alt="">
+                </div>
+                <dl>
+                  <dt>박막형(Turnkey Solution)</dt>
+                  <dd>Single, tandem, triple junction 까지 다양한 고효율 박막형 태양전지 생산 가능</dd>
+                  <dd>장비 안정성 우수, 낮은 유지 보수 비용</dd>
+                  <dd>세계 최고 생산성 / 최저 비용 시스템</dd>
+                  <dd><span>#태양열</span></dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+
+
+    </article>
+
+
+
+    <footer id="footerArea">
+      <a href="#" class="topMove"><i class="fa-solid fa-up-long"></i></a>
+      <div class="fnb">
+        <ul>
+          <li><a href="#">이메일 무단수집거부</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">서비스 이용약관</a></li>
+        </ul>
+      </div>
+      <div class="tom_menu">
+        <img src="./images/logo.png" alt="logo">
+        <ul class="sns">
+          <li><a title="instagram으로 이동" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span
+                class="hidden">인스타그램</span></a></li>
+          <li><a title="facebook 으로 이동" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span
+                class="hidden">페이스북</span></a></li>
+          <li><a title="youtube 으로 이동" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i><span
+                class="hidden">소개</span></a></li>
+          <li><a title="twitter 으로 이동" href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter"></i><span
+                class="hidden">트위터</span></a></li>
+        </ul>
+      </div>
+      <address>
+        <span>
+          [본사]경기도 광주시 오포읍 오포로 240
+        </span>
+        <span>
+          [용인 R&D Center]경기도 용인시 기흥구 신정로 79
+        </span>
+        <span>☎ 031-760-7000 ,FAX : 031-760-7117</span>
+      </address>
+
+      <div class="family">
+        <a class="arrow" href="#">Family Site</a>
+        <ul class="aList">
+          <li><a href="https://www.samsungengineering.co.kr/kor/index" title="family Site 새창에 열림"
+              target="_blank">삼성엔지니어링</a></li>
+          <li><a href="http://www.jseng.com/jusung_recruit/index.html" title="family Site 새창에 열림"
+              target="_blank">주성인재채용</a></li>
+          <li><a href="http://www.ilun.or.kr/main/kr_main.asp" title="family Site 새창에 열림" target="_blank">일운과학재단</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/subcommon.js"></script>
+
+</body>
+
+</html>

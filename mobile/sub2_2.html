@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>주성엔지니어링</title>
+
+  <link rel="apple-touch-icon-precomposed" href="app_icon.png">
+  <link rel="apple-touch-startup-image" href="startup.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/sub_common.css">
+  <link rel="stylesheet" href="./css/sub2css/sub2_1.css">
+  <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
+  <script src="./js/prefixfree.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <script src="./js/prefixfree.min.js"></script>
+
+
+  <script>
+    // <![CDATA[
+    try {
+      window.addEventListener('load', function () {
+        setTimeout(scrollTo, 0, 0, 1);
+      }, false);
+    } catch (e) {}
+    // ]]>
+  </script>
+
+</head>
+
+<body>
+  <div id="skipNav">
+    <a href="#content">본문바로가기</a>
+    <a href="#gnb">네비게이션바로가기</a>
+  </div>
+
+
+  <div id="wrap">
+
+    <header id="headerArea">
+      <div class="headerInner">
+        <h1><a href="./index.html">주성엔지니어링</a></h1>
+        <a class="menu_btn" href="#">
+          <span>메뉴</span>
+        </a>
+        <div class="modal_box"></div>
+      </div>
+
+      <nav id="gnb">
+        <h2 class="hidden">글로벌네비게이션영역</h2>
+        <ul class="menu_box">
+          <li class="depth1">
+            <h3><a href="#">회사소개<span>about company</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub1_1.html">기업정보</a></li>
+              <li><a href="./sub1_2.html">융합경쟁력</a></li>
+              <li><a href="./sub1_3.html">회사연혁</a></li>
+              <li><a href="./sub1_4.html">오시는길</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">제품소개 <span>product</span> <i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub2_1.html">반도체장비</a></li>
+              <li><a href="./sub2_2.html">디스플레이장비</a></li>
+              <li><a href="./sub2_3.html">태양광장비</a></li>
+              <li><a href="./sub2_4.html">제품검색</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">경영정보 <span>management</span> <i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub3_1.html">윤리경영</a></li>
+              <li><a href="./sub3_2.html">사회공헌</a></li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <h3><a href="#">인재채용 <span>empolyment</span><i class="fa-solid fa-plus"></i></a></h3>
+            <ul>
+              <li><a href="./sub4_1.html">인재상</a></li>
+              <li><a href="./sub4_2.html">복리후생</a></li>
+              <li><a href="./sub4_3.html">채용절차</a></li>
+            </ul>
+          </li>
+        </ul>
+        <?
+        @extract($_POST);
+        @extract($_GET);
+        @extract($_SESSION);//세션만있으면됨
+        //$userid =$_SESSION['userid']; ,... 
+     
+         if(!$userid) // 세션변수 받은게 있냐?
+       {
+     ?>
+             <ul class="login_box">
+               <li><a href="./login/login_form.php">로그인</a></li>
+               <li><a href="./member/join.html">회원가입</a></li>
+             </ul>
+     <?
+       }
+       else
+       {
+     ?>
+     
+             <ul class="login_box">
+               <li><a href="./login/logout.php">로그아웃</a></li>
+               <li><a href="./member/member_form_modify.php">정보수정</a></li>
+             </ul>
+     <?
+       }
+     ?>
+      </nav>
+    </header>
+
+
+
+
+    <article id="content">
+      <div class="sub_layout">
+        <div class="main">
+          <img src="./images/visual_sub2.png" alt="">
+          <h3>제품소개 <span>Product</span></h3>
+        </div>
+        <div class="sub_menu">
+          <h2>
+            <a href="#" class="menu_open_btn">디스플레이장비</a>
+            <span class="notice hidden">
+            </span>
+            <i id="sub_menu_icon" class="fa-solid fa-plus"></i>
+          </h2>
+          <ul>
+            <li><a href="./sub2_1.html">반도체장비</a></li>
+            <li><a href="./sub2_2.html">디스플레이장비</a></li>
+            <li><a href="./sub2_3.html">태양광장비</a></li>
+            <li><a href="./sub2_4.html">제품검색</a></li>
+          </ul>
+        </div>
+        <div class="title_area">
+          <strong class="slogan">
+            생산의 핵심인 <span>품질, 시간, 기술</span>을 선도합니다.
+          </strong>
+        </div>
+      </div>
+
+      <div class="spy" draggable="true">
+        <a draggable="true" class="close_btn" href="#"><span class="hidden">메뉴닫기</span><i class="fa-solid fa-xmark"></i></a>
+        <div draggable="true" class="spy_list">
+          <ul draggable="true"> 
+            <li><a draggable="true" href="#">OLED</a></li>
+            <li><a draggable="true" href="#">IGZO</a></li>
+            <li><a draggable="true" href="#">PE CVD</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="product">
+        <ul>
+          <li>
+            <h4>OLED Encapsulation(CVD&ALD)</h4>
+            <div class="img_box">
+              <img src="./images/sub2_2/product1.jpg" alt="">
+            </div>
+            <div class="text_area">
+              <p>대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템</p>
+              <p>플라즈마로 인한 기판 손상 없이 300도 이하의 저온에서 우수한 최고의 막질을 균일하게 형성</p>
+              <p>Damage Zero의 신개념 플라즈마 기술</p>
+              <a href="#">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <h4>IGZO MOCVD</h4>
+            <div class="img_box">
+              <img src="./images/sub2_2/product2.jpg" alt="">
+            </div>
+            <div class="text_area">
+              <p>Source(In, Ga, Zn)의 비율 조절 가능</p>
+              <p>이동도(Mobility) 90 이상</p>
+              <p>세계 최초 CVD방식의 IGZO 장비</p>
+              <p>세계 최고 Mobility</p>
+              <a href="#">자세히보기</a>
+            </div>
+          </li>
+          <li>
+            <h4>PE CVD</h4>
+            <div class="img_box">
+              <img src="./images/sub2_2/product3.jpg" alt="">
+            </div>
+            <div class="text_area">
+              <p>온도 및 가스 분사 제어</p>
+              <p>낮은 이물 제어</p>
+              <p>우수한 막질 균일도</p>
+              <a href="#">자세히보기</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="modal">
+        <div class="pop_modal_box">
+          <div class="pop_top">
+            <p>Product List</p>
+            <a class="popCloseBtn" href="#"><span class="hidden">닫기</span><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          <div class="modal_text">
+
+          </div>
+          <div class="modal_btn_box">
+            <ul class="modal_btn">
+              <li><a class="modal_perv" href="#"><span class="hidden">이전</span><i class="fa-solid fa-angle-left"></i></a></li>
+              <li><a class="modal_next" href="#"><span class="hidden">다음</span><i class="fa-solid fa-angle-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </article>
+
+
+
+    <footer id="footerArea">
+      <a href="#" class="topMove"><i class="fa-solid fa-up-long"></i></a>
+      <div class="fnb">
+        <ul>
+          <li><a href="#">이메일 무단수집거부</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">서비스 이용약관</a></li>
+        </ul>
+      </div>
+      <div class="tom_menu">
+        <img src="./images/logo.png" alt="logo">
+        <ul class="sns">
+          <li><a title="instagram으로 이동" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span
+                class="hidden">인스타그램</span></a></li>
+          <li><a title="facebook 으로 이동" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span
+                class="hidden">페이스북</span></a></li>
+          <li><a title="youtube 으로 이동" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i><span
+                class="hidden">소개</span></a></li>
+          <li><a title="twitter 으로 이동" href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter"></i><span
+                class="hidden">트위터</span></a></li>
+        </ul>
+      </div>
+      <address>
+        <span>
+          [본사]경기도 광주시 오포읍 오포로 240
+        </span>
+        <span>
+          [용인 R&D Center]경기도 용인시 기흥구 신정로 79
+        </span>
+        <span>☎ 031-760-7000 ,FAX : 031-760-7117</span>
+      </address>
+
+      <div class="family">
+        <a class="arrow" href="#">Family Site</a>
+        <ul class="aList">
+          <li><a href="https://www.samsungengineering.co.kr/kor/index" title="family Site 새창에 열림"
+              target="_blank">삼성엔지니어링</a></li>
+          <li><a href="http://www.jseng.com/jusung_recruit/index.html" title="family Site 새창에 열림"
+              target="_blank">주성인재채용</a></li>
+          <li><a href="http://www.ilun.or.kr/main/kr_main.asp" title="family Site 새창에 열림" target="_blank">일운과학재단</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/subcommon.js"></script>
+  <script src="./js/sub2_2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+body{
+background: #f8f8f8;
+}
+#wrap {
+  width: 650px;
+  margin: 0 auto;
+  font-family: 'Nanum Gothic', sans-serif;
+  background: #fff;
+  margin-bottom: 100px;
+  box-shadow: 12px 20px 20px 10px rgb(0 0 0 / 10%);
+  padding: 60px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+header h1 a {
+  display: block;
+  width: 200px;
+  height: 42px;
+  text-align: center;
+  margin: 50px auto;
+  margin-top: 70px;
+}
+#wrap h2{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+#wrap h2+p{
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+#wrap #id_pw_input input{
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  vertical-align: middle;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+#wrap #id_pw_input input:focus{
+  box-shadow: 1px 1px 10px 1px red;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+#wrap #login_button button{
+  width: 100%;
+  background: #b51f1f;
+  padding: 15px;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  opacity: 0.8;
+  border: 1px solid rgba(0, 0, 0, 0);
+
+}
+#wrap #login_button button:focus{
+  box-shadow: 1px 1px 10px 1px red;
+  outline: none;
+  opacity: 1;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#wrap .find{
+  margin-left: 5px;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+}
+#wrap .find li{
+  float: left;
+  position: relative;
+  margin-right: 15px;
+}
+#wrap .find li:first-child::after{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 14px;
+  margin: 10% 0;
+  background: #999;
+  right: -8px;
+}
+#wrap .find li a{
+  font-size: 0.89rem;
+  transition: all 0.3s ease-out;
+}
+#wrap #join_button{
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  position: relative;
+}
+#wrap #join_button::after{
+  position: absolute;
+  left: 5%;
+  top: 0px;
+  content: '';
+  width: 90%;
+  height: 1px;
+  background: #ccc;
+  
+}
+
+#wrap #join_button a{
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  color: #b51f1f;
+  border-radius: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  border: 1px solid #ccc;
+
+}
+
+#wrap #join_button a:focus{
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
+  outline: none;
+  border: 1px solid #ccc;
+  background: #c8c8c8;
+  opacity: 1;
+
+}
+#wrap #join_button a:hover{
+  opacity: 1;
+  background: #c8c8c8;
+
+}
+
+#wrap #login_button button:hover{
+  opacity: 1;
+
+}

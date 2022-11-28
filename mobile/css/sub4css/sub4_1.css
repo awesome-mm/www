@@ -1,0 +1,58 @@
+#content .content1{
+
+}
+#content .content1 .img_box{
+  width: 60%;
+}
+#content .content1 .img_box img{
+  width: 100%;
+}
+#content .content1 li:nth-of-type(even) .img_box{
+  margin-left: 40%;
+}
+
+#content .content1 li{
+  margin-bottom: 30px;
+}
+
+#content .content1 .text_box{
+
+}
+#content .content1 .text_box h3{
+  font-size: 1.3rem;
+  padding-left: 10px;
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+
+}
+#content .content1 .text_box h3::before{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #b51f1f;
+  margin-top: 5px;
+}
+#content .content1 .text_box h3 span{
+  color: #b51f1f;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+#content .content1 .text_box p{
+  font-size: 1.111rem;
+  line-height: 2em;
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
+  clear: both;
+}
+
+#content .content1 ul li:nth-of-type(3n+2) .text_box h3{
+  float: right;
+  padding-left: 0;
+  padding-right: 10px;
+}

@@ -1,0 +1,25 @@
+{
+  "text_box" : [
+    {
+      "title": "OLED Encapsulation(CVD&ALD)",
+      "p1": "대면적 봉지에 적합한 CVD/ALD 겸용 봉지 시스템",
+      "p2": "세계 최초로 신개념 플라즈마 기술을 적용한 대면적 봉지용 TSD - CVD/ALD",
+      "p3": "Damage Zero의 신개념 플라즈마 기술",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "IGZO MOCVD",
+      "p1": "Source(In, Ga, Zn)의 비율 조절 가능",
+      "p2": "이동도(Mobility) 90 이상",
+      "p3": "세계 최초 CVD방식의 IGZO 장비<br><br>세계 최고 Mobility",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "PE CVD",
+      "p1": "온도 및 가스 분사 제어",
+      "p2": "낮은 이물 제어",
+      "p3": "우수한 막질 균일도",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    }
+  ]
+}

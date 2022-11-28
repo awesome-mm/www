@@ -1,0 +1,108 @@
+#content .content_area{
+  position: relative;
+}
+#content .content_area::after{
+  content: '';
+  width: 2000px;
+  height: 2400px;
+  background: #dfdede;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -1000px;
+  z-index: -1;
+  background-image: url(../images/content3/bg1.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#content .product_list {
+  width: 1200px;
+  margin: 0 auto;
+}
+#content .product_list ul{
+}
+#content .product_list ul li{
+  position: relative;
+  margin-bottom: 400px;
+}
+#content .product_list li img{
+  position: relative;
+  top: 0;
+  width: 650px;
+  box-shadow: 5px 5px 10px 0 rgb(0 0 0 / 50%);
+  transition: all 0.5s ease-out;
+}
+#content .product_list li img:hover{
+  transform: scale(1.1);
+}
+
+#content .product_list li:nth-of-type(odd) img{
+  left: 120px;
+  border-radius: 0 40px;
+
+}
+
+#content .product_list li:nth-of-type(even) img{
+  left: 400px;
+  border-radius:  40px 0;
+
+}
+
+#content .product_list ul li div {
+  position: absolute;
+  width: 500px;
+  height: 550px;
+  background: #fff;
+  border: 1px solid  rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px 0 rgb(0 0 0 / 50%);
+  padding: 60px;
+  box-sizing: border-box;
+}
+#content .product_list .content_text1{
+  top: 100px;
+  right: 50px;
+}
+#content .product_list .content_text2{
+  top: 100px;
+  left: 0;
+}
+#content .product_list .content_text3{
+  top: 100px;
+  right: 50px
+}
+#content .product_list .content_text4{
+  top: 100px;
+  left: 0
+}
+
+#content .product_list h4 {
+  text-align: center;
+  font-size: 1.667em;
+  font-weight: 600;
+  margin-bottom: 50px;
+  position: relative;
+  transition: all 0.5s ease-out;
+}
+#content .product_list div:hover h4{
+  color: #b51f1f;
+}
+#content .product_list h4::after{
+  content: '';
+  width: 400px;
+  height: 1px;
+  background: #ed164c;
+  position: absolute;
+  bottom: -30px;
+  left: -11px;
+
+}
+
+#content .product_list p {
+  font-size: 0.889em;
+  text-align: justify;
+  line-height: 2em;
+
+}

@@ -1,0 +1,32 @@
+{
+  "text_box" : [
+    {
+      "title": "Flexible Solar (Turnkey Solution)",
+      "p1": "세계 최고 Flexible a-Si:H/μc-Si:H 이중접합 태양전지 기술.",
+      "p2": "세계 최고 수준의 플랙서블 태양전지 내구성 및 내환경성 시험 통과",
+      "p3": "다양한 구조의 이중접합 태양전지 기술",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "결정형(PE CVD / RIE)",
+      "p1": "최고 효율 / 최저 비용 시스템",
+      "p2": "고효율 및 고생산성 시스템",
+      "p3": "태양전지 변환 효율 향상<br><br>저온에서 특화된 공정 기술",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "결정형(Turnkey Solution)",
+      "p1": "고효율 및 고 생산성 시스템",
+      "p2": "공정 단순화 및 저온 공정 시스템",
+      "p3": "Bi-facial module 구현",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    },
+    {
+      "title": "박막형(Turnkey Solution)",
+      "p1": "장비 안정성 우수, 낮은 유지 보수 비용",
+      "p2": "세계 최고 생산성 / 최저 비용 시스템",
+      "p3": "Single, tandem, triple junction 까지 다양한 고효율 박막형 태양전지 생산 가능",
+      "span": ["High-K"," Metal", "SiO / SiOC / SiON", "SiN / SiBN" , "Oxidation" , "Nitridation"]
+    }
+  ]
+}
