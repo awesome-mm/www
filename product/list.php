@@ -6,15 +6,13 @@
   $table = "product";
 
 ?>
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../common/css/common.css" type="text/css" media="all">
-<link href="./css/sub6common.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/sub2common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/main_list.css" rel="stylesheet" type="text/css" media="all">
-<title>주성엔지니어링</title>
 <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
 <script src="./js/jquery-1.12.4.min.js" type="text/javascript"></script>
 <script src="./js/jquery-migrate-1.4.1.min.js" type="text/javascript"></script>
@@ -22,7 +20,7 @@
 <?
 	include "../lib/dbconn.php";
 
-	if(!$scale){$scale=6;}			// 한 화면에 표시되는 글 수
+	if(!$scale){$scale=4;}			// 한 화면에 표시되는 글 수
 
     if ($mode=="search")
 	{
@@ -106,12 +104,18 @@
           <div class="search_box">
               <form action="./list.php?mode=search" method="post">
                 <select name="find" id="find">
+                  <option value="category">카테고리</option>  
                   <option value="subject">제목</option>
                   <option value="content">내용</option>
                   <option value="nick">닉네임</option>
                 </select>
                 <label for="search" class="hidden">검색</label>
-                <input maxlength="15" type="text" name="search" id="search" placeholder="검색어를 입력해주세요">
+                <input maxlength="15" type="text" name="search" id="search" placeholder="검색어를 입력해주세요" value="<?=$search?>" list="dataList_id">
+                <datalist id="dataList_id">
+                  <option value="반도체"></option>
+                  <option value="태양광"></option>
+                  <option value="디스플레이"></option>
+                </datalist>
                 <button>
                   <i class="fa-solid fa-magnifying-glass"></i>
                   <span class="hidden">검색</span>
@@ -160,6 +164,7 @@
     $item_content = $row[content];
 	  $item_hit     = $row[hit];
     $item_date    = $row[regist_day];
+    $irem_category =$row[category];
 
 	  $item_date = substr($item_date, 0, 10);  
 	  $item_subject = str_replace(" ", "&nbsp;", $row[subject]);
@@ -175,12 +180,17 @@
                     <div class="list_item1 img_box">
                       <img src="<?= $item_image ?>"></img>
                     </div>
+
                     <div class="list_text">
-                      <div class="list_item2"><strong><?= $item_subject ?></strong></div>
-                      <div class="list_item3"><p><?=$item_content?></p></div>
-                      <div class="list_item4">
+                      <div class="list_item2">
+                        <b><?=$irem_category?></b>
+                      </div>
+                      <div class="list_item3"><strong><?= $item_subject ?></strong></div>
+                      <div class="list_item4"><p><?=$item_content?></p></div>
+                      <div class="list_item5">
                         <span><?= $item_nick ?></span>
                         <span><?= $item_date ?></span>
+                        <span><i class="fa-solid fa-eye"></i><?= $item_hit ?></span>
                       </div>
                     </div>
                   </a>
@@ -224,7 +234,7 @@
                     }
                   else
                     { 
-                      echo "<a href='list.php?table=$table&page=$i&scale=$scale'> $i </a>";
+                      echo "<a href='list.php?table=$table&page=$i&scale=$scale&liststyle=$liststyle'> $i </a>";
                     }      
                 }
                 ?>	

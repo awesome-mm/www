@@ -21,10 +21,13 @@ $(document).ready(function() {
                $(this).css('background','rgba(0, 0, 0, 0.2)').css('border-bottom','1px solid rgba(0,0,0,0)'); 
                $('.dropdownmenu li a').css('color','#fff');
                $('.top_menu li a').css('color','#fff');
+               $('.search_top_btn a').css('color','#fff');
+
            }else{
                $(this).css('background','#fff'); 
                $('.dropdownmenu li a').css('color','#333');
                $('.top_menu li a').css('color','#333');
+
            }
           on_off=false;    
 
@@ -37,11 +40,13 @@ $(document).ready(function() {
                $('#headerArea').css('background','#fff').css('border-bottom','1px solid #ccc');
                $('.dropdownmenu li a').css('color','#333');
                $('.top_menu li a').css('color','#333');
+               $('.search_top_btn a').css('color','#333');
            }else{//스크롤 900이상일 때
               if(on_off==false){//마우스가 헤더에 리브했을때만 투명해라
                    $('#headerArea').css('background','rgba(0, 0, 0, 0.2)').css('border-bottom','1px solid rgba(0,0,0,0)');
                    $('.dropdownmenu li a').css('color','#fff');
                    $('.top_menu li a').css('color','#fff');
+                   $('.search_top_btn a').css('color','#fff');
               }
            }; 
            
@@ -52,7 +57,7 @@ $(document).ready(function() {
     $('ul.dropdownmenu').hover(
        function() { 
           $('ul.dropdownmenu li.menu ul').fadeIn('normal',function(){$(this).stop();}); //모든 서브를 다 열어라
-          $('#headerArea').animate({height:424},'fast').clearQueue();
+          $('#headerArea').animate({height:434},'fast').clearQueue();
        },function() {
           $('ul.dropdownmenu li.menu ul').hide(); //모든 서브를 다 닫아라
           $('#headerArea').animate({height:200},'fast').clearQueue();
@@ -85,11 +90,23 @@ $(document).ready(function() {
      //tab 처리
      $('ul.dropdownmenu li.menu .depth1').on('focus', function () {        
         $('ul.dropdownmenu li.menu ul').slideDown('normal');
-        $('#headerArea').animate({height:390},'fast').clearQueue();
+        $('#headerArea').animate({height:434},'fast').clearQueue();
      });
 
     $('ul.dropdownmenu li.m6 li:last').find('a').on('blur', function () {        
         $('ul.dropdownmenu li.menu ul').slideUp('fast');
         $('#headerArea').animate({height:200},'normal').clearQueue();
     });
+
+
+    //headersearch
+    $('#headerArea .header_inner .top_menu a').click(function(){
+        $('#headerSearch').slideDown();
+    })
+    
+    $('#headerSearch .search_close_btn').click(function(){
+        $('#headerSearch').slideUp();
+    })
+    
+
 });

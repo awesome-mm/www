@@ -24,14 +24,12 @@
 		$copied_file_2 = $row[file_copied_2];
 	}
 ?>
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>주성엔지니어링</title>
 <link rel="stylesheet" href="../common/css/common.css" type="text/css" media="all">
-<link href="./css/sub6common.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/sub2common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/write_form.css" rel="stylesheet" type="text/css" media="all">
 <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
 <script>
@@ -137,10 +135,10 @@
 										<!-- name="html_ok" value="y"  필드명 is_html-->
 									</div>
                   <div class="category_box">
-                  <select name="category" id="category">
-                    <option value="반도체장비" checked>반도체장비</option>
-                    <option value="태양광장비">태양광장비</option>
-                    <option value="디스플레이장비">디스플레이장비</option>
+                  <select name="category" id="category">  
+                    <option value="반도체" checked>반도체</option>
+                    <option value="태양광">태양광</option>
+                    <option value="디스플레이">디스플레이</option>
                   </select>
                   </div>
 									<textarea rows="15" cols="79" id="content" name="content"><?=$item_content?></textarea>

@@ -118,7 +118,7 @@ var productEvent = $('.product').offset().top -500;
 var introduceEvent = $('.introduce').offset().top -600;
 var managementEvent = $('.management').offset().top -600;
 var newsEvent = $('.news').offset().top -600;
-var recruitmentEvent = $('.recruitment').offset().top -600;
+var recruitmentEvent = $('.recruitment').offset().top -500;
 
 //스크롤이 특정값에 닿을 때 애니메이션 적용
 $(window).on('scroll',function(e){
@@ -128,7 +128,9 @@ $(window).on('scroll',function(e){
   // console.log(scrollng)
   //화면이 위에있을 때 초기화
   if(scrollng<=productEvent-200){
+
     $('#content h3').removeClass('headerMove');
+    $('.product').removeClass('headerMove');
     $('.business_img').removeClass('imgSlide');
     $('.business_box').removeClass('textSlide');
     $('.introduce ul').removeClass('introduce_inner');
@@ -157,26 +159,25 @@ $(window).on('scroll',function(e){
   if(scrollng>=introduceEvent+100){
     $('.introduce h3').addClass('headerMove');
   }
-  if(scrollng>=introduceEvent+400){
+  if(scrollng>=introduceEvent){
     $('.introduce ul').addClass('introduce_inner');
     $('.introduce ul li').addClass('boxSlide');
   }
   //managementEvent
-  if(scrollng>=managementEvent+100){
+  if(scrollng>=managementEvent){
     $('.management h3').addClass('headerMove');
     $('.management .img1').addClass('mana_img1');
     $('.management .management_text:eq(0)').addClass('mana_text1');
-  }
-  if(scrollng>=managementEvent+800){
     $('.management .img2').addClass('mana_img2');
     $('.management .management_text:eq(1)').addClass('mana_text2');
   }
+
   //managementEvent 아이콘
   if(scrollng>=managementEvent+1100){
     $('.management .management_sub ').addClass('mana_icon');
   }
   //newsEvent 
-  if(scrollng>=newsEvent+200){
+  if(scrollng>=newsEvent){
     $('.news h3').addClass('headerMove');
     $('.news .news_btn').addClass('news_move');
     $('.news .news_Box .clone_inner2').addClass('news_move');

@@ -1,5 +1,45 @@
+<!-- header serach -->
+<script>
+  function search_check(){
+    if (!document.search_from.search.value)
+      {
+          alert("검색어를 입력해주세요.");    
+          document.search_from.search.focus();
+          document.search_from.search.select();
+          return;
+      }
+      document.search_from.submit();
+  }
+  function search_value_submit(value){
+    document.search_from.search.value = value;
+    document.search_from.submit();
+  }
+</script>
+<div class="headerSearch_box">
+  <div id="headerSearch" style="display: none;">
+    <div class="headerSearch_inner">
+      <p>주성엔지니어링의 제품을 검색해보세요</p>
+      <form action="./product/list.php?table=product&mode=search" method="post" name="search_from">
+        <input type="hidden" name="find" value="category">
+        <label class="hidden" for="search">검색어입력</label>
+        <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요">
+        <button onclick="search_check()"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <dl>
+        <dt>추천검색어</dt>
+        <dd>
+          <a href="javascript:search_value_submit('반도체')">반도체</a>
+          <a href="javascript:search_value_submit('태양광')">태양광</a>
+          <a href="javascript:search_value_submit('디스플레이')">디스플레이</a>
+        </dd>
+      </dl>
+      <a href="#" class="search_close_btn"><span class="hidden">닫기</span><i class="fa-solid fa-xmark"></i></a>
+    </div>
+  </div>
+</div>
+
 <!-- 푸터 공통 요소 -->
-<footer id="footerArea">
+<footer id="footerArea">  
   <div class="footer_top">
     <div class="footer_inner">
       <a href="#" class="topMove"><i class="fa-solid fa-up-long"></i></a>
@@ -22,17 +62,24 @@
         <p>copyright &copy; JUSUNG ENGINEERING CO.,LTD ALLRIGHT RESERVED</p>
       </address>
       <ul class="sns">
-        <li><a  title="instagram으로 이동" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span class="hidden">인스타그램</span></a></li>
-        <li><a  title="facebook 으로 이동" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span class="hidden">페이스북</span></a></li>
-        <li><a  title="youtube 으로 이동" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i><span class="hidden">소개</span></a></li>
-        <li><a  title="twitter 으로 이동" href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter"></i><span class="hidden">트위터</span></a></li>
+        <li><a title="instagram으로 이동" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span
+              class="hidden">인스타그램</span></a></li>
+        <li><a title="facebook 으로 이동" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span
+              class="hidden">페이스북</span></a></li>
+        <li><a title="youtube 으로 이동" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i><span
+              class="hidden">소개</span></a></li>
+        <li><a title="twitter 으로 이동" href="https://twitter.com/?lang=ko"><i class="fa-brands fa-twitter"></i><span
+              class="hidden">트위터</span></a></li>
       </ul>
       <div class="family">
         <a class="arrow" href="#">Family Site</a>
         <ul class="aList">
-          <li><a href="https://www.samsungengineering.co.kr/kor/index" title="family Site 새창에 열림" target="_blank">삼성엔지니어링</a></li>
-          <li><a href="http://www.jseng.com/jusung_recruit/index.html" title="family Site 새창에 열림" target="_blank">주성인재채용</a></li>
-          <li><a href="http://www.ilun.or.kr/main/kr_main.asp" title="family Site 새창에 열림" target="_blank">일운과학재단</a></li>
+          <li><a href="https://www.samsungengineering.co.kr/kor/index" title="family Site 새창에 열림"
+              target="_blank">삼성엔지니어링</a></li>
+          <li><a href="http://www.jseng.com/jusung_recruit/index.html" title="family Site 새창에 열림"
+              target="_blank">주성인재채용</a></li>
+          <li><a href="http://www.ilun.or.kr/main/kr_main.asp" title="family Site 새창에 열림" target="_blank">일운과학재단</a>
+          </li>
         </ul>
       </div>
     </div>

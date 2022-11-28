@@ -5,12 +5,10 @@
     @extract($_GET);
     @extract($_SESSION);
 ?>
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>주성엔지니어링</title>
 <link href="../common/css/common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/modify.css" rel="stylesheet" type="text/css" media="all">
 
@@ -233,11 +231,11 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                 <dd>
                 <select class="hp" name="hp1" id="hp1">
                     <option value='010' <? if($hp1 == '010'){echo 'selected';}?>>010</option>
-                    <option value='011' <? if($hp1 == '010'){echo 'selected';}?>>011</option>
-                    <option value='016' <? if($hp1 == '010'){echo 'selected';}?>>016</option>
-                    <option value='017' <? if($hp1 == '010'){echo 'selected';}?>>017</option>
-                    <option value='018' <? if($hp1 == '010'){echo 'selected';}?>>018</option>
-                    <option value='019' <? if($hp1 == '010'){echo 'selected';}?>>019</option>
+                    <option value='011' <? if($hp1 == '011'){echo 'selected';}?>>011</option>
+                    <option value='016' <? if($hp1 == '016'){echo 'selected';}?>>016</option>
+                    <option value='017' <? if($hp1 == '017'){echo 'selected';}?>>017</option>
+                    <option value='018' <? if($hp1 == '018'){echo 'selected';}?>>018</option>
+                    <option value='019' <? if($hp1 == '019'){echo 'selected';}?>>019</option>
                 </select> -
                 <label class="hidden" for="hp2">전화번호중간4자리</label>
                 <input type="text" class="hp" name="hp2" id="hp2" value="<?= $hp2 ?>"

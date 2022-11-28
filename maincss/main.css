@@ -30,7 +30,7 @@
   position: absolute;
   top: 0;
   left: 0%;
-  transition: opacity 1s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 .main .visual_box img {
   animation: visual_scale 20s infinite ease-out alternate;
@@ -307,8 +307,7 @@
 }
 #content .introduce ul {
   float: left;
-  padding: 20px 50px;
-  transition: all 0.5s ease-out;
+  padding: 20px 66px;
   position: relative;
 }
 #content .introduce li {
@@ -317,7 +316,7 @@
   position: relative;
   margin-bottom: 30px;
   border-radius: 20px;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
   margin-right: 20px;
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
@@ -490,7 +489,6 @@
 #content .management_sub li {
   float: left;
   margin-right: 80px;
-  transition: all 0.5s ease-out;
 }
 #content .management_sub li:last-child {
   margin-right: 0;
@@ -727,7 +725,7 @@ float: left;
   padding-left: 70px;
 }
 #content .recruitment_back {
-  width: 2000px;
+  width: 1200px;
   height: 750px;
   margin: 0 auto;
   background: url(../images/recruitment/recruitment_back02.jpg) center bottom no-repeat;
@@ -882,16 +880,16 @@ float: left;
   to{opacity: 1;}
 }
 #content .product.headerMove{
-  animation: headerMove 0.3s 0.3s ease-out; animation-fill-mode: forwards;
+  animation: headerMove 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .product.headerMove h3{
-  animation: headerMove 0.3s 0.3s ease-out; animation-fill-mode: forwards;
+  animation: headerMove 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .product .business_img.imgSlide{
-  animation: business_img 1s ease-out; animation-fill-mode: forwards;
+  animation: business_img 0.5s ease-out; animation-fill-mode: forwards;
 }
 #content .product .business_box.textSlide{
-  animation: business_box 1s ease-out; animation-fill-mode: forwards;
+  animation: business_box 0.5s ease-out; animation-fill-mode: forwards;
 }
 #content .product .fadein{
   animation: fadein 0.3s ease-out; animation-fill-mode: forwards;
@@ -909,16 +907,16 @@ to{opacity: 1; margin-right: 20px;}
   to{transform: scale(1);opacity: 1}
 }
 #content .introduce .headerMove{
-  animation: headerMove 0.3s 0.3s ease-out; animation-fill-mode: forwards;
-  transition: all .5s;
+  animation: headerMove 0.3s ease-out; animation-fill-mode: forwards;
+  transition: all .3s;
 }
 #content .introduce ul.introduce_inner{
   opacity: 0;
-  animation: introduce_inner  0.5s ease-out ;animation-fill-mode: forwards;
+  animation: introduce_inner  0.3s ease-out ;animation-fill-mode: forwards;
 }
 #content .introduce ul .boxSlide{
   opacity: 0;
-  animation: boxSlide 1s ease-out ;animation-fill-mode: forwards;
+  animation: boxSlide .6s ease-out ;animation-fill-mode: forwards;
 }
 @keyframes mana_img1 {
   from{opacity: 1; width: 0; }
@@ -951,19 +949,19 @@ to{opacity: 1; margin-right: 20px;}
   animation: mana_img1 0.6s ease-out ;animation-fill-mode: forwards;
 }
 #content .managementContent .mana_text1{
-  animation: mana_text1 0.5s 0.6s ease-out ;animation-fill-mode: forwards;
+  animation: mana_text1 0.5s 0.3s ease-out ;animation-fill-mode: forwards;
 }
 #content .managementContent .mana_img2{
   animation: mana_img2 0.5s ease-out ;animation-fill-mode: forwards;
 }
 #content .managementContent .mana_text2{
-  animation: mana_text2 0.5s 0.5s ease-out ;animation-fill-mode: forwards;
+  animation: mana_text2 0.5s 0.3s ease-out ;animation-fill-mode: forwards;
 }
 #content .managementContent .mana_icon li div{
-  animation: mana_icon 0.5s ease-out; animation-fill-mode: forwards;
+  animation: mana_icon 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .managementContent .mana_icon li span{
-  animation: headerMove 0.3s 0.5s ease-out; animation-fill-mode: forwards;
+  animation: headerMove 0.5s ease-out; animation-fill-mode: forwards;
 }
 
 /* news 영역 */
@@ -979,10 +977,10 @@ to{opacity: 1; margin-right: 20px;}
   animation: headerMove 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .news .news_Box .news_move{
-  animation: news_move 0.7s ease-out; animation-fill-mode: forwards;
+  animation: news_move 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .news .news_btn.news_move{
-  animation: news_move2 0.3s 0.7s ease-out; animation-fill-mode: forwards;
+  animation: news_move2 0.3s ease-out; animation-fill-mode: forwards;
 }
 /* recruitment 영역 */
 @keyframes recruitment_move{
@@ -994,16 +992,16 @@ to{opacity: 1; margin-right: 20px;}
   to{transform: translateX(0); opacity: 1;}
 }
 @keyframes recruitment_move2{
-  from{width: 2000px; top:100px; opacity: 1;}
-  to{ width: 1200px; top:0; opacity: 1; }
+  from{opacity: 0;}
+  to{opacity: 1; }
 }
 
 #content .recruitment .headerMove{
-  animation: headerMove 0.5s 0.2s ease-out; animation-fill-mode: forwards;
+  animation: headerMove 0.2s 0.3s ease-out; animation-fill-mode: forwards;
 }
 #content .recruitment_move{
-  animation: recruitment_move2 1.2s ease-out; animation-fill-mode: forwards;
+  animation: recruitment_move2 0.2s ease-out; animation-fill-mode: forwards;
 }
 #content .recruitment .textMove{
-  animation: recruitment_move 0.5s 0.8s  ease-out; animation-fill-mode: forwards;
+  animation: recruitment_move 0.2s 0.3s  ease-out; animation-fill-mode: forwards;
 }

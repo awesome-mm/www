@@ -64,9 +64,6 @@
                 document.location.href = href;
         }
     }
-		function check_text(this){
-			this = 
-		}
 </script>
 </head>
 

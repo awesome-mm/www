@@ -1,0 +1,127 @@
+#content .sub_layout {
+  position: relative;
+}
+
+#content .sub_layout .main{
+  width: 100%;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+#content .sub_layout .main img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#content .sub_layout .main h3{
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;  
+}
+#content .sub_layout .main h3 span{
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+#content .sub_layout .sub_menu{
+  position: relative;
+  background: #f8f8f8;
+  
+}
+#content .sub_layout .sub_menu h2{
+  position: relative;
+
+}
+#content .sub_layout .sub_menu a{
+  font-size: 1.375rem;
+  display: block;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+
+}
+#content .sub_layout .sub_menu .menu_open_btn{
+  border-bottom: 1px solid #ccc;
+
+}
+#content .sub_layout .sub_menu .fa-solid{
+  position: absolute;
+  float: right;
+  right: 5%;
+  margin-top: 7px;
+  font-size: 1.3rem;
+  top: 0;
+  padding: 10px 0;
+}
+
+#content .sub_layout .sub_menu ul{
+  padding: 15px 0;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  border-bottom: 1px solid #666;
+  z-index: 10;
+  background: #fff;
+  display: none;
+  opacity: 0;
+
+
+
+}
+#content .sub_layout .sub_menu ul a{
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 10px 0;
+}
+  @keyframes menu_open {
+    from{opacity: 0; top: 20px;}
+    to{opacity: 1;  top: 49px;}
+
+  }
+
+#content .sub_layout .sub_menu ul.menu_open{
+  display: block;
+  animation: menu_open 0.3s ease-out forwards;
+  background: #f8f8f8;
+
+}
+
+#content .sub_layout .sub_menu ul li{}
+
+
+#content .sub_layout .title_area{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+
+}
+#content .sub_layout .title_area strong{
+  font-size: 1.250rem;
+  font-weight: 500;
+}
+
+#content .sub_layout .title_area strong::before{
+  content: '';
+  width: 2px;
+  height: 30px;
+  position: absolute;
+  background: #ed164c;
+  top: 30px;
+  left: 50%;
+}
+
+#content .sub_layout .title_area span{
+  color: #ed164c;
+}
+

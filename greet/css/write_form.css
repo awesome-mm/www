@@ -102,6 +102,7 @@
     box-sizing: border-box;
     background: #fff;
     font-weight: 300;
+    box-shadow: 1px 1px 10px 1px rgb(0 0 0 / 20%);
     
 }
 #write_button button{
@@ -109,9 +110,11 @@
   margin-right: 0;
   color: #666;
 
+
 }
 
 #write_button > a:hover , #write_button> button:hover{
   color: #fff;
   background: #b51f1f;
+  box-shadow: 1px 1px 10px 1px rgb(0 0 0 / 20%);
 }

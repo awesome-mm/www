@@ -1,3 +1,44 @@
+<!-- header serach -->
+<script>
+  function search_check(){
+    if (!document.search_from.search.value)
+      {
+          alert("검색어를 입력해주세요.");    
+          document.search_from.search.focus();
+          document.search_from.search.select();
+          return;
+      }
+      document.search_from.submit();
+  }
+  function search_value_submit(value){
+    document.search_from.search.value = value;
+    document.search_from.submit();
+  }
+</script>
+<div class="headerSearch_box">
+  <div id="headerSearch" style="display: none;">
+    <div class="headerSearch_inner">
+      <p>주성엔지니어링의 제품을 검색해보세요</p>
+      <form action="../product/list.php?table=product&mode=search" method="post" name="search_from">
+        <input type="hidden" name="find" value="category">
+        <label class="hidden" for="search">검색어입력</label>
+        <input type="text" id="search" name="search" placeholder="검색어를 입력해주세요">
+        <button onclick="search_check()"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <dl>
+        <dt>추천검색어</dt>
+        <dd>
+          <a href="javascript:search_value_submit('반도체')">반도체</a>
+          <a href="javascript:search_value_submit('태양광')">태양광</a>
+          <a href="javascript:search_value_submit('디스플레이')">디스플레이</a>
+        </dd>
+      </dl>
+      <a href="#" class="search_close_btn"><span class="hidden">닫기</span><i class="fa-solid fa-xmark"></i></a>
+    </div>
+  </div>
+</div>
+
+
 <!-- 푸터 공통 요소 -->
 <footer id="footerArea">
   <div class="footer_top">

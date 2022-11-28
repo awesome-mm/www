@@ -82,14 +82,12 @@
 	mysql_query($sql, $connect);
 
 ?>
-<!DOCTYPE HTML>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주성엔지니어링</title>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head> 
+<meta charset="utf-8">
 <link rel="stylesheet" href="../common/css/common.css" type="text/css" media="all">
-<link href="./css/sub6common.css" rel="stylesheet" type="text/css" media="all">
+<link href="./css/sub2common.css" rel="stylesheet" type="text/css" media="all">
 <link href="./css/view.css" rel="stylesheet" type="text/css" media="all">
 <script src="https://kit.fontawesome.com/e67abfe1c6.js" crossorigin="anonymous"></script>
 <script>

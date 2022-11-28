@@ -1,0 +1,71 @@
+#content .content1{}
+#content .content1 ul{
+  overflow: hidden;
+}
+#content .content1 ul .list{
+  margin-bottom: 50px;
+}
+
+
+#content .content1 ul .list:nth-of-type(2n+1){
+  right: 20%;
+}
+#content .content1 ul .list:nth-of-type(2n) .img_box{
+  left: 20%;
+}
+#content .content1 ul .list:nth-of-type(2n+1) h3{
+  text-align: start;
+  margin-left: 10%;
+}
+#content .content1 ul .list:nth-of-type(2n) h3{
+  text-align: right;
+  margin-right: 10%;
+}
+
+
+#content .content1 .img_box{
+  width: 80%;
+  position: relative;
+}
+#content .content1 .img_box img{
+  width: 100%;
+}
+#content .content1 .text_box{}
+#content .content1 .text_box h3{
+  font-size: 1.5rem;
+  margin: 10px 0;
+  position: relative;
+}
+#content .content1 .text_box h3::before{
+  content: '';
+  width: 40px;
+  height: 2px;
+  border-radius: 1px;
+  background: #b51f1f;
+  position: absolute;
+  bottom: -5px;
+}
+#content .content1 ul .list:nth-of-type(2n) h3::before{
+}
+
+#content .content1 .text_box ol{
+  width: 70%;
+  margin: 0 auto;
+  text-align: justify;
+}
+#content .content1 .text_box ol li{
+  padding: 5px 0;
+}
+#content .content1 .text_box ol li span{
+  display: block;
+  position: relative;
+}
+#content .content1 .text_box ol li span::before{
+  content: '';
+  background: rgba(0, 0, 255, 0.8);
+  width: 2px;
+  height: 70%;
+  position: absolute;
+  left: -5px;
+  margin-top: 5px;
+}

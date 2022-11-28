@@ -208,7 +208,6 @@
   width: 500px;
   height: 400px;
   float: left;
-  margin-top: 50px;
 }
 
 .pop .popup dl {
@@ -217,7 +216,7 @@
   text-align: center;
   padding: 0px 30px;
   box-sizing: border-box;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .pop .popup dt {

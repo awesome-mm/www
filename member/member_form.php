@@ -2,12 +2,11 @@
 	session_start(); 
 ?>
 
-<!DOCTYPE HTML>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>주성엔지니어링</title>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
 	<link rel="stylesheet" href="../common/css/common.css">
 	<link rel="stylesheet" href="./css/member_form.css">
 	
@@ -220,7 +219,7 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
         </dt>
         <dd >
           <select class="hp" name="hp1" id="hp1">
-            <option value='010'>010</option>
+            <option value='010' selected>010</option>
             <option value='011'>011</option>
             <option value='016'>016</option>
             <option value='017'>017</option>

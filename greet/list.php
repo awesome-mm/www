@@ -109,7 +109,7 @@
                   <option value="nick">닉네임</option>
                 </select>
                 <label for="search" class="hidden">검색</label>
-                <input maxlength="15" type="text" name="search" id="search" placeholder="검색어를 입력해주세요">
+                <input maxlength="15" type="text" name="search" id="search"  value="<?=$search?>" placeholder="검색어를 입력해주세요">
                 <button>
                   <i class="fa-solid fa-magnifying-glass"></i>
                   <span class="hidden">검색</span>
@@ -146,7 +146,7 @@
               <li class="list_con_2">제목</li>
               <li class="list_con_3">글쓴이</li>
               <li class="list_con_4">등록일</li>
-              <li class="list_con_5">조회수</li>
+              <li class="list_con_5">조회</li>
             </ul>
             <ul class="list_content">
 
