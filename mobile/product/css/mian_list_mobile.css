@@ -340,6 +340,8 @@
 
 /* list_style */
 
+#content .table_box .list_style {}
+
 #content .table_box .list_style .list_style{
   float: left;
   width: 30%;
@@ -357,6 +359,11 @@
   width: 70%;
   margin-top: 20px;
 }
+#content .product_list.list_style  li .img_box{
+}
 
+
+#content .table_box .list_style .list_item2{}
+#content .table_box .list_style .list_item3{}
 #content .table_box .list_style .list_item4{display: none;}
-
+#content .table_box .list_style .list_item5{}

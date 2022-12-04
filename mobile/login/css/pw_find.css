@@ -9,7 +9,7 @@ body {
   background: #fff;
   margin-bottom: 100px;
   box-shadow: 12px 20px 20px 10px rgb(0 0 0 / 10%);
-  padding: 60px;
+  padding: 30px;
   box-sizing: border-box;
   margin-bottom: 100px;
   position: relative;
@@ -81,9 +81,17 @@ header h1 a {
   font-size: 1rem;
 }
 
-
+#wrap .telBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrap  .hp_span{
+  width: 10px;
+  text-align: center;
+}
 #wrap #hp1 {
-  width: calc(33.33% - 33px);
+  width: calc(33.33% - 10px);
   padding: 15px 5px;
   box-sizing: border-box;
   font-size: 1rem;
