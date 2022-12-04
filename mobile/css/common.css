@@ -456,7 +456,7 @@ label { cursor:pointer; }
   display: block;
 }
 
-#headerSearch form #search{
+#headerSearch form #hd_search{
   height: 65px;
   line-height: 65px;
   font-size: 1rem;

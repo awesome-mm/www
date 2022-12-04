@@ -16,9 +16,12 @@
     if(!$id) 
    {
       echo("아이디를 입력하세요.");
-   }
-   else
+      
+   } else if(strpos($id, ' ') !== false)
    {
+       echo "<span>공백을 포함하지 않은 아이디를 입력하세요.</span>";
+      
+   } else {
       include "../../lib/dbconn.php";
  
       $sql = "select * from member where id='$id' ";

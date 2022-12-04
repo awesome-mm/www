@@ -18,20 +18,6 @@
 <script src="./js/jquery-1.12.4.min.js"></script>
   <script src="./js/jquery-migrate-1.4.1.min.js"></script>
 <script>
-   function check_id()
-   {
-     window.open("check_id.php?id=" + document.member_form.id.value,
-         "IDcheck",
-          "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
-   }
-
-   function check_nick()
-   {
-     window.open("../member/check_nick.php?nick=" + document.member_form.nick.value,
-         "NICKcheck",
-          "left=200,top=200,width=250,height=100,scrollbars=no,resizable=yes");
-   }
-
    function check_input()
    {
       if (!document.member_form.pass.value)
@@ -98,7 +84,7 @@
 
       return;
    }
-
+   //nick 중복검사
    $(document).ready(function() {
     $("#nick").keyup(function() {    // id입력 상자에 id값 입력시
     var nick = $('#nick').val();
@@ -134,7 +120,37 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
     });
 });	
    });
-       //nick 중복검사		 
+//폰번호 검사
+$("#hp2").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp2 = $('#hp2').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data: "hp2=" + hp2,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	
+
+//폰번호 검사
+$("#hp3").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp3 = $('#hp3').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data: "hp3=" + hp3,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	 
 
 
 </script>
@@ -231,7 +247,7 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                 <span>휴대폰</span>
                 <label class="hidden" for="hp1">전화번호앞3자리</label>
                 </dt>
-                <dd>
+                <dd class="hp_flex">
                 <select class="hp" name="hp1" id="hp1">
                     <option value='010' <? if($hp1 == '010'){echo 'selected';}?>>010</option>
                     <option value='011' <? if($hp1 == '011'){echo 'selected';}?>>011</option>
@@ -239,13 +255,16 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                     <option value='017' <? if($hp1 == '017'){echo 'selected';}?>>017</option>
                     <option value='018' <? if($hp1 == '018'){echo 'selected';}?>>018</option>
                     <option value='019' <? if($hp1 == '019'){echo 'selected';}?>>019</option>
-                </select> -
+                </select>
+                <span class="hp_span">-</span>
                 <label class="hidden" for="hp2">전화번호중간4자리</label>
                 <input type="text" class="hp" name="hp2" id="hp2" value="<?= $hp2 ?>"
                     placeholder="0000" required>
-                - <label class="hidden" for="hp3">전화번호끝4자리</label>
+                <span class="hp_span">-</span>
+                <label class="hidden" for="hp3">전화번호끝4자리</label>
                 <input type="text" class="hp" name="hp3" id="hp3" value="<?= $hp3 ?>"
                     placeholder="0000" required>
+                    <span id="loadtext4"></span>
                 </dd>
 
             </dl>
@@ -253,15 +272,16 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
                 <dt>
                 <span>이메일</span>
                 </dt>
-                <dd>
+                <dd class="email_flex">
                 <label class="hidden" for="email1">이메일아이디</label>
-                <input type="text" id="email1" name="email1" placeholder="jusung12" value="<?= $email1 ?>" required> @
+                <input type="text" id="email1" name="email1" placeholder="jusung12" value="<?= $email1 ?>" required>
+                <span class="email_span">@</span>
                 <label class="hidden" for="email2">이메일주소</label>
                 <input type="text" name="email2" id="email2" placeholder="jusung.com" value="<?= $email2 ?>" required>
                 </dd>
             </dl>
             <div class="row bottom_btn">
-                <a href="#" onclick="reset_form()" class="cansle_btn">취소</a>
+                <a href="../index.html" class="cansle_btn">취소</a>
                 <a href="#" onclick="check_input()" class="signup_btn">정보저장</a>&nbsp;&nbsp;
             </div>
             </form>

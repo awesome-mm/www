@@ -17,7 +17,7 @@ body{
 
 
 #content {
-  width: 640px;
+  width: 90%;
   margin: 0 auto;
   font-family: 'Nanum Gothic', sans-serif;
   background: #fff;
@@ -68,11 +68,6 @@ body{
 #content dd{
   position: relative;
   padding-bottom: 20px;
-}
-#content dd span{
-  display: block;
-  font-size: 0.768rem;
-  float: right;
 }
 .name_box{float: left; margin-right: 2%;}
 .nick_box{float: right;}
@@ -128,7 +123,7 @@ body{
 }
 
 #content .hp_box select{
-  width: 154px;
+  width: calc(33.33% - 30px);
   height: 50px;
   text-indent: 5px;
   outline: none;
@@ -147,9 +142,26 @@ body{
 
 }
 #content .hp_box input{
-  width: 155px;
+  width: 33.33%;
   box-sizing: border-box;
 
+}
+#content .hp_box .hp_span{
+  padding: 0 5px;
+}
+#content .email_box .email_span{
+  padding: 0 5px;
+}
+#content .hp_box .hp_flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content .email_box .email_flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #content .bottom_btn{
@@ -160,15 +172,15 @@ body{
 
 }
 #content .email_box input{
-  width: 236px;
+  width: calc(50% -5px);
   box-sizing: border-box;
 }
 
-.signup_btn{
+.bottom_btn  .signup_btn{
   display: inline-block;
-  width: 246px;
+  width: 48%;
   line-height: 24px;
-  padding: 8px 0;
+  padding: 1% 0;
   font-size: 1rem;
   cursor: pointer;
   border: 1px solid #ccc;
@@ -176,14 +188,13 @@ body{
   transition: all 0.3s ease-out;
   color: #fff;
   box-sizing: border-box;
-  opacity: 0.6;
+  opacity: 1;
 }
-
-.cansle_btn{
+.bottom_btn .cansle_btn{
   display: inline-block;
-  width: 246px;
+  width: 48%;
   line-height: 24px;
-  padding: 8px 0;
+  padding: 1% 0;
   font-size: 1rem;
   cursor: pointer;
   border: 1px solid #ccc;

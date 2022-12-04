@@ -51,7 +51,7 @@ $("#nick").keyup(function() {    // id입력 상자에 id값 입력시
         }
     });
 });		 
-
+//패스워드 중복검사
 $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
     var pass = $('#pass').val();
     var pass_confirm = $('#pass_confirm').val();
@@ -69,7 +69,37 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
         }
     });
 });		
+//폰번호 검사
+$("#hp2").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp2 = $('#hp2').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data: "hp2=" + hp2,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	
 
+//폰번호 검사
+$("#hp3").keyup(function() {    // id입력 상자에 id값 입력시
+    var hp3 = $('#hp3').val();
+    $.ajax({
+        type: "POST",
+        url: "check_hp.php",
+        data: "hp3=" + hp3,
+        cache: false, 
+        success: function(data)
+        {
+		 
+             $("#loadtext4").html(data);
+        }
+    });
+});	
 
 });
 	
@@ -232,6 +262,7 @@ $("#pass_confirm").keyup(function() {    // id입력 상자에 id값 입력시
           <label class="hidden" for="hp2">전화번호중간4자리</label><input type="text" class="hp" name="hp2" id="hp2" placeholder="0000" required>
           <span class="hp_span">-</span>
           <label class="hidden" for="hp3">전화번호끝4자리</label><input type="text" class="hp" name="hp3" id="hp3" placeholder="0000"  required>
+          <span id="loadtext4"></span>
         </dd>
 
       </dl>

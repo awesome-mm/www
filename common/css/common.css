@@ -536,7 +536,7 @@ img {
   border-bottom: 2px solid black
 }
 
-#headerSearch form #search{
+#headerSearch form #hd_search{
   width: 650px;
   height: 65px;
   line-height: 65px;
