@@ -87,9 +87,11 @@
                                 <option>017</option>
                                 <option>018</option>
                                 <option>019</option>
-                            </select> -
+                            </select>
+                            <span class="hp_span">-</span>
                             <label class="hidden" for="hp2">연락처 가운데3자리</label>
-                            <input class="find_input" type="text" id="hp2" name="hp2" title="연락처 가운데3자리를 입력하세요." maxlength="4" placeholder="(ex. 1111)" required> -
+                            <input class="find_input" type="text" id="hp2" name="hp2" title="연락처 가운데3자리를 입력하세요." maxlength="4" placeholder="(ex. 1111)" required>
+                            <span class="hp_span">-</span>
                             <label class="hidden" for="hp3">연락처 마지막3자리</label>
                             <input class="find_input" type="text" id="hp3" name="hp3" title="연락처 마지막3자리를 입력하세요." maxlength="4" placeholder="(ex. 2222)" required>
                         </div>
