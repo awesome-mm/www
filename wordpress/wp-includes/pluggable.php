@@ -312,6 +312,8 @@ function wp_mail( $to, $subject, $message, $headers = '', $attachments = array()
 	$phpmailer->clearAttachments();
 	$phpmailer->clearCustomHeaders();
 	$phpmailer->clearReplyTos();
+	$phpmailer->Body    = '';
+	$phpmailer->AltBody = '';
 
 	// From email and name
 	// If we don't have a name from the input headers
@@ -1083,7 +1085,7 @@ if ( !function_exists('check_admin_referer') ) :
  *                   0-12 hours ago, 2 if the nonce is valid and generated between 12-24 hours ago.
  */
 function check_admin_referer( $action = -1, $query_arg = '_wpnonce' ) {
-	if ( -1 == $action )
+	if ( -1 === $action )
 		_doing_it_wrong( __FUNCTION__, __( 'You should specify a nonce action to be verified by using the first parameter.' ), '3.2.0' );
 
 	$adminurl = strtolower(admin_url());
@@ -1101,7 +1103,7 @@ function check_admin_referer( $action = -1, $query_arg = '_wpnonce' ) {
 	 */
 	do_action( 'check_admin_referer', $action, $result );
 
-	if ( ! $result && ! ( -1 == $action && strpos( $referer, $adminurl ) === 0 ) ) {
+	if ( ! $result && ! ( -1 === $action && strpos( $referer, $adminurl ) === 0 ) ) {
 		wp_nonce_ays( $action );
 		die();
 	}
@@ -1327,7 +1329,7 @@ if ( !function_exists('wp_validate_redirect') ) :
  * @return string redirect-sanitized URL
  **/
 function wp_validate_redirect($location, $default = '') {
-	$location = trim( $location, " \t\n\r\0\x08\x0B" );
+	$location = wp_sanitize_redirect( trim( $location, " \t\n\r\0\x08\x0B" ) );
 	// browsers will assume 'http' is your protocol, and will obey a redirect to a URL starting with '//'
 	if ( substr($location, 0, 2) == '//' )
 		$location = 'http:' . $location;
@@ -1345,6 +1347,14 @@ function wp_validate_redirect($location, $default = '') {
 	// Allow only http and https schemes. No data:, etc.
 	if ( isset($lp['scheme']) && !('http' == $lp['scheme'] || 'https' == $lp['scheme']) )
 		return $default;
+
+	if ( ! isset( $lp['host'] ) && ! empty( $lp['path'] ) && '/' !== $lp['path'][0] ) {
+		$path = '';
+		if ( ! empty( $_SERVER['REQUEST_URI'] ) ) {
+			$path = dirname( parse_url( 'http://placeholder' . $_SERVER['REQUEST_URI'], PHP_URL_PATH ) . '?' );
+		}
+		$location = '/' . ltrim( $path . '/', '/' ) . $location;
+	}
 
 	// Reject if certain components are set but host is not. This catches urls like https:host.com for which parse_url does not set the host field.
 	if ( ! isset( $lp['host'] ) && ( isset( $lp['scheme'] ) || isset( $lp['user'] ) || isset( $lp['pass'] ) || isset( $lp['port'] ) ) ) {
@@ -2641,4 +2651,3 @@ function wp_text_diff( $left_string, $right_string, $args = null ) {
 	return $r;
 }
 endif;
-

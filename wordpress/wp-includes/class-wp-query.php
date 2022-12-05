@@ -438,6 +438,13 @@ class WP_Query {
 	private $compat_methods = array( 'init_query_flags', 'parse_tax_query' );
 
 	/**
+	 * Controls whether an attachment query should include filenames or not.
+	 *
+	 * @since 6.0.3
+	 * @var bool
+	 */
+	protected $allow_query_attachment_by_filename = false;
+	/**
 	 * Resets query flags to false.
 	 *
 	 * The query flags are what page info WordPress was able to figure out.
@@ -529,7 +536,6 @@ class WP_Query {
 			, 'attachment'
 			, 'attachment_id'
 			, 'name'
-			, 'static'
 			, 'pagename'
 			, 'page_id'
 			, 'second'
@@ -760,11 +766,7 @@ class WP_Query {
 			$this->is_single = true;
 		} elseif ( $qv['p'] ) {
 			$this->is_single = true;
-		} elseif ( ('' !== $qv['hour']) && ('' !== $qv['minute']) &&('' !== $qv['second']) && ('' != $qv['year']) && ('' != $qv['monthnum']) && ('' != $qv['day']) ) {
-			// If year, month, day, hour, minute, and second are set, a single
-			// post is being queried.
-			$this->is_single = true;
-		} elseif ( '' != $qv['static'] || '' != $qv['pagename'] || !empty($qv['page_id']) ) {
+		} elseif ( '' != $qv['pagename'] || !empty($qv['page_id']) ) {
 			$this->is_page = true;
 			$this->is_single = false;
 		} else {
@@ -1303,7 +1305,12 @@ class WP_Query {
 			}
 
 			$like = $n . $wpdb->esc_like( $term ) . $n;
-			$search .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s))", $like, $like, $like );
+
+			if ( ! empty( $this->allow_query_attachment_by_filename ) ) {
+				$search .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s) $andor_op (sq1.meta_value $like_op %s))", $like, $like, $like, $like );
+			} else {
+				$search .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s))", $like, $like, $like );
+			}
 			$searchand = ' AND ';
 		}
 
@@ -1638,6 +1645,16 @@ class WP_Query {
 
 		// Fill again in case pre_get_posts unset some vars.
 		$q = $this->fill_query_vars($q);
+
+		/**
+		 * Filters whether an attachment query should include filenames or not.
+		 *
+		 * @since 6.0.3
+		 *
+		 * @param bool $allow_query_attachment_by_filename Whether or not to include filenames.
+		 */
+		$this->allow_query_attachment_by_filename = apply_filters( 'wp_allow_query_attachment_by_filename', false );
+		remove_all_filters( 'wp_allow_query_attachment_by_filename' );
 
 		// Parse meta query
 		$this->meta_query = new WP_Meta_Query();
@@ -2043,7 +2060,7 @@ class WP_Query {
 			}
 		}
 
-		if ( !empty( $this->tax_query->queries ) || !empty( $this->meta_query->queries ) ) {
+		if ( ! empty( $this->tax_query->queries ) || ! empty( $this->meta_query->queries ) || ! empty( $this->allow_query_attachment_by_filename ) ) {
 			$groupby = "{$wpdb->posts}.ID";
 		}
 
@@ -2115,6 +2132,10 @@ class WP_Query {
 			$whichmimetype = wp_post_mime_type_where( $q['post_mime_type'], $wpdb->posts );
 		}
 		$where .= $search . $whichauthor . $whichmimetype;
+
+		if ( ! empty( $this->allow_query_attachment_by_filename ) ) {
+			$join .= " LEFT JOIN {$wpdb->postmeta} AS sq1 ON ( {$wpdb->posts}.ID = sq1.post_id AND sq1.meta_key = '_wp_attached_file' )";
+		}
 
 		if ( ! empty( $this->meta_query->queries ) ) {
 			$clauses = $this->meta_query->get_sql( 'post', $wpdb->posts, 'ID', $this );

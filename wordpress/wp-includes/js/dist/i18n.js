@@ -82,12 +82,12 @@ this["wp"] = this["wp"] || {}; this["wp"]["i18n"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 319);
+/******/ 	return __webpack_require__(__webpack_require__.s = "Vhyj");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 125:
+/***/ "4Z/T":
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
@@ -106,11 +106,11 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
         not_json: /[^j]/,
         text: /^[^\x25]+/,
         modulo: /^\x25{2}/,
-        placeholder: /^\x25(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?([b-gijostTuvxX])/,
+        placeholder: /^\x25(?:([1-9]\d*)\$|\(([^)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?([b-gijostTuvxX])/,
         key: /^([a-z_][a-z_\d]*)/i,
         key_access: /^\.([a-z_][a-z_\d]*)/i,
         index_access: /^\[(\d+)\]/,
-        sign: /^[\+\-]/
+        sign: /^[+-]/
     }
 
     function sprintf(key) {
@@ -123,42 +123,42 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
     }
 
     function sprintf_format(parse_tree, argv) {
-        var cursor = 1, tree_length = parse_tree.length, arg, output = '', i, k, match, pad, pad_character, pad_length, is_positive, sign
+        var cursor = 1, tree_length = parse_tree.length, arg, output = '', i, k, ph, pad, pad_character, pad_length, is_positive, sign
         for (i = 0; i < tree_length; i++) {
             if (typeof parse_tree[i] === 'string') {
                 output += parse_tree[i]
             }
-            else if (Array.isArray(parse_tree[i])) {
-                match = parse_tree[i] // convenience purposes only
-                if (match[2]) { // keyword argument
+            else if (typeof parse_tree[i] === 'object') {
+                ph = parse_tree[i] // convenience purposes only
+                if (ph.keys) { // keyword argument
                     arg = argv[cursor]
-                    for (k = 0; k < match[2].length; k++) {
-                        if (!arg.hasOwnProperty(match[2][k])) {
-                            throw new Error(sprintf('[sprintf] property "%s" does not exist', match[2][k]))
+                    for (k = 0; k < ph.keys.length; k++) {
+                        if (arg == undefined) {
+                            throw new Error(sprintf('[sprintf] Cannot access property "%s" of undefined value "%s"', ph.keys[k], ph.keys[k-1]))
                         }
-                        arg = arg[match[2][k]]
+                        arg = arg[ph.keys[k]]
                     }
                 }
-                else if (match[1]) { // positional argument (explicit)
-                    arg = argv[match[1]]
+                else if (ph.param_no) { // positional argument (explicit)
+                    arg = argv[ph.param_no]
                 }
                 else { // positional argument (implicit)
                     arg = argv[cursor++]
                 }
 
-                if (re.not_type.test(match[8]) && re.not_primitive.test(match[8]) && arg instanceof Function) {
+                if (re.not_type.test(ph.type) && re.not_primitive.test(ph.type) && arg instanceof Function) {
                     arg = arg()
                 }
 
-                if (re.numeric_arg.test(match[8]) && (typeof arg !== 'number' && isNaN(arg))) {
+                if (re.numeric_arg.test(ph.type) && (typeof arg !== 'number' && isNaN(arg))) {
                     throw new TypeError(sprintf('[sprintf] expecting number but found %T', arg))
                 }
 
-                if (re.number.test(match[8])) {
+                if (re.number.test(ph.type)) {
                     is_positive = arg >= 0
                 }
 
-                switch (match[8]) {
+                switch (ph.type) {
                     case 'b':
                         arg = parseInt(arg, 10).toString(2)
                         break
@@ -170,38 +170,38 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
                         arg = parseInt(arg, 10)
                         break
                     case 'j':
-                        arg = JSON.stringify(arg, null, match[6] ? parseInt(match[6]) : 0)
+                        arg = JSON.stringify(arg, null, ph.width ? parseInt(ph.width) : 0)
                         break
                     case 'e':
-                        arg = match[7] ? parseFloat(arg).toExponential(match[7]) : parseFloat(arg).toExponential()
+                        arg = ph.precision ? parseFloat(arg).toExponential(ph.precision) : parseFloat(arg).toExponential()
                         break
                     case 'f':
-                        arg = match[7] ? parseFloat(arg).toFixed(match[7]) : parseFloat(arg)
+                        arg = ph.precision ? parseFloat(arg).toFixed(ph.precision) : parseFloat(arg)
                         break
                     case 'g':
-                        arg = match[7] ? String(Number(arg.toPrecision(match[7]))) : parseFloat(arg)
+                        arg = ph.precision ? String(Number(arg.toPrecision(ph.precision))) : parseFloat(arg)
                         break
                     case 'o':
                         arg = (parseInt(arg, 10) >>> 0).toString(8)
                         break
                     case 's':
                         arg = String(arg)
-                        arg = (match[7] ? arg.substring(0, match[7]) : arg)
+                        arg = (ph.precision ? arg.substring(0, ph.precision) : arg)
                         break
                     case 't':
                         arg = String(!!arg)
-                        arg = (match[7] ? arg.substring(0, match[7]) : arg)
+                        arg = (ph.precision ? arg.substring(0, ph.precision) : arg)
                         break
                     case 'T':
                         arg = Object.prototype.toString.call(arg).slice(8, -1).toLowerCase()
-                        arg = (match[7] ? arg.substring(0, match[7]) : arg)
+                        arg = (ph.precision ? arg.substring(0, ph.precision) : arg)
                         break
                     case 'u':
                         arg = parseInt(arg, 10) >>> 0
                         break
                     case 'v':
                         arg = arg.valueOf()
-                        arg = (match[7] ? arg.substring(0, match[7]) : arg)
+                        arg = (ph.precision ? arg.substring(0, ph.precision) : arg)
                         break
                     case 'x':
                         arg = (parseInt(arg, 10) >>> 0).toString(16)
@@ -210,21 +210,21 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
                         arg = (parseInt(arg, 10) >>> 0).toString(16).toUpperCase()
                         break
                 }
-                if (re.json.test(match[8])) {
+                if (re.json.test(ph.type)) {
                     output += arg
                 }
                 else {
-                    if (re.number.test(match[8]) && (!is_positive || match[3])) {
+                    if (re.number.test(ph.type) && (!is_positive || ph.sign)) {
                         sign = is_positive ? '+' : '-'
                         arg = arg.toString().replace(re.sign, '')
                     }
                     else {
                         sign = ''
                     }
-                    pad_character = match[4] ? match[4] === '0' ? '0' : match[4].charAt(1) : ' '
-                    pad_length = match[6] - (sign + arg).length
-                    pad = match[6] ? (pad_length > 0 ? pad_character.repeat(pad_length) : '') : ''
-                    output += match[5] ? sign + arg + pad : (pad_character === '0' ? sign + pad + arg : pad + sign + arg)
+                    pad_character = ph.pad_char ? ph.pad_char === '0' ? '0' : ph.pad_char.charAt(1) : ' '
+                    pad_length = ph.width - (sign + arg).length
+                    pad = ph.width ? (pad_length > 0 ? pad_character.repeat(pad_length) : '') : ''
+                    output += ph.align ? sign + arg + pad : (pad_character === '0' ? sign + pad + arg : pad + sign + arg)
                 }
             }
         }
@@ -275,7 +275,20 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
                 if (arg_names === 3) {
                     throw new Error('[sprintf] mixing positional and named placeholders is not (yet) supported')
                 }
-                parse_tree.push(match)
+
+                parse_tree.push(
+                    {
+                        placeholder: match[0],
+                        param_no:    match[1],
+                        keys:        match[2],
+                        sign:        match[3],
+                        pad_char:    match[4],
+                        align:       match[5],
+                        width:       match[6],
+                        precision:   match[7],
+                        type:        match[8]
+                    }
+                )
             }
             else {
                 throw new SyntaxError('[sprintf] unexpected placeholder')
@@ -308,41 +321,196 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
         }
     }
     /* eslint-enable quote-props */
-}()
+}(); // eslint-disable-line
 
 
 /***/ }),
 
-/***/ 15:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "4eJC":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _defineProperty; });
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
+/**
+ * Memize options object.
+ *
+ * @typedef MemizeOptions
+ *
+ * @property {number} [maxSize] Maximum size of the cache.
+ */
 
-  return obj;
+/**
+ * Internal cache entry.
+ *
+ * @typedef MemizeCacheNode
+ *
+ * @property {?MemizeCacheNode|undefined} [prev] Previous node.
+ * @property {?MemizeCacheNode|undefined} [next] Next node.
+ * @property {Array<*>}                   args   Function arguments for cache
+ *                                               entry.
+ * @property {*}                          val    Function result.
+ */
+
+/**
+ * Properties of the enhanced function for controlling cache.
+ *
+ * @typedef MemizeMemoizedFunction
+ *
+ * @property {()=>void} clear Clear the cache.
+ */
+
+/**
+ * Accepts a function to be memoized, and returns a new memoized function, with
+ * optional options.
+ *
+ * @template {Function} F
+ *
+ * @param {F}             fn        Function to memoize.
+ * @param {MemizeOptions} [options] Options object.
+ *
+ * @return {F & MemizeMemoizedFunction} Memoized function.
+ */
+function memize( fn, options ) {
+	var size = 0;
+
+	/** @type {?MemizeCacheNode|undefined} */
+	var head;
+
+	/** @type {?MemizeCacheNode|undefined} */
+	var tail;
+
+	options = options || {};
+
+	function memoized( /* ...args */ ) {
+		var node = head,
+			len = arguments.length,
+			args, i;
+
+		searchCache: while ( node ) {
+			// Perform a shallow equality test to confirm that whether the node
+			// under test is a candidate for the arguments passed. Two arrays
+			// are shallowly equal if their length matches and each entry is
+			// strictly equal between the two sets. Avoid abstracting to a
+			// function which could incur an arguments leaking deoptimization.
+
+			// Check whether node arguments match arguments length
+			if ( node.args.length !== arguments.length ) {
+				node = node.next;
+				continue;
+			}
+
+			// Check whether node arguments match arguments values
+			for ( i = 0; i < len; i++ ) {
+				if ( node.args[ i ] !== arguments[ i ] ) {
+					node = node.next;
+					continue searchCache;
+				}
+			}
+
+			// At this point we can assume we've found a match
+
+			// Surface matched node to head if not already
+			if ( node !== head ) {
+				// As tail, shift to previous. Must only shift if not also
+				// head, since if both head and tail, there is no previous.
+				if ( node === tail ) {
+					tail = node.prev;
+				}
+
+				// Adjust siblings to point to each other. If node was tail,
+				// this also handles new tail's empty `next` assignment.
+				/** @type {MemizeCacheNode} */ ( node.prev ).next = node.next;
+				if ( node.next ) {
+					node.next.prev = node.prev;
+				}
+
+				node.next = head;
+				node.prev = null;
+				/** @type {MemizeCacheNode} */ ( head ).prev = node;
+				head = node;
+			}
+
+			// Return immediately
+			return node.val;
+		}
+
+		// No cached value found. Continue to insertion phase:
+
+		// Create a copy of arguments (avoid leaking deoptimization)
+		args = new Array( len );
+		for ( i = 0; i < len; i++ ) {
+			args[ i ] = arguments[ i ];
+		}
+
+		node = {
+			args: args,
+
+			// Generate the result from original function
+			val: fn.apply( null, args ),
+		};
+
+		// Don't need to check whether node is already head, since it would
+		// have been returned above already if it was
+
+		// Shift existing head down list
+		if ( head ) {
+			head.prev = node;
+			node.next = head;
+		} else {
+			// If no head, follows that there's no tail (at initial or reset)
+			tail = node;
+		}
+
+		// Trim tail if we're reached max size and are pending cache insertion
+		if ( size === /** @type {MemizeOptions} */ ( options ).maxSize ) {
+			tail = /** @type {MemizeCacheNode} */ ( tail ).prev;
+			/** @type {MemizeCacheNode} */ ( tail ).next = null;
+		} else {
+			size++;
+		}
+
+		head = node;
+
+		return node.val;
+	}
+
+	memoized.clear = function() {
+		head = null;
+		tail = null;
+		size = 0;
+	};
+
+	if ( false ) {}
+
+	// Ignore reason: There's not a clear solution to create an intersection of
+	// the function with additional properties, where the goal is to retain the
+	// function signature of the incoming argument and add control properties
+	// on the return value.
+
+	// @ts-ignore
+	return memoized;
 }
 
+module.exports = memize;
+
+
 /***/ }),
 
-/***/ 319:
+/***/ "Vhyj":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "setLocaleData", function() { return /* binding */ setLocaleData; });
+__webpack_require__.d(__webpack_exports__, "__", function() { return /* binding */ __; });
+__webpack_require__.d(__webpack_exports__, "_x", function() { return /* binding */ _x; });
+__webpack_require__.d(__webpack_exports__, "_n", function() { return /* binding */ _n; });
+__webpack_require__.d(__webpack_exports__, "_nx", function() { return /* binding */ _nx; });
+__webpack_require__.d(__webpack_exports__, "sprintf", function() { return /* binding */ build_module_sprintf; });
+
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
-var objectSpread = __webpack_require__(8);
+var objectSpread = __webpack_require__("vpQ4");
 
 // CONCATENATED MODULE: ./node_modules/@tannin/postfix/index.js
 var PRECEDENCE, OPENERS, TERMINATORS, PATTERN;
@@ -551,19 +719,22 @@ var OPERATORS = {
  */
 function evaluate_evaluate( postfix, variables ) {
 	var stack = [],
-		i, getOperatorResult, term, value;
+		i, j, args, getOperatorResult, term, value;
 
 	for ( i = 0; i < postfix.length; i++ ) {
 		term = postfix[ i ];
 
 		getOperatorResult = OPERATORS[ term ];
 		if ( getOperatorResult ) {
+			// Pop from stack by number of function arguments.
+			j = getOperatorResult.length;
+			args = Array( j );
+			while ( j-- ) {
+				args[ j ] = stack.pop();
+			}
+
 			try {
-				// Pop from stack by number of function arguments.
-				value = getOperatorResult.apply(
-					null,
-					stack.splice( -1 * getOperatorResult.length )
-				);
+				value = getOperatorResult.apply( null, args );
 			} catch ( earlyReturn ) {
 				return earlyReturn;
 			}
@@ -600,7 +771,7 @@ function evaluate_evaluate( postfix, variables ) {
  *
  * @param {string} expression C expression.
  *
- * @return {Function} Compiled evaluator.
+ * @return {(variables?:{[variable:string]:*})=>*} Compiled evaluator.
  */
 function compile( expression ) {
 	var terms = postfix( expression );
@@ -636,12 +807,44 @@ function pluralForms( expression ) {
 /**
  * Tannin constructor options.
  *
- * @property {?string}   contextDelimiter Joiner in string lookup with context.
- * @property {?Function} onMissingKey     Callback to invoke when key missing.
+ * @typedef {Object} TanninOptions
  *
- * @type {Object}
+ * @property {string}   [contextDelimiter] Joiner in string lookup with context.
+ * @property {Function} [onMissingKey]     Callback to invoke when key missing.
+ */
+
+/**
+ * Domain metadata.
  *
- * @typedef {TanninOptions}
+ * @typedef {Object} TanninDomainMetadata
+ *
+ * @property {string}            [domain]       Domain name.
+ * @property {string}            [lang]         Language code.
+ * @property {(string|Function)} [plural_forms] Plural forms expression or
+ *                                              function evaluator.
+ */
+
+/**
+ * Domain translation pair respectively representing the singular and plural
+ * translation.
+ *
+ * @typedef {[string,string]} TanninTranslation
+ */
+
+/**
+ * Locale data domain. The key is used as reference for lookup, the value an
+ * array of two string entries respectively representing the singular and plural
+ * translation.
+ *
+ * @typedef {{[key:string]:TanninDomainMetadata|TanninTranslation,'':TanninDomainMetadata|TanninTranslation}} TanninLocaleDomain
+ */
+
+/**
+ * Jed-formatted locale data.
+ *
+ * @see http://messageformat.github.io/Jed/
+ *
+ * @typedef {{[domain:string]:TanninLocaleDomain}} TanninLocaleData
  */
 
 /**
@@ -684,19 +887,42 @@ function getPluralExpression( pf ) {
 /**
  * Tannin constructor.
  *
- * @param {Object}        data    Jed-formatted locale data.
- * @param {TanninOptions} options Tannin options.
+ * @class
+ *
+ * @param {TanninLocaleData} data      Jed-formatted locale data.
+ * @param {TanninOptions}    [options] Tannin options.
  */
 function Tannin( data, options ) {
 	var key;
 
+	/**
+	 * Jed-formatted locale data.
+	 *
+	 * @name Tannin#data
+	 * @type {TanninLocaleData}
+	 */
 	this.data = data;
+
+	/**
+	 * Plural forms function cache, keyed by plural forms string.
+	 *
+	 * @name Tannin#pluralForms
+	 * @type {Object<string,Function>}
+	 */
 	this.pluralForms = {};
 
-	options = options || {};
+	/**
+	 * Effective options for instance, including defaults.
+	 *
+	 * @name Tannin#options
+	 * @type {TanninOptions}
+	 */
 	this.options = {};
+
 	for ( key in DEFAULT_OPTIONS ) {
-		this.options[ key ] = options[ key ] || DEFAULT_OPTIONS[ key ];
+		this.options[ key ] = options !== undefined && key in options
+			? options[ key ]
+			: DEFAULT_OPTIONS[ key ];
 	}
 }
 
@@ -710,17 +936,34 @@ function Tannin( data, options ) {
  */
 Tannin.prototype.getPluralForm = function( domain, n ) {
 	var getPluralForm = this.pluralForms[ domain ],
-		config, plural;
+		config, plural, pf;
 
 	if ( ! getPluralForm ) {
 		config = this.data[ domain ][ '' ];
-		plural = getPluralExpression(
+
+		pf = (
 			config[ 'Plural-Forms' ] ||
 			config[ 'plural-forms' ] ||
+			// Ignore reason: As known, there's no way to document the empty
+			// string property on a key to guarantee this as metadata.
+			// @ts-ignore
 			config.plural_forms
 		);
 
-		getPluralForm = this.pluralForms[ domain ] = pluralForms( plural );
+		if ( typeof pf !== 'function' ) {
+			plural = getPluralExpression(
+				config[ 'Plural-Forms' ] ||
+				config[ 'plural-forms' ] ||
+				// Ignore reason: As known, there's no way to document the empty
+				// string property on a key to guarantee this as metadata.
+				// @ts-ignore
+				config.plural_forms
+			);
+
+			pf = pluralForms( plural );
+		}
+
+		getPluralForm = this.pluralForms[ domain ] = pf;
 	}
 
 	return getPluralForm( n );
@@ -729,11 +972,12 @@ Tannin.prototype.getPluralForm = function( domain, n ) {
 /**
  * Translate a string.
  *
- * @param {string} domain   Translation domain.
- * @param {string} context  Context distinguishing terms of the same name.
- * @param {string} singular Primary key for translation lookup.
- * @param {string} plural   Fallback value used for non-zero plural form index.
- * @param {number} n        Value to use in calculating plural form.
+ * @param {string}      domain   Translation domain.
+ * @param {string|void} context  Context distinguishing terms of the same name.
+ * @param {string}      singular Primary key for translation lookup.
+ * @param {string=}     plural   Fallback value used for non-zero plural
+ *                               form index.
+ * @param {number=}     n        Value to use in calculating plural form.
  *
  * @return {string} Translated string.
  */
@@ -773,20 +1017,14 @@ Tannin.prototype.dcnpgettext = function( domain, context, singular, plural, n ) 
 };
 
 // EXTERNAL MODULE: ./node_modules/memize/index.js
-var memize = __webpack_require__(41);
+var memize = __webpack_require__("4eJC");
 var memize_default = /*#__PURE__*/__webpack_require__.n(memize);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/i18n/node_modules/sprintf-js/src/sprintf.js
-var sprintf = __webpack_require__(125);
+// EXTERNAL MODULE: ./node_modules/sprintf-js/src/sprintf.js
+var sprintf = __webpack_require__("4Z/T");
 var sprintf_default = /*#__PURE__*/__webpack_require__.n(sprintf);
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/i18n/build-module/index.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLocaleData", function() { return setLocaleData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__", function() { return __; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_x", function() { return _x; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_n", function() { return _n; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_nx", function() { return _nx; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sprintf", function() { return build_module_sprintf; });
 
 
 /**
@@ -964,134 +1202,38 @@ function build_module_sprintf(format) {
 
 /***/ }),
 
-/***/ 41:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "rePB":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = function memize( fn, options ) {
-	var size = 0,
-		maxSize, head, tail;
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _defineProperty; });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
-	if ( options && options.maxSize ) {
-		maxSize = options.maxSize;
-	}
-
-	function memoized( /* ...args */ ) {
-		var node = head,
-			len = arguments.length,
-			args, i;
-
-		searchCache: while ( node ) {
-			// Perform a shallow equality test to confirm that whether the node
-			// under test is a candidate for the arguments passed. Two arrays
-			// are shallowly equal if their length matches and each entry is
-			// strictly equal between the two sets. Avoid abstracting to a
-			// function which could incur an arguments leaking deoptimization.
-
-			// Check whether node arguments match arguments length
-			if ( node.args.length !== arguments.length ) {
-				node = node.next;
-				continue;
-			}
-
-			// Check whether node arguments match arguments values
-			for ( i = 0; i < len; i++ ) {
-				if ( node.args[ i ] !== arguments[ i ] ) {
-					node = node.next;
-					continue searchCache;
-				}
-			}
-
-			// At this point we can assume we've found a match
-
-			// Surface matched node to head if not already
-			if ( node !== head ) {
-				// As tail, shift to previous. Must only shift if not also
-				// head, since if both head and tail, there is no previous.
-				if ( node === tail ) {
-					tail = node.prev;
-				}
-
-				// Adjust siblings to point to each other. If node was tail,
-				// this also handles new tail's empty `next` assignment.
-				node.prev.next = node.next;
-				if ( node.next ) {
-					node.next.prev = node.prev;
-				}
-
-				node.next = head;
-				node.prev = null;
-				head.prev = node;
-				head = node;
-			}
-
-			// Return immediately
-			return node.val;
-		}
-
-		// No cached value found. Continue to insertion phase:
-
-		// Create a copy of arguments (avoid leaking deoptimization)
-		args = new Array( len );
-		for ( i = 0; i < len; i++ ) {
-			args[ i ] = arguments[ i ];
-		}
-
-		node = {
-			args: args,
-
-			// Generate the result from original function
-			val: fn.apply( null, args )
-		};
-
-		// Don't need to check whether node is already head, since it would
-		// have been returned above already if it was
-
-		// Shift existing head down list
-		if ( head ) {
-			head.prev = node;
-			node.next = head;
-		} else {
-			// If no head, follows that there's no tail (at initial or reset)
-			tail = node;
-		}
-
-		// Trim tail if we're reached max size and are pending cache insertion
-		if ( size === maxSize ) {
-			tail = tail.prev;
-			tail.next = null;
-		} else {
-			size++;
-		}
-
-		head = node;
-
-		return node.val;
-	}
-
-	memoized.clear = function() {
-		head = null;
-		tail = null;
-		size = 0;
-	};
-
-	if ( false ) {}
-
-	return memoized;
-};
-
+  return obj;
+}
 
 /***/ }),
 
-/***/ 8:
+/***/ "vpQ4":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _objectSpread; });
-/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("rePB");
 
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
+    var source = arguments[i] != null ? Object(arguments[i]) : {};
     var ownKeys = Object.keys(source);
 
     if (typeof Object.getOwnPropertySymbols === 'function') {
@@ -1101,7 +1243,7 @@ function _objectSpread(target) {
     }
 
     ownKeys.forEach(function (key) {
-      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]);
+      Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]);
     });
   }
 
