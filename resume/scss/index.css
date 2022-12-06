@@ -1,0 +1,15 @@
+html {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+#content {
+  margin-top: 10px;
+}
+#content .info {
+  margin: 0;
+}/*# sourceMappingURL=index.css.map */
