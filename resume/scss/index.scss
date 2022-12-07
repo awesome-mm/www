@@ -1,0 +1,387 @@
+%marginTopBottom{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  color: #333
+}
+// minin 방법 
+@mixin liformat($liformat: 25%) {
+  width: $liformat;
+  font-size: 1.25em;
+  font-weight: 700;
+  padding-bottom: 10px;
+  float: left;
+  text-align: center;
+}
+@mixin ddformat($ddformat: 25%) {
+  width: $ddformat;
+  padding: 10px 0;
+  float: left;
+  text-align: center;
+  line-height: 1.5em;
+}
+// @include ddformat($ddformat: 33.33%);
+
+//확장방법
+// %liformat {
+//   font-weight: 700;
+//   padding-bottom: 10px;
+//   float: left;
+//   text-align: center;
+// }
+// %ddformat {
+//   padding: 10px 0;
+//   float: left;
+//   text-align: center;
+// }
+// @extend %liformat;
+// @extend %ddformat;
+
+$font-family: 'Noto Sans KR', sans-serif;
+$color: #333;
+
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,
+samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,
+li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,
+td,article,aside,canvas,details,embed,figure,figcaption,footer,header,
+hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ol,ul {list-style: none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block;}
+
+html{
+  font-size: 16px;
+  font-weight: 400;
+}
+body {
+  font-family: $font-family;
+  color: #333
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address {
+  font-style: normal
+}
+
+a{
+  word-break: break-all;
+}
+
+img {
+  border: 0;
+  vertical-align: top
+}
+
+.hidden {
+  display: block;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -1000%;
+  color: #fff;
+}
+.clearfix::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+
+
+#content{
+    .info{
+      padding: 0 10%;
+      width: 80%;
+      h2{
+        margin: 50px;
+
+      }
+      .info_img{
+        width: 142px;
+        height: 186px;
+        background: url(../img2.jpg);
+        background-position: -70px;
+        background-size: cover;
+        float: left;
+        margin-right: 50px;
+          // img{
+          //   width: 100%;
+          // }
+      }
+      .info_text{
+        overflow: hidden;
+        p{
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+        .info_top{
+          li{
+            padding: 15px 0;
+            width: 50%;
+            float: left;
+          }
+          dt{
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+          }
+        }
+        .info_bottom{
+          li{
+            width: 50%;
+            padding: 15px 0;
+            float: left;
+          }
+          dt{
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+.summary_info{
+  margin-top: 50px;
+  padding: 0 10%;
+  width: 80%;
+  position: relative;
+
+  &::before{
+    content: '';
+    display: block;
+    width: 100%;
+    background: rgba($color: rgb(128,128,128), $alpha: .2);
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -3;
+    left: 0;
+  }
+  .summary_info_inner {
+    box-shadow: 1px 1px 5px 5px rgba($color: #000000, $alpha: .1);
+    overflow: hidden;
+    
+    dl{
+      width: 25%;
+      float: left;
+      text-align: center;
+      background: #fff;
+      margin: 30px 0;
+      border-right: 1px solid #ccc;
+      box-sizing: border-box;
+      &:last-of-type{
+        border: none;
+      }
+      dt{
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+  .details_info{
+    margin: 0 10%;
+    width: 80%;
+    margin-top: 50px;
+    h2{
+      margin-bottom: 20px;
+    }
+    //교육사항, 학력사항
+    .education{
+      .head{
+        border-bottom: 1px solid #ccc;
+          ul{
+            overflow: hidden;
+            li{
+              @include liformat($liformat: 25%);
+            }
+          }
+        }
+      .education_text{
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        dl{
+          dt{display: none;}
+          dd{
+            @include ddformat($ddformat: 25%);
+          }
+        }
+
+      }
+    }
+    //경력사항
+    .acheivement{
+      .head{
+        border-bottom: 1px solid #ccc;
+          ul{
+            overflow: hidden;
+            li{
+              @include liformat($liformat: 25%);
+            }
+          }
+        }
+      .acheivement_text{
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        dl{
+          dt{display: none;}
+          dd{
+            @include ddformat($ddformat: 25%);
+          }
+        }
+
+      }
+    }
+    //포트폴리오
+    .portfolio{
+      .head{
+        border-bottom: 1px solid #ccc;
+          ul{
+            overflow: hidden;
+            li{
+              @include liformat($liformat: 33.33%);
+              &:nth-child(3n+1){
+                width: 25%;
+              }
+              &:nth-child(3n+2){
+                width: 50%;
+              }
+              &:nth-child(3n+3){
+                width: 25%;
+              }
+            }
+
+          }
+        }
+      .portfolio_text{
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        dl{
+          dt{display: none;}
+          dd{
+            @include ddformat($ddformat: 33.33%);
+            text-align: start;
+          }
+          &:nth-of-type(3n+1) dd{
+            width: 25%;
+            text-align: center;
+            span{
+              font-size: 1.25rem;
+              font-weight: 700;
+            }
+          }
+          &:nth-of-type(3n+2) dd{
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+          }
+          &:nth-of-type(3n+3) dd{
+            width: 25%;
+            padding-left: 10px;
+            box-sizing: border-box;
+
+          }
+        }
+      }
+    }
+    //직무능력사항
+    .skill{
+      .head{
+        border-bottom: 1px solid #ccc;
+          ul{
+            overflow: hidden;
+            li{
+              @include liformat($liformat: 33.33%);
+              &:nth-child(3n+1){
+                width: 25%;
+              }
+              &:nth-child(3n+2){
+                width: 75%;
+              }
+            }
+          }
+        }
+      .skill_text{
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        dl{
+          &:nth-child(2n+1){
+            @include ddformat($ddformat: 25%);
+            font-weight: 700;
+          }
+          &:nth-child(2n+2){
+            @include ddformat($ddformat: 75%);
+            text-align: start;
+          }
+          dt{display: none;}
+          dd{
+            position:relative;
+            margin-bottom: 10px;
+            &::before{
+              content: '';
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -10px;
+              width: 3px;
+              height: 3px;
+              background-color: #000000;
+            }
+          }
+        }
+      }
+    }
+    //자격 면허
+    .certificate{
+      .head{
+        border-bottom: 1px solid #ccc;
+          ul{
+            overflow: hidden;
+            li{
+              @include liformat($liformat: 25%);
+
+            }
+          }
+        }
+      .certificate_text{
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        dl{
+          @include ddformat($ddformat: 25%);
+          text-align: center;
+          dt{display: none;}
+          dd{
+            position:relative;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  footer{
+    margin-top: 100px;
+    background: #000000;
+    padding: 30px 0;
+    p{
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+//반응형처리

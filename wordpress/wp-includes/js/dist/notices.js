@@ -82,376 +82,12 @@ this["wp"] = this["wp"] || {}; this["wp"]["notices"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 279);
+/******/ 	return __webpack_require__(__webpack_require__.s = "Msv9");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 122:
-/***/ (function(module, exports) {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-module.exports = _interopRequireDefault;
-
-/***/ }),
-
-/***/ 175:
-/***/ (function(module, exports) {
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
-
-/***/ }),
-
-/***/ 176:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.DEFAULT_STATUS = exports.DEFAULT_CONTEXT = void 0;
-
-/**
- * Default context to use for notice grouping when not otherwise specified. Its
- * specific value doesn't hold much meaning, but it must be reasonably unique
- * and, more importantly, referenced consistently in the store implementation.
- *
- * @type {string}
- */
-var DEFAULT_CONTEXT = 'global';
-/**
- * Default notice status.
- *
- * @type {string}
- */
-
-exports.DEFAULT_CONTEXT = DEFAULT_CONTEXT;
-var DEFAULT_STATUS = 'info';
-exports.DEFAULT_STATUS = DEFAULT_STATUS;
-
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["lodash"]; }());
-
-/***/ }),
-
-/***/ 279:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(280);
-
-
-/***/ }),
-
-/***/ 280:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireWildcard = __webpack_require__(281);
-
-var _interopRequireDefault = __webpack_require__(122);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _data = __webpack_require__(5);
-
-var _reducer = _interopRequireDefault(__webpack_require__(282));
-
-var actions = _interopRequireWildcard(__webpack_require__(289));
-
-var selectors = _interopRequireWildcard(__webpack_require__(290));
-
-var _controls = _interopRequireDefault(__webpack_require__(291));
-
-/**
- * WordPress dependencies
- */
-
-/**
- * Internal dependencies
- */
-var _default = (0, _data.registerStore)('core/notices', {
-  reducer: _reducer.default,
-  actions: actions,
-  selectors: selectors,
-  controls: _controls.default
-});
-
-exports.default = _default;
-
-
-/***/ }),
-
-/***/ 281:
-/***/ (function(module, exports) {
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  } else {
-    var newObj = {};
-
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};
-
-          if (desc.get || desc.set) {
-            Object.defineProperty(newObj, key, desc);
-          } else {
-            newObj[key] = obj[key];
-          }
-        }
-      }
-    }
-
-    newObj.default = obj;
-    return newObj;
-  }
-}
-
-module.exports = _interopRequireWildcard;
-
-/***/ }),
-
-/***/ 282:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(122);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(283));
-
-var _lodash = __webpack_require__(2);
-
-var _onSubKey = _interopRequireDefault(__webpack_require__(287));
-
-/**
- * External dependencies
- */
-
-/**
- * Internal dependencies
- */
-
-/**
- * Reducer returning the next notices state. The notices state is an object
- * where each key is a context, its value an array of notice objects.
- *
- * @param {Object} state  Current state.
- * @param {Object} action Dispatched action.
- *
- * @return {Object} Updated state.
- */
-var notices = (0, _onSubKey.default)('context')(function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case 'CREATE_NOTICE':
-      // Avoid duplicates on ID.
-      return (0, _toConsumableArray2.default)((0, _lodash.reject)(state, {
-        id: action.notice.id
-      })).concat([action.notice]);
-
-    case 'REMOVE_NOTICE':
-      return (0, _lodash.reject)(state, {
-        id: action.id
-      });
-  }
-
-  return state;
-});
-var _default = notices;
-exports.default = _default;
-
-
-/***/ }),
-
-/***/ 283:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayWithoutHoles = __webpack_require__(284);
-
-var iterableToArray = __webpack_require__(285);
-
-var nonIterableSpread = __webpack_require__(286);
-
-function _toConsumableArray(arr) {
-  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
-}
-
-module.exports = _toConsumableArray;
-
-/***/ }),
-
-/***/ 284:
-/***/ (function(module, exports) {
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
-      arr2[i] = arr[i];
-    }
-
-    return arr2;
-  }
-}
-
-module.exports = _arrayWithoutHoles;
-
-/***/ }),
-
-/***/ 285:
-/***/ (function(module, exports) {
-
-function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
-}
-
-module.exports = _iterableToArray;
-
-/***/ }),
-
-/***/ 286:
-/***/ (function(module, exports) {
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
-}
-
-module.exports = _nonIterableSpread;
-
-/***/ }),
-
-/***/ 287:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(122);
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.onSubKey = void 0;
-
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(175));
-
-var _objectSpread3 = _interopRequireDefault(__webpack_require__(288));
-
-/**
- * Higher-order reducer creator which creates a combined reducer object, keyed
- * by a property on the action object.
- *
- * @param {string} actionProperty Action property by which to key object.
- *
- * @return {Function} Higher-order reducer.
- */
-var onSubKey = function onSubKey(actionProperty) {
-  return function (reducer) {
-    return function () {
-      var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      var action = arguments.length > 1 ? arguments[1] : undefined;
-      // Retrieve subkey from action. Do not track if undefined; useful for cases
-      // where reducer is scoped by action shape.
-      var key = action[actionProperty];
-
-      if (key === undefined) {
-        return state;
-      } // Avoid updating state if unchanged. Note that this also accounts for a
-      // reducer which returns undefined on a key which is not yet tracked.
-
-
-      var nextKeyState = reducer(state[key], action);
-
-      if (nextKeyState === state[key]) {
-        return state;
-      }
-
-      return (0, _objectSpread3.default)({}, state, (0, _defineProperty2.default)({}, key, nextKeyState));
-    };
-  };
-};
-
-exports.onSubKey = onSubKey;
-var _default = onSubKey;
-exports.default = _default;
-
-
-/***/ }),
-
-/***/ 288:
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineProperty = __webpack_require__(175);
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
-}
-
-module.exports = _objectSpread;
-
-/***/ }),
-
-/***/ 289:
+/***/ "/Af7":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -467,9 +103,9 @@ exports.createErrorNotice = createErrorNotice;
 exports.createWarningNotice = createWarningNotice;
 exports.removeNotice = removeNotice;
 
-var _lodash = __webpack_require__(2);
+var _lodash = __webpack_require__("YLtl");
 
-var _constants = __webpack_require__(176);
+var _constants = __webpack_require__("8CGg");
 
 var _marked =
 /*#__PURE__*/
@@ -648,7 +284,223 @@ function removeNotice(id) {
 
 /***/ }),
 
-/***/ 290:
+/***/ "1ZqX":
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["data"]; }());
+
+/***/ }),
+
+/***/ "284h":
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__("cDf5");
+
+function _getRequireWildcardCache() {
+  if (typeof WeakMap !== "function") return null;
+  var cache = new WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache();
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+module.exports = _interopRequireWildcard;
+
+/***/ }),
+
+/***/ "3pnB":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireWildcard = __webpack_require__("284h");
+
+var _interopRequireDefault = __webpack_require__("TqRt");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _data = __webpack_require__("1ZqX");
+
+var _reducer = _interopRequireDefault(__webpack_require__("7VZY"));
+
+var actions = _interopRequireWildcard(__webpack_require__("/Af7"));
+
+var selectors = _interopRequireWildcard(__webpack_require__("C0DU"));
+
+var _controls = _interopRequireDefault(__webpack_require__("ikX/"));
+
+/**
+ * WordPress dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+var _default = (0, _data.registerStore)('core/notices', {
+  reducer: _reducer.default,
+  actions: actions,
+  selectors: selectors,
+  controls: _controls.default
+});
+
+exports.default = _default;
+
+
+/***/ }),
+
+/***/ "7VZY":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__("TqRt");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__("RIqP"));
+
+var _lodash = __webpack_require__("YLtl");
+
+var _onSubKey = _interopRequireDefault(__webpack_require__("pHKE"));
+
+/**
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+/**
+ * Reducer returning the next notices state. The notices state is an object
+ * where each key is a context, its value an array of notice objects.
+ *
+ * @param {Object} state  Current state.
+ * @param {Object} action Dispatched action.
+ *
+ * @return {Object} Updated state.
+ */
+var notices = (0, _onSubKey.default)('context')(function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'CREATE_NOTICE':
+      // Avoid duplicates on ID.
+      return (0, _toConsumableArray2.default)((0, _lodash.reject)(state, {
+        id: action.notice.id
+      })).concat([action.notice]);
+
+    case 'REMOVE_NOTICE':
+      return (0, _lodash.reject)(state, {
+        id: action.id
+      });
+  }
+
+  return state;
+});
+var _default = notices;
+exports.default = _default;
+
+
+/***/ }),
+
+/***/ "8CGg":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DEFAULT_STATUS = exports.DEFAULT_CONTEXT = void 0;
+
+/**
+ * Default context to use for notice grouping when not otherwise specified. Its
+ * specific value doesn't hold much meaning, but it must be reasonably unique
+ * and, more importantly, referenced consistently in the store implementation.
+ *
+ * @type {string}
+ */
+var DEFAULT_CONTEXT = 'global';
+/**
+ * Default notice status.
+ *
+ * @type {string}
+ */
+
+exports.DEFAULT_CONTEXT = DEFAULT_CONTEXT;
+var DEFAULT_STATUS = 'info';
+exports.DEFAULT_STATUS = DEFAULT_STATUS;
+
+
+/***/ }),
+
+/***/ "Bnag":
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "C0DU":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -659,7 +511,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getNotices = getNotices;
 
-var _constants = __webpack_require__(176);
+var _constants = __webpack_require__("8CGg");
 
 /**
  * Internal dependencies
@@ -725,7 +577,174 @@ function getNotices(state) {
 
 /***/ }),
 
-/***/ 291:
+/***/ "EbDI":
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
+/***/ "Ijbi":
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__("WkPL");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
+/***/ "MVZn":
+/***/ (function(module, exports, __webpack_require__) {
+
+var defineProperty = __webpack_require__("lSNA");
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? Object(arguments[i]) : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+module.exports = _objectSpread;
+
+/***/ }),
+
+/***/ "Msv9":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__("3pnB");
+
+
+/***/ }),
+
+/***/ "RIqP":
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__("Ijbi");
+
+var iterableToArray = __webpack_require__("EbDI");
+
+var unsupportedIterableToArray = __webpack_require__("ZhPi");
+
+var nonIterableSpread = __webpack_require__("Bnag");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+
+/***/ }),
+
+/***/ "TqRt":
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ "WkPL":
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+
+/***/ }),
+
+/***/ "YLtl":
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["lodash"]; }());
+
+/***/ }),
+
+/***/ "ZhPi":
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__("WkPL");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+
+/***/ }),
+
+/***/ "cDf5":
+/***/ (function(module, exports) {
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+
+/***/ }),
+
+/***/ "gdqT":
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["a11y"]; }());
+
+/***/ }),
+
+/***/ "ikX/":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -736,7 +755,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _a11y = __webpack_require__(44);
+var _a11y = __webpack_require__("gdqT");
 
 /**
  * WordPress dependencies
@@ -751,17 +770,83 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 44:
+/***/ "lSNA":
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["wp"]["a11y"]; }());
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
 
 /***/ }),
 
-/***/ 5:
-/***/ (function(module, exports) {
+/***/ "pHKE":
+/***/ (function(module, exports, __webpack_require__) {
 
-(function() { module.exports = this["wp"]["data"]; }());
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__("TqRt");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.onSubKey = void 0;
+
+var _defineProperty2 = _interopRequireDefault(__webpack_require__("lSNA"));
+
+var _objectSpread3 = _interopRequireDefault(__webpack_require__("MVZn"));
+
+/**
+ * Higher-order reducer creator which creates a combined reducer object, keyed
+ * by a property on the action object.
+ *
+ * @param {string} actionProperty Action property by which to key object.
+ *
+ * @return {Function} Higher-order reducer.
+ */
+var onSubKey = function onSubKey(actionProperty) {
+  return function (reducer) {
+    return function () {
+      var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var action = arguments.length > 1 ? arguments[1] : undefined;
+      // Retrieve subkey from action. Do not track if undefined; useful for cases
+      // where reducer is scoped by action shape.
+      var key = action[actionProperty];
+
+      if (key === undefined) {
+        return state;
+      } // Avoid updating state if unchanged. Note that this also accounts for a
+      // reducer which returns undefined on a key which is not yet tracked.
+
+
+      var nextKeyState = reducer(state[key], action);
+
+      if (nextKeyState === state[key]) {
+        return state;
+      }
+
+      return (0, _objectSpread3.default)({}, state, (0, _defineProperty2.default)({}, key, nextKeyState));
+    };
+  };
+};
+
+exports.onSubKey = onSubKey;
+var _default = onSubKey;
+exports.default = _default;
+
 
 /***/ })
 

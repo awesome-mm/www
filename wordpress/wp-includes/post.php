@@ -1018,9 +1018,9 @@ function is_post_type_hierarchical( $post_type ) {
 
 /**
  * Determines whether a post type is registered.
- * 
+ *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
+ * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 3.0.0
@@ -1778,7 +1778,99 @@ function is_post_type_viewable( $post_type ) {
 		}
 	}
 
-	return $post_type->publicly_queryable || ( $post_type->_builtin && $post_type->public );
+	if ( ! is_object( $post_type ) ) {
+		return false;
+	}
+
+	$is_viewable = $post_type->publicly_queryable || ( $post_type->_builtin && $post_type->public );
+
+	/**
+	 * Filters whether a post type is considered "viewable".
+	 *
+	 * The returned filtered value must be a boolean type to ensure
+	 * `is_post_type_viewable()` only returns a boolean. This strictness
+	 * is by design to maintain backwards-compatibility and guard against
+	 * potential type errors in PHP 8.1+. Non-boolean values (even falsey
+	 * and truthy values) will result in the function returning false.
+	 *
+	 * @since 5.9.0
+	 *
+	 * @param bool         $is_viewable Whether the post type is "viewable" (strict type).
+	 * @param WP_Post_Type $post_type   Post type object.
+	 */
+	return true === apply_filters( 'is_post_type_viewable', $is_viewable, $post_type );
+}
+
+/**
+ * Determines whether a post status is considered "viewable".
+ *
+ * For built-in post statuses such as publish and private, the 'public' value will be evaluated.
+ * For all others, the 'publicly_queryable' value will be used.
+ *
+ * @since 5.7.0
+ * @since 5.9.0 Added `is_post_status_viewable` hook to filter the result.
+ *
+ * @param string|stdClass $post_status Post status name or object.
+ * @return bool Whether the post status should be considered viewable.
+ */
+function is_post_status_viewable( $post_status ) {
+	if ( is_scalar( $post_status ) ) {
+		$post_status = get_post_status_object( $post_status );
+
+		if ( ! $post_status ) {
+			return false;
+		}
+	}
+
+	if (
+		! is_object( $post_status ) ||
+		$post_status->internal ||
+		$post_status->protected
+	) {
+		return false;
+	}
+
+	$is_viewable = $post_status->publicly_queryable || ( $post_status->_builtin && $post_status->public );
+
+	/**
+	 * Filters whether a post status is considered "viewable".
+	 *
+	 * The returned filtered value must be a boolean type to ensure
+	 * `is_post_status_viewable()` only returns a boolean. This strictness
+	 * is by design to maintain backwards-compatibility and guard against
+	 * potential type errors in PHP 8.1+. Non-boolean values (even falsey
+	 * and truthy values) will result in the function returning false.
+	 *
+	 * @since 5.9.0
+	 *
+	 * @param bool     $is_viewable Whether the post status is "viewable" (strict type).
+	 * @param stdClass $post_status Post status object.
+	 */
+	return true === apply_filters( 'is_post_status_viewable', $is_viewable, $post_status );
+}
+
+/**
+ * Determines whether a post is publicly viewable.
+ *
+ * Posts are considered publicly viewable if both the post status and post type
+ * are viewable.
+ *
+ * @since 5.7.0
+ *
+ * @param int|WP_Post|null $post Optional. Post ID or post object. Defaults to global $post.
+ * @return bool Whether the post is publicly viewable.
+ */
+function is_post_publicly_viewable( $post = null ) {
+	$post = get_post( $post );
+
+	if ( ! $post ) {
+		return false;
+	}
+
+	$post_type   = get_post_type( $post );
+	$post_status = get_post_status( $post );
+
+	return is_post_type_viewable( $post_type ) && is_post_status_viewable( $post_status );
 }
 
 /**
@@ -2044,11 +2136,11 @@ function get_post_custom_values( $key = '', $post_id = 0 ) {
  *
  * Sticky posts should remain at the top of The Loop. If the post ID is not
  * given, then The Loop ID for the current post will be used.
- * 
+ *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
+ * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
- * 
+ *
  * @since 2.7.0
  *
  * @param int $post_id Optional. Post ID. Default is ID of the global $post.
@@ -3203,6 +3295,9 @@ function wp_get_recent_posts( $args = array(), $output = ARRAY_A ) {
 function wp_insert_post( $postarr, $wp_error = false ) {
 	global $wpdb;
 
+	// Capture original pre-sanitized array for passing into filters.
+	$unsanitized_postarr = $postarr;
+
 	$user_id = get_current_user_id();
 
 	$defaults = array(
@@ -3506,21 +3601,27 @@ function wp_insert_post( $postarr, $wp_error = false ) {
 		 * Filters attachment post data before it is updated in or added to the database.
 		 *
 		 * @since 3.9.0
+		 * @since 5.4.1 `$unsanitized_postarr` argument added.
 		 *
-		 * @param array $data    An array of sanitized attachment post data.
-		 * @param array $postarr An array of unsanitized attachment post data.
+		 * @param array $data                An array of slashed, sanitized, and processed attachment post data.
+		 * @param array $postarr             An array of slashed and sanitized attachment post data, but not processed.
+		 * @param array $unsanitized_postarr An array of slashed yet *unsanitized* and unprocessed attachment post data
+		 *                                   as originally passed to wp_insert_post().
 		 */
-		$data = apply_filters( 'wp_insert_attachment_data', $data, $postarr );
+		$data = apply_filters( 'wp_insert_attachment_data', $data, $postarr, $unsanitized_postarr );
 	} else {
 		/**
 		 * Filters slashed post data just before it is inserted into the database.
 		 *
 		 * @since 2.7.0
+		 * @since 5.4.1 `$unsanitized_postarr` argument added.
 		 *
-		 * @param array $data    An array of slashed post data.
-		 * @param array $postarr An array of sanitized, but otherwise unmodified post data.
+		 * @param array $data                An array of slashed, sanitized, and processed post data.
+		 * @param array $postarr             An array of sanitized (and slashed) but otherwise unmodified post data.
+		 * @param array $unsanitized_postarr An array of slashed yet *unsanitized* and unprocessed post data as
+		 *                                   originally passed to wp_insert_post().
 		 */
-		$data = apply_filters( 'wp_insert_post_data', $data, $postarr );
+		$data = apply_filters( 'wp_insert_post_data', $data, $postarr, $unsanitized_postarr );
 	}
 	$data = wp_unslash( $data );
 	$where = array( 'ID' => $post_ID );
@@ -4050,7 +4151,7 @@ function _truncate_post_slug( $slug, $length = 200 ) {
 		if ( $decoded_slug === $slug )
 			$slug = substr( $slug, 0, $length );
 		else
-			$slug = utf8_uri_encode( $decoded_slug, $length );
+			$slug = utf8_uri_encode( $decoded_slug, $length, true );
 	}
 
 	return rtrim( $slug, '-' );
@@ -5017,11 +5118,11 @@ function get_pages( $args = array() ) {
 
 /**
  * Determines whether an attachment URI is local and really an attachment.
- * 
+ *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
+ * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
- * 
+ *
  * @since 2.0.0
  *
  * @param string $url URL to check
@@ -5518,9 +5619,9 @@ function wp_attachment_is( $type, $post = null ) {
 
 /**
  * Determines whether an attachment is an image.
- * 
+ *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/ 
+ * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.1.0
@@ -6527,35 +6628,6 @@ function wp_add_trashed_suffix_to_post_name_for_post( $post ) {
 	$wpdb->update( $wpdb->posts, array( 'post_name' => $post_name ), array( 'ID' => $post->ID ) );
 	clean_post_cache( $post->ID );
 	return $post_name;
-}
-
-/**
- * Filter the SQL clauses of an attachment query to include filenames.
- *
- * @since 4.7.0
- * @access private
- *
- * @global wpdb $wpdb WordPress database abstraction object.
- *
- * @param array $clauses An array including WHERE, GROUP BY, JOIN, ORDER BY,
- *                       DISTINCT, fields (SELECT), and LIMITS clauses.
- * @return array The modified clauses.
- */
-function _filter_query_attachment_filenames( $clauses ) {
-	global $wpdb;
-	remove_filter( 'posts_clauses', __FUNCTION__ );
-
-	// Add a LEFT JOIN of the postmeta table so we don't trample existing JOINs.
-	$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS sq1 ON ( {$wpdb->posts}.ID = sq1.post_id AND sq1.meta_key = '_wp_attached_file' )";
-
-	$clauses['groupby'] = "{$wpdb->posts}.ID";
-
-	$clauses['where'] = preg_replace(
-		"/\({$wpdb->posts}.post_content (NOT LIKE|LIKE) (\'[^']+\')\)/",
-		"$0 OR ( sq1.meta_value $1 $2 )",
-		$clauses['where'] );
-
-	return $clauses;
 }
 
 /**
