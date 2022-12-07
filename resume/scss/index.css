@@ -1,3 +1,22 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s,
+samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul,
+li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th,
+td, article, aside, canvas, details, embed, figure, figcaption, footer, header,
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 html {
   font-size: 16px;
   font-weight: 400;
@@ -5,11 +24,148 @@ html {
 
 body {
   font-family: "Noto Sans KR", sans-serif;
+  color: #333;
 }
 
-#content {
-  margin-top: 10px;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+
+address {
+  font-style: normal;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+  vertical-align: top;
+}
+
+.hidden {
+  display: block;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -1000%;
+  color: #fff;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 #content .info {
-  margin: 0;
+  padding: 0 10%;
+  width: 80%;
+}
+#content .info h2 {
+  margin: 50px;
+}
+#content .info .info_img {
+  width: 142px;
+  height: 186px;
+  background: url(../img2.jpg);
+  background-position: -70px;
+  background-size: cover;
+  float: left;
+  margin-right: 50px;
+}
+#content .info .info_text {
+  overflow: hidden;
+}
+#content .info .info_text p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#content .info .info_text .info_top li {
+  padding: 15px 0;
+  width: 50%;
+  float: left;
+}
+#content .info .info_text .info_top dt {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+#content .info .info_text .info_bottom li {
+  width: 50%;
+  padding: 15px 0;
+  float: left;
+}
+#content .summary_info {
+  margin-top: 50px;
+  padding: 0 10%;
+  width: 80%;
+  position: relative;
+}
+#content .summary_info::before {
+  content: "";
+  display: block;
+  width: 100%;
+  background: #ccc;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -3;
+  left: 0;
+}
+#content .summary_info .summary_info_inner {
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+#content .summary_info .summary_info_inner dl {
+  width: 25%;
+  float: left;
+  text-align: center;
+  background: #fff;
+  margin: 30px 0;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#content .summary_info .summary_info_inner dl:last-of-type {
+  border: none;
+}
+#content .details_info {
+  margin: 0 10%;
+  width: 80%;
+  margin-top: 50px;
+}
+#content .details_info h2 {
+  margin-bottom: 20px;
+}
+#content .details_info .education .education_text {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+#content .details_info .education .education_text dl dt {
+  display: none;
+}
+#content .details_info .education .education_text dl dd {
+  padding: 10px 0;
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+#content .head {
+  border-bottom: 1px solid #ccc;
+}
+#content .head ul {
+  overflow: hidden;
+}
+#content .head ul li {
+  font-weight: 700;
+  padding-bottom: 10px;
+  width: 25%;
+  float: left;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
