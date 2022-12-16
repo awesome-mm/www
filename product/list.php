@@ -73,8 +73,8 @@
       <img src="./images/visual01.jpg" alt="">
     </div>
     <div class="text">
-      <h3>홍보센터</h3>
-      <p>promotion center</p>
+      <h3>제품소개</h3>
+      <p>Product Information</p>
     </div>
   </div>
 

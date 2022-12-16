@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 
     //headersearch
-    $('#headerArea .header_inner .top_menu a').click(function(){
+    $('#headerArea .header_inner .top_menu .search_top_btn').click(function(){
         $('#headerSearch').slideDown();
     })
     

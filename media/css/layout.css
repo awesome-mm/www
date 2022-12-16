@@ -197,9 +197,8 @@
 #content .about .about_text p{
    width: 80%;
    margin: 0 auto;
-   text-align: justify;
    font-size: 1.250rem;
-   line-height: 1.5em;
+   line-height: 1.8em;
 }
 #content .about .about_text a{
    display: inline-block;
@@ -434,7 +433,8 @@
 #content .trailer .con_top{
    margin-bottom: 80px;   
    display: flex;
-   align-items: flex-start;
+   align-items: center;
+   justify-content: center;
 
 }
 #content .trailer .con_top a{
@@ -449,12 +449,10 @@
 }
 
 #content .trailer .con_top p{
-   margin-top: 20px;
    width: 45%;
    margin-right: 5%;
-   text-align: justify;
    font-size: 1.250rem;
-   line-height: 1.5rem;
+   line-height: 2rem;
    display: -webkit-box;
    -webkit-box-orient: vertical;
    text-overflow: ellipsis;
