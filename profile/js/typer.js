@@ -114,7 +114,7 @@ return  (function(modules) { // webpackBootstrap
 	    /* Clear element's content and set default text */
 	    this.textEl.className = options.textClass || 'tiny-typer-text';
 	    this.cursor.className = options.cursorClass || 'tiny-typer-cursor';
-	    this.cursor.innerHTML = options.cursor || ' &#9612;';
+	    this.cursor.innerHTML = options.cursor || ' &#95;';
 	
 	    this.init();
 	  }
