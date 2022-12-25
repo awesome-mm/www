@@ -411,6 +411,35 @@ h1 {
   padding: 20px;
 
 }
+.content_text button{
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.row.col-md-12.col-sm-6.col-xs-12.clearfix.con1 {
+  position: relative;
+}
+
+.col-md-6.col-sm-12.col-xs-12.pull-right.content_text {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.col-md-6.col-sm-12.col-xs-12.pull-left.content_text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.row.col-md-12.col-sm-6.col-xs-12.clearfix.con2 {
+  position: relative;
+}
 
 /* menu */
 #content .menu{}
@@ -728,7 +757,14 @@ h1 {
 #content .cards .login .col-md-3{margin-top: 30px; margin-bottom: 30px;}
 #content .cards .con_right{text-align: center;}
 
-
+#wrap .col-md-6.col-sm-12.col-xs-12.pull-right.content_text{
+  position: static;
+  transform: translate(0);
+}
+#wrap .col-md-6.col-sm-12.col-xs-12.pull-left.content_text{
+  position: static;
+  transform: translate(0);
+}
 }
 
 /* 소형테블릿 */

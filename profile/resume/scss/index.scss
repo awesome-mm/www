@@ -95,7 +95,14 @@ img {
   clear: both;
   display: block;
 }
-
+#wrap{
+  .title{
+    h1{
+      margin: 50px auto;
+      width: fit-content;
+    }
+  }
+}
 
 #content{
     .info{
@@ -103,7 +110,6 @@ img {
       width: 80%;
       h2{
         margin: 50px;
-
       }
       .info_img{
         width: 142px;
@@ -113,16 +119,32 @@ img {
         background-size: cover;
         float: left;
         margin-right: 50px;
+        box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 80%);
           // img{
           //   width: 100%;
           // }
       }
       .info_text{
         overflow: hidden;
-        p{
+        strong{
           font-size: 1.5rem;
           font-weight: 700;
           margin-bottom: 20px;
+          position: relative;
+          display: inline-block;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            padding: 5px 0;
+            width: 100%;
+            height: 5px;
+            background-color: rgba(0,255,0,0.4);
+            border-radius: 15px;
+            z-index: -1;
+            transform: skewX(133deg);
+          }
         }
         .info_top{
           li{
@@ -169,8 +191,9 @@ img {
     z-index: -3;
     left: 0;
   }
+
   .summary_info_inner {
-    box-shadow: 1px 1px 5px 5px rgba($color: #000000, $alpha: .1);
+    box-shadow: 1px 1px 5px 2px rgba($color: #000000, $alpha: .3);
     overflow: hidden;
     
     dl{
@@ -199,11 +222,26 @@ img {
     margin-top: 50px;
     h2{
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        padding: 5px 0;
+        width: 100%;
+        height: 5px;
+        background-color: rgba(0,255,0,0.4);
+        border-radius: 15px;
+        z-index: -1;
+        transform: skewX(133deg);
+      }
     }
     //교육사항, 학력사항
     .education{
       .head{
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #999;
           ul{
             overflow: hidden;
             li{
@@ -226,7 +264,7 @@ img {
     //경력사항
     .acheivement{
       .head{
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #999;
           ul{
             overflow: hidden;
             li{
@@ -249,7 +287,7 @@ img {
     //포트폴리오
     .portfolio{
       .head{
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #999;
           ul{
             overflow: hidden;
             li{
@@ -283,6 +321,10 @@ img {
               font-size: 1.25rem;
               font-weight: 700;
             }
+            b{
+              font-weight: 400;
+              display: block;
+            }
           }
           &:nth-of-type(3n+2) dd{
             width: 50%;
@@ -301,7 +343,7 @@ img {
     //직무능력사항
     .skill{
       .head{
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #999;
           ul{
             overflow: hidden;
             li{
@@ -322,24 +364,29 @@ img {
           &:nth-child(2n+1){
             @include ddformat($ddformat: 25%);
             font-weight: 700;
+            padding-right: 10%;
           }
           &:nth-child(2n+2){
-            @include ddformat($ddformat: 75%);
+            @include ddformat($ddformat: 65%);
             text-align: start;
           }
           dt{display: none;}
           dd{
             position:relative;
             margin-bottom: 10px;
-            &::before{
-              content: '';
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              left: -10px;
-              width: 3px;
-              height: 3px;
-              background-color: #000000;
+            ul{
+              li{
+                position: relative;
+                &::before{
+                  content: '';
+                  position: absolute;
+                  top: 10px;
+                  left: -10px;
+                  width: 3px;
+                  height: 3px;
+                  background-color: #000000;
+                }
+              }
             }
           }
         }
@@ -348,11 +395,11 @@ img {
     //자격 면허
     .certificate{
       .head{
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #999;
           ul{
             overflow: hidden;
             li{
-              @include liformat($liformat: 25%);
+              @include liformat($liformat: 33.33%);
 
             }
           }
@@ -361,17 +408,30 @@ img {
         border-bottom: 1px solid #ccc;
         overflow: hidden;
         dl{
-          @include ddformat($ddformat: 25%);
+          @include ddformat($ddformat: 33.33%);
           text-align: center;
           dt{display: none;}
           dd{
             position:relative;
-            margin-bottom: 10px;
           }
         }
       }
     }
   }
+
+  
+    .content{
+      div{
+        > ul{
+         > li:last-of-type{ 
+            
+              border-bottom: 1px solid #999 !important;
+          }
+        }
+      }
+
+    }
+  
 
   footer{
     margin-top: 100px;
@@ -382,6 +442,91 @@ img {
       color: #fff;
     }
   }
+
 }
 
 //반응형처리
+
+@media only screen and(max-width:1024px) {
+  #wrap .title h1{
+    margin: 30px 10%;
+  }
+  #content .summary_info .summary_info_inner dl{
+    width: 50%;
+    margin: 0;
+    padding: 30px 0;
+    border: 1px solid #ccc;
+  }
+  #content .summary_info .summary_info_inner dl:last-of-type{
+    border: 1px solid #ccc;
+
+  }
+  #content .info .info_img{
+    float: none;
+    margin: 30px auto;
+  }
+
+
+}
+@media screen and(max-width:640px) {
+  #content .details_info h2{margin: 0;}
+
+  #content .info .info_text .info_top{overflow: hidden;}
+  #content .info .info_text .info_top li{float: none; width: auto;}
+  
+  #content .info .info_text .info_top li dt{float: left;}
+  #content .info .info_text .info_top li dd{margin-left: 100px;}
+
+  #content .info .info_text .info_bottom{overflow: hidden;}
+  #content .info .info_text .info_bottom li{float: none; width: auto;}
+  #content .info .info_text .info_bottom li dt{float: left;}
+  #content .info .info_text .info_bottom li dd{margin-left: 100px;}
+
+
+  #content .details_info .skill .skill_text dl dd{
+    margin-bottom: 0;
+  }
+  #content .details_info .skill .skill_text dl dd ul li{
+    padding-left: 10px;
+  }
+  #content .details_info .skill .skill_text dl:nth-child(2n+1){
+    font-weight: 400;
+  }
+  #content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+2) dd{padding: 0;}
+  #content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+3) dd{padding: 0;}
+
+
+  #content .content .details_info >ul >li{
+    padding: 30px 0;
+  }
+  #content .content .details_info > ul .head{display: none;}
+  #content .content .details_info > ul .text dl{width: auto !important;
+     float: none !important;
+     text-align: start !important;
+     padding: 10px 0 !important;
+    }
+  #content .content .details_info > ul .text dl dt{
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  #content .content .details_info > ul .text dl dd{
+    width: auto !important;
+    float: none;
+    text-align: start !important;
+  }
+  #content .content .details_info > ul .text dl dd span{
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+  }
+  #content .content .details_info > ul .text dl dd b{
+    display: inline-block !important;
+  }
+
+  #content .details_info .skill .skill_text dl dd ul li::before{
+    top: 10px;
+    left: 0;
+    transform: translate(0px);
+  }
+}

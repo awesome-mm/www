@@ -62,6 +62,11 @@ img {
   display: block;
 }
 
+#wrap .title h1 {
+  margin: 50px auto;
+  width: fit-content;
+}
+
 #content .info {
   padding: 0 10%;
   width: 80%;
@@ -70,21 +75,38 @@ img {
   margin: 50px;
 }
 #content .info .info_img {
-  width: 142px;
-  height: 186px;
-  background: url(../img2.jpg);
-  background-position: -70px;
-  background-size: cover;
-  float: left;
-  margin-right: 50px;
+    width: 150px;
+    height: 220px;
+    background: url(../profile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-right: 50px;
+    box-shadow: 1px 1px 10px 2px rgb(0 0 0 / 80%);
 }
 #content .info .info_text {
   overflow: hidden;
 }
-#content .info .info_text p {
+#content .info .info_text strong {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+#content .info .info_text strong::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  padding: 5px 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0, 255, 0, 0.4);
+  border-radius: 15px;
+  z-index: -1;
+  transform: skewX(133deg);
 }
 #content .info .info_text .info_top li {
   padding: 15px 0;
@@ -125,7 +147,7 @@ img {
   left: 0;
 }
 #content .summary_info .summary_info_inner {
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 #content .summary_info .summary_info_inner dl {
@@ -152,9 +174,24 @@ img {
 }
 #content .details_info h2 {
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+#content .details_info h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  padding: 5px 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0, 255, 0, 0.4);
+  border-radius: 15px;
+  z-index: -1;
+  transform: skewX(133deg);
 }
 #content .details_info .education .head {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 #content .details_info .education .head ul {
   overflow: hidden;
@@ -182,7 +219,7 @@ img {
   line-height: 1.5em;
 }
 #content .details_info .acheivement .head {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 #content .details_info .acheivement .head ul {
   overflow: hidden;
@@ -210,7 +247,7 @@ img {
   line-height: 1.5em;
 }
 #content .details_info .portfolio .head {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 #content .details_info .portfolio .head ul {
   overflow: hidden;
@@ -255,6 +292,10 @@ img {
   font-size: 1.25rem;
   font-weight: 700;
 }
+#content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+1) dd b {
+  font-weight: 400;
+  display: block;
+}
 #content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+2) dd {
   width: 50%;
   padding: 10px;
@@ -266,7 +307,7 @@ img {
   box-sizing: border-box;
 }
 #content .details_info .skill .head {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 #content .details_info .skill .head ul {
   overflow: hidden;
@@ -296,9 +337,10 @@ img {
   text-align: center;
   line-height: 1.5em;
   font-weight: 700;
+  padding-right: 10%;
 }
 #content .details_info .skill .skill_text dl:nth-child(2n+2) {
-  width: 75%;
+  width: 65%;
   padding: 10px 0;
   float: left;
   text-align: center;
@@ -312,24 +354,26 @@ img {
   position: relative;
   margin-bottom: 10px;
 }
-#content .details_info .skill .skill_text dl dd::before {
+#content .details_info .skill .skill_text dl dd ul li {
+  position: relative;
+}
+#content .details_info .skill .skill_text dl dd ul li::before {
   content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 10px;
   left: -10px;
   width: 3px;
   height: 3px;
   background-color: #000000;
 }
 #content .details_info .certificate .head {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 #content .details_info .certificate .head ul {
   overflow: hidden;
 }
 #content .details_info .certificate .head ul li {
-  width: 25%;
+  width: 33.33%;
   font-size: 1.25em;
   font-weight: 700;
   padding-bottom: 10px;
@@ -341,7 +385,7 @@ img {
   overflow: hidden;
 }
 #content .details_info .certificate .certificate_text dl {
-  width: 25%;
+  width: 33.33%;
   padding: 10px 0;
   float: left;
   text-align: center;
@@ -353,7 +397,9 @@ img {
 }
 #content .details_info .certificate .certificate_text dl dd {
   position: relative;
-  margin-bottom: 10px;
+}
+#content .content div > ul > li:last-of-type {
+  border-bottom: 1px solid #999 !important;
 }
 #content footer {
   margin-top: 100px;
@@ -363,4 +409,103 @@ img {
 #content footer p {
   text-align: center;
   color: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+  #wrap .title h1 {
+    margin: 30px 10%;
+  }
+  #content .summary_info .summary_info_inner dl {
+    width: 50%;
+    margin: 0;
+    padding: 30px 0;
+    border: 1px solid #ccc;
+  }
+  #content .summary_info .summary_info_inner dl:last-of-type {
+    border: 1px solid #ccc;
+  }
+  #content .info .info_img {
+    float: none;
+    margin: 30px auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  #content .details_info h2 {
+    margin: 0;
+  }
+  #content .info .info_text .info_top {
+    overflow: hidden;
+  }
+  #content .info .info_text .info_top li {
+    float: none;
+    width: auto;
+  }
+  #content .info .info_text .info_top li dt {
+    float: left;
+  }
+  #content .info .info_text .info_top li dd {
+    margin-left: 100px;
+  }
+  #content .info .info_text .info_bottom {
+    overflow: hidden;
+  }
+  #content .info .info_text .info_bottom li {
+    float: none;
+    width: auto;
+  }
+  #content .info .info_text .info_bottom li dt {
+    float: left;
+  }
+  #content .info .info_text .info_bottom li dd {
+    margin-left: 100px;
+  }
+  #content .details_info .skill .skill_text dl dd {
+    margin-bottom: 0;
+  }
+  #content .details_info .skill .skill_text dl dd ul li {
+    padding-left: 10px;
+  }
+  #content .details_info .skill .skill_text dl:nth-child(2n+1) {
+    font-weight: 400;
+  }
+  #content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+2) dd {
+    padding: 0;
+  }
+  #content .details_info .portfolio .portfolio_text dl:nth-of-type(3n+3) dd {
+    padding: 0;
+  }
+  #content .content .details_info > ul > li {
+    padding: 30px 0;
+  }
+  #content .content .details_info > ul .head {
+    display: none;
+  }
+  #content .content .details_info > ul .text dl {
+    width: auto !important;
+    float: none !important;
+    text-align: start !important;
+    padding: 10px 0 !important;
+  }
+  #content .content .details_info > ul .text dl dt {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  #content .content .details_info > ul .text dl dd {
+    width: auto !important;
+    float: none;
+    text-align: start !important;
+  }
+  #content .content .details_info > ul .text dl dd span {
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+  }
+  #content .content .details_info > ul .text dl dd b {
+    display: inline-block !important;
+  }
+  #content .details_info .skill .skill_text dl dd ul li::before {
+    top: 10px;
+    left: 0;
+    transform: translate(0px);
+  }
 }

@@ -6,7 +6,7 @@ $(document).ready(function(){
   window.onload=function(){	
       var el       = document.querySelector('.slogan p')
       var options  = {
-          text: '안녕하세요? 프론트엔드 개발자 & 웹퍼블리셔 김성찬입니다',
+          text: '안녕하세요?  Web Publisher & Front-end developer 김성찬입니다.',
           textSpeed: 50,
           blinkSpeed: 0.05
       }
